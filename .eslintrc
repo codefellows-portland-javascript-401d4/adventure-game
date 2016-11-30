@@ -23,6 +23,9 @@
    "key-spacing": [0, {"align": "value"}],
    "no-underscore-dangle": 0
  },
+ "parserOptions": {
+        "sourceType": "module"
+    },
    "globals": {
    "describe": false,
    "it": false,
