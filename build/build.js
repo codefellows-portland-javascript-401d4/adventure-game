@@ -32474,11 +32474,16 @@
 
 	var _mainController2 = _interopRequireDefault(_mainController);
 
+	var _clearingController = __webpack_require__(5);
+
+	var _clearingController2 = _interopRequireDefault(_clearingController);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var controllers = _angular2.default.module('controllers', []);
 
 	controllers.controller('mainController', _mainController2.default);
+	controllers.controller('clearingController', _clearingController2.default);
 
 	exports.default = controllers.name;
 
@@ -32494,7 +32499,27 @@
 	exports.default = mainController;
 	function mainController() {
 	  var self = this;
-	  self.location = 'code fellows!';
+	  self.location = 'clearing';
+	  self.crystal = false, self.gameOver = false, self.lookAround = function (location) {
+	    console.log(location);
+	  };
+	}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = clearingController;
+	function clearingController() {
+	  var self = this;
+	  self.initDescription = 'This is a clearing';
+	  self.descriptionCrystal = 'You have a crystal';
+	  self.descriptionNoCrystal = 'You are missing a crystal';
 	}
 
 /***/ }
