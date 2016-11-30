@@ -4,6 +4,8 @@
   "description": "![cf](http://i.imgur.com/7v5ASc8.png) Angular Adventure Game ====",
   "main": "karma.conf.js",
   "scripts": {
+    "start": "webpack-dev-server --inline",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
