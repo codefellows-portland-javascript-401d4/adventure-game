@@ -2,8 +2,24 @@
 <head><title>Sasquatch</title></head>
 <body ng-controller="mainController as main">
     {{main.location}}
-    <div ng-controller="clearingController as clearing">
-        {{clearing.initDescription}}
+    <!--location divs-->
+    <div>
+      <div ng-show="main.location === clearing.name" ng-class="clearing.name" ng-controller="clearingController as clearing">
+          {{main.lookAround(clearing)}}
+          <div ng-repeat="(direction, location) in clearing.movement">
+              <button ng-click="main.move(location)">{{direction}}</button>
+
+              {{main.location.movement}}
+          </div>
+      </div>
+      <div ng-show="main.location === stream.name" ng-class="stream.name" ng-controller="streamController as stream">
+          {{main.lookAround(stream)}}
+          <div ng-repeat="(direction, location) in stream.movement">
+              <button ng-click="main.move(location)">{{direction}}</button>
+          </div>
+      </div>
     </div>
+    <!--game interaction button div-->
+
 <script type="text/javascript" src="build.js"></script></body>
 </html>
