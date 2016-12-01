@@ -4,7 +4,9 @@
   "description": "Initializing...",
   "main": "index.js",
   "scripts": {
-    "test": "exit 0"
+    "start": "webpack-dev-server --inline",
+    "build": "webpack",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
