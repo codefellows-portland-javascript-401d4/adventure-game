@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="game">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Oregon Trail 2016</title>
 <link href="styles.css" rel="stylesheet"></head>
 <body>
-  <div ng-model="message">
-    It works!
+  <div>
+    <h1>Instructions</h1>
+      <p>Welcome to the Oregon Trail game!</p>
+  </div>
+  <div ng-controller="trailController" ng-model="message">
+    <button ng-model="food" value="">Food</button>
+    <button ng-model="gun" value="">Gun</button>
+    {{message}}
   </div>
 <script type="text/javascript" src="main.js"></script></body>
 </html>
