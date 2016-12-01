@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" ng-controller="room">
 <head>
     <meta charset="UTF-8">
     <title>Hell's Kitchen</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-	<div>
+	roomState: {{roomState}}
+	<div ng-show="roomState == 'dining'">
 		<h1>Dining Room</h1>
 		<p>desciptive text................</p>
 			<input type="button" value="Go to Chef Ramsay's Office'" ng-click="">
 			<input type="button" value="Go to the Hell's Kitchen" ng-click="">
 	</div>
-	 <div>
+	 <div ng-show="roomState == 'kitchen'">
 		<h1>Kitchen</h1>
 		<p>desciptive text................</p>
 			<input type="button" value="Go to the Dining Room" ng-click="">
 			<input type="button" value="Make f**&ing Risotto*" ng-click="">
 	</div>
-	 <div>
+	 <div ng-show="roomState == 'office'">
 		<h1>Chef Ramsay's Office</h1>
 		<p>desciptive text................</p>
 			<input type="button" value="Go to the Dining Room" ng-click="">
