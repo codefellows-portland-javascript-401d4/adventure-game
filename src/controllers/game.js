@@ -3,6 +3,6 @@
 Controller.$inject = ['$scope'];
 
 export default function Controller($scope) {
-  $scope.roomState = 'dining';
+  $scope.room = 'dining';
 
 }

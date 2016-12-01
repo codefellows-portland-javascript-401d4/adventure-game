@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" ng-controller="room">
+<html lang="en" ng-app="myApp" ng-controller="game">
 <head>
     <meta charset="UTF-8">
-    <title>Hell's Kitchen</title>
+    <title>Hell's Kitchen Mini Adventure</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-	roomState: {{roomState}}
-	<div ng-show="roomState == 'dining'">
+	<div ng-show="room == 'dining'">
 		<h1>Dining Room</h1>
-		<p>desciptive text................</p>
+		<p>descriptive text................</p>
 			<input type="button" value="Go to Chef Ramsay's Office'" ng-click="">
 			<input type="button" value="Go to the Hell's Kitchen" ng-click="">
 	</div>
-	 <div ng-show="roomState == 'kitchen'">
+	 <div ng-show="room == 'kitchen'">
 		<h1>Kitchen</h1>
-		<p>desciptive text................</p>
+		<p>descriptive text................</p>
 			<input type="button" value="Go to the Dining Room" ng-click="">
 			<input type="button" value="Make f**&ing Risotto*" ng-click="">
 	</div>
-	 <div ng-show="roomState == 'office'">
+	 <div ng-show="room == 'office'">
 		<h1>Chef Ramsay's Office</h1>
-		<p>desciptive text................</p>
+		<p>descriptive text................</p>
 			<input type="button" value="Go to the Dining Room" ng-click="">
 			<input type="button" value="Give Chef Ramsay Risotto*" ng-click="">
 	</div>
