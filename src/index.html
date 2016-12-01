@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-controller="gameController">
+      <div ng-model="room" ng-controller="roomController" ng-click="<!-- run functions to 1) pickUpItem(), 2) goToRoom() -->">
+        {{roomTitle}}
+        <hr>
+        {{roomDescription}}
+        <br>
+        {{itemDescription}}
+        <br>
+        {{monsterDescription}}
+
+        <!-- should this be a 5 X 5 grid? -->
+        <!-- and how do we populate the table and then buttons in the table? -->
+        <table> <!-- clickable images for each room hide and show go here-->
+          <tr>
+            <td>top left corner</td>
+            <td>top/north door</td>
+            <td>top right corner</td>
+          </tr>
+          
+          <tr>
+            <td>left/east door</td>
+            <td>center</td>
+            <td>right/west door</td>
+          </tr>
+
+          <tr>
+            <td>bottom left corner</td>
+            <td>bottom/south door</td>
+            <td>bottom right corner</td>
+          </tr>
+        </table>
+
+        </div>
+      </div>
+
+       <!-- is this ng-model="character"? --> 
+      <div ng-model="inventory" ng-repeat="item for item in inventory" ng-click="<!-- run a functions to 1)useItem(), 2) useWeapon() -->">
+        {{inventory}}
+      </div>
+
+    </div>
+
+  </body>
+</html>
