@@ -32482,9 +32482,9 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _room = __webpack_require__(8);
+	var _game = __webpack_require__(8);
 	
-	var _room2 = _interopRequireDefault(_room);
+	var _game2 = _interopRequireDefault(_game);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -32496,7 +32496,7 @@
 	var controllers = _angular2.default.module('controllers', []);
 	
 	// add the controllers to this app
-	controllers.controller('room', _room2.default);
+	controllers.controller('game', _game2.default);
 	// and 2) create the controller here:
 	
 	// export the module
@@ -32517,7 +32517,7 @@
 	Controller.$inject = ['$scope'];
 	
 	function Controller($scope) {
-	  $scope.roomState = 'dining';
+	  $scope.room = 'dining';
 	}
 
 /***/ }
