@@ -11,10 +11,8 @@ export default function mainController() {
 
   self.lookAround = function(location) {
     if (hasCrystal) {
-      console.log(1, hasCrystal);
       return location.descriptionCrystal;
     } else {
-      console.log(2, hasCrystal);
       return location.descriptionNoCrystal;
     }
   };  
@@ -26,6 +24,11 @@ export default function mainController() {
       return 'You caught Bigfoot!  Fame and fortune will surely be yours.';
     } else {
       return 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
+    }
+  };
+  self.pickUpItem = function(item) {
+    if (self.items.indexOf(item) === -1) {
+      self.items.push(item);
     }
   };
 }
