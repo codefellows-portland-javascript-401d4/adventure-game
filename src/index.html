@@ -1,6 +1,18 @@
-<html>
+<html ng-app="myApp">
 <head><title>Sasquatch</title></head>
-<body>
-    
+<body ng-controller="mainController as main">
+    {{main.location}}
+    <div ng-show="main.location === clearing.name" ng-class="clearing.name" ng-controller="clearingController as clearing">
+        {{main.lookAround(clearing)}}
+        <div ng-repeat="(direction, location) in clearing.movement">
+            <button ng-click="main.move(location)">{{direction}}</button>
+        </div>
+    </div>
+    <div ng-show="main.location === stream.name" ng-class="stream.name" ng-controller="streamController as stream">
+        {{main.lookAround(stream)}}
+        <div ng-repeat="(direction, location) in stream.movement">
+            <button ng-click="main.move(location)">{{direction}}</button>
+        </div>
+    </div>
 </body>
 </html>
