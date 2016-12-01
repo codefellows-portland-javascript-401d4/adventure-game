@@ -36,6 +36,15 @@
           </div>
       </div>
     </div>
-   
+    <!--catch bigfoot button-->
+    <div ng-show="main.location === main.sasquatchLocation">
+      <button ng-click="main.catchBigfoot()">Catch Bigfoot</button>
+      <div ng-show="main.gameOver && main.hasCrystal">
+        You caught Bigfoot!  Fame and fortune will surely be yours.
+      </div>
+      <div ng-show="main.gameOver && !main.hasCrystal">
+        Awww!  He ran right over you and got away.  Go home and tell all your friends.
+      </div>
+    </div>
 </body>
 </html>
