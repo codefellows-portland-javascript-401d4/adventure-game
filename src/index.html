@@ -8,5 +8,11 @@
             <button ng-click="main.move(location)">{{direction}}</button>
         </div>
     </div>
+    <div ng-show="main.location === stream.name" ng-class="stream.name" ng-controller="streamController as stream">
+        {{main.lookAround(stream)}}
+        <div ng-repeat="(direction, location) in stream.movement">
+            <button ng-click="main.move(location)">{{direction}}</button>
+        </div>
+    </div>
 </body>
 </html>
