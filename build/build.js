@@ -32478,12 +32478,17 @@
 
 	var _clearingController2 = _interopRequireDefault(_clearingController);
 
+	var _streamController = __webpack_require__(6);
+
+	var _streamController2 = _interopRequireDefault(_streamController);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var controllers = _angular2.default.module('controllers', []);
 
 	controllers.controller('mainController', _mainController2.default);
 	controllers.controller('clearingController', _clearingController2.default);
+	controllers.controller('streamController', _streamController2.default);
 
 	exports.default = controllers.name;
 
@@ -32500,8 +32505,25 @@
 	function mainController() {
 	  var self = this;
 	  self.location = 'clearing';
-	  self.crystal = false, self.gameOver = false, self.lookAround = function (location) {
-	    console.log(location);
+	  self.crystal = false;
+	  self.sasquatchLocation = 'clearing';
+	  self.gameOver = false;
+	  self.lookAround = function (location) {
+	    if (self.crystal) {
+	      return location.descriptionCrystal;
+	    } else {
+	      return location.descriptionNoCrystal;
+	    }
+	  };
+	  self.move = function (newLocation) {
+	    self.location = newLocation;
+	  };
+	  self.catchBigfoot = function () {
+	    if (self.crystal) {
+	      return 'You caught Bigfoot!  Fame and fortune will surely be yours.';
+	    } else {
+	      return 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
+	    }
 	  };
 	}
 
@@ -32517,9 +32539,37 @@
 	exports.default = clearingController;
 	function clearingController() {
 	  var self = this;
+	  self.name = 'clearing';
 	  self.initDescription = 'This is a clearing';
 	  self.descriptionCrystal = 'You have a crystal';
 	  self.descriptionNoCrystal = 'You are missing a crystal';
+	  self.movement = {
+	    forward: 'stream'
+	  };
+	  self.items = [];
+	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = streamController;
+	function streamController() {
+	  var self = this;
+	  self.name = 'stream';
+	  self.initDescription = 'This is a stream';
+	  self.descriptionCrystal = 'You have a crystal.  Bigfootprints have appeared!';
+	  self.descriptionNoCrystal = 'You are missing a crystal';
+	  self.movement = {
+	    forward: 'cave',
+	    backward: 'clearing'
+	  };
+	  self.items = [];
 	}
 
 /***/ }
