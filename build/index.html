@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="main.css">
 <link href="main.css" rel="stylesheet"></head>
 <body>
+    Show HTML: <input type="checkbox" ng-model="myVar">
+<div ng-show="myVar">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+</div>
     <section ng-controller="cowsay">
         <input ng-model="message">
         <pre>{{say(message)}}</pre>
