@@ -2,8 +2,11 @@
 <head><title>Sasquatch</title></head>
 <body ng-controller="mainController as main">
     {{main.location}}
-    <div ng-controller="clearingController as clearing">
+    <div ng-show="main.location === clearing.name" ng-class="clearing.name" ng-controller="clearingController as clearing">
         {{main.lookAround(clearing)}}
+        <div ng-repeat="(direction, location) in clearing.movement">
+            <button ng-click="main.move(location)">{{direction}}</button>
+        </div>
     </div>
 </body>
 </html>

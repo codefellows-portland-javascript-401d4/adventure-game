@@ -10,4 +10,7 @@ export default function mainController() {
       return location.descriptionNoCrystal;
     }
   };  
+  self.move = function(newLocation) {
+    self.location = newLocation;
+  };
 }
