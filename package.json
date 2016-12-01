@@ -1,0 +1,19 @@
+{
+  "name": "potato-game",
+  "version": "1.0.0",
+  "description": "a game based on node and Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Waxhoya/adventure-game.git"
+  },
+  "author": "Albert Reel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Waxhoya/adventure-game/issues"
+  },
+  "homepage": "https://github.com/Waxhoya/adventure-game#readme"
+}
