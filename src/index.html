@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div ng-controller="gameState as game">
+  <div>{{roomTitle}}</div>
+  <div>
+    <!--clickable images for each room
+    hide and show-->
+  </div>
+  <div>{{room.description}}</div>
+  <div ng-repeat="for item in items">{{inventory}}</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+//each room is an individual object
+//have a roomController that renders each object on 
+
+room {
+  name:
+  description:
+  items: []
+  enemies:
+  north:
+  south:
+  east:
+  west:
+}
