@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+    
+    <style>
+      .excited {
+        font-family: impact;
+      }
+      .display{
+        font-size: 20px;
+      }
+      .blue {
+        color: blue;
+      }
+      .gold {
+        color: gold;
+      }
+      .green {
+        color: green;
+      }
+
+    </style>
+    </head>
+    <body>
+      <!--<div ng-controller="colorController">
+        <label>Message:</label>
+        <input type="text" ng-model="yourMessage" placeholder="Enter your message here">-->
+        <div ng-controller="adventureController">
+          <label>Choice 1:</label>
+
+          
+
+          <label>Choice 2:</label>
+          <input type="button" ng-model="choiceOne" placeholder="Choice One">
+
+          
+
+
+        <label>Pick your color:</label>
+        <select ng-model="yourColor" ng-options="color.name for color in colors"></select>
+        <br>
+
+        <label>Excited?</label>
+        <input type="checkbox" ng-model="isExcited">
+
+        <label>Font Size:</label>
+        <input type="range" ng-model="font.size" value=min min=10 max=50>
+
+        <hr>
+
+        <button class="choice1" ng-click="data.tes = 1" >choice 1</button>
+        <button class="choice2" ng-click="data.tes = 1" >choice 2</button>
+
+        <p>Your message:</p>
+
+        <p ng-style="{'font-size': font.size + 'px'}" 
+           ng-class="[{ excited: isExcited }, yourColor.name]">{{yourMessage}}
+        </p>        
+
+      </div>
+      <script src="main.js"></script>
+    </body>
+  </html>
