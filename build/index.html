@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Our First Webpack App</title>
+    <link rel="stylesheet" href="main.css">
+<link href="main.css" rel="stylesheet"></head>
+<body>
+    Show HTML: <input type="checkbox" ng-model="myVar">
+<div ng-show="myVar">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+</div>
+    <section ng-controller="cowsay">
+        <input ng-model="message">
+        <pre>{{say(message)}}</pre>
+    </section>
+<script type="text/javascript" src="main.js"></script></body>
+</html>
