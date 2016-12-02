@@ -3,6 +3,6 @@ import { profiles } from '../profiles';
 
 export default function game($scope) {
   $scope.room = 'swipe';
-  $scope.name = '';
-  $scope.profiles = profiles;
+  $scope.current = profiles.chad;
+  console.log($scope);
 }
