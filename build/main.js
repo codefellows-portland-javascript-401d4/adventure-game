@@ -32532,6 +32532,9 @@
 	  $scope.makeRisotto = function () {
 	    $scope.risottoMade = true;
 	  };
+	  $scope.assignRisotto = function () {
+	    $scope.risottoAssigned = true;
+	  };
 	}
 
 /***/ }
