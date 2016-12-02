@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="datingGame">
 <head>
-    <meta charset="UTF-8">
-    <title>Millenial Dating Game</title>
+  <meta charset="UTF-8">
+  <title>Millenial Dating Game</title>
 </head>
 <body ng-controller="game">
-    <section ng-show="room === 'swipe'">
-        <h1>Welcome</h1>
-            {{ profiles }}
-    </section>
-    
-    <section>
-        <button ng-show="room === 'swipe'">Swipe right</button>
-        <button ng-show="room === 'swipe'">Swipe left</button>
-    </section>
+  <section ng-show="room === 'swipe'" ng-controller="swipe">
+    <h1>{{name}}</h1>
+    <h2>{{bio}}</h2>
+    <img src="{{img}}" alt="profile pic">
+  </section>
+  <section>
+    <button ng-show="room === 'swipe'">Swipe right</button>
+    <button ng-show="room === 'swipe'">Swipe left</button>
+  </section>
 </body>
 </html>

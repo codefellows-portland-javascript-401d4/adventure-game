@@ -2,7 +2,8 @@ const profiles = {};
 
 profiles.chad = {
   name: 'Chad',
-  bio: '../img/chad-profile.jpg',
+  bio: 'Crush suds. Frisbee is life.',
+  img: '../src/img/chad-profile.jpg',
   message: 'pickup line'
 };
 
@@ -14,4 +15,4 @@ profiles.becky = {
 
 profiles.chad.next = profiles.becky;
 
-export default { profiles };
+export {profiles};
