@@ -7,34 +7,44 @@
 <body>
 
   <div>
-    <h1>Instructions</h1>
-      <p>Welcome to the Oregon Trail game!</p>
+    <h1>The Oregon Trail</h1>
   </div>
 
   <div ng-controller="trail" ng-model="message">
-    {{message}}
+    {{message}}</br>
 
     <div ng-controller="begin" ng-show="day === ''" >
+      <p>Welcome to The Oregon Trail 2016 game! Before you begin your journey, you need to make a choice. You're a poor pioneer and you've only got enough coin to either buy food or a gun.</p>
+      {{message}}</br>
       <button ng-click="supplies.food = true" ng-model="food" value="">Food</button>
       <button ng-click="supplies.gun = true" ng-model="gun" value="">Gun</button>
-      {{message}}
     </div>
 
     <div ng-controller="day01" ng-show="day === 'day01'">
+      <p>Uh oh, on Day 1 you ran into some bad dudes! Do you want to run or fight?</p>
       <button ng-click="run()" ng-model="run" value="">Run</button>
       <button ng-click="fight()" ng-model="fight" value="">Fight</button>
     </div>
 
     <div ng-controller="day20" ng-show="day === 'day20'">
+      <p>Day 20: You sure got a big appetite for a city slicker. Yer nearly out of beans'n'franks, so you need to make a choice: Do you want to buy food in the next town, take your chances and continue on, or go hunting?</p>
       <button ng-click="town()" ng-model="town" value="">Town</button>
       <button ng-click="continue()" ng-model="continue" value="">Continue</button>
       <button ng-click="hunt()" ng-model="hunt" value="">Hunt</button>
     </div>
 
     <div ng-controller="day30" ng-show="day === 'day30'">
+      <p>Day 30: You need to cross the Snake River,and it's running high: Do you try to ford it or wait for the waters to fall and hope that your food lasts?</p>
       <button ng-click="ford()">Ford</button>
       <button ng-click="wait()">Wait</button>
     </div>
+
+    <div  ng-show="day === 'dead'">
+    </div>
+
+    <div ng-show="day === 'win'">
+    </div>
+
 
 
   </div>
