@@ -2,18 +2,18 @@
 <html ng-app="primary">
     <head>
         <meta charset="UTF-8">
-        <title>Potatoe Republic</title>
+        <title>Potato Republic</title>
     </head>
     <body ng-controller="playerInfo" >
         <div class="flex-container">
             <h3>SCORE: {{playerScore}} </h1>
             <h1 ng-class="">{{ nationName }} vs {{ rivalNation }}</h1>
-            <h3>SCORE: {{rivalScore}} </h1>
+            <h3>Year: {{count}} </h1>
         </div>
         <div class="flex-container">
-            <div class="flex-item secDef">DEFENCE<br><img src="./abe.jpg"></img></div>
-            <div class="flex-item secState">STATE<br><img src="./abe.jpg"></img></div>
-            <div class="flex-item secEdu">EDUCATION<br><img src="./abe.jpg"></img></div>
+            <div class="flex-item secDef">DEFENCE<br><img src="./putin.jpg"></img></div>
+            <div class="flex-item secState">STATE<br><img src="./aMerkel.jpg"></img></div>
+            <div class="flex-item secEdu">EDUCATION<br><img src="./catherine.jpg"></img></div>
         </div>
         <br>
         <div class="flex-container">
@@ -23,9 +23,14 @@
         </div>
         <br>
         <div class="flex-container">
-            <div class="flex-item secDef">DEFENCE<br><img src="./abe.jpg"></img></div>
+            <div class="flex-item secDef">DEFENCE<br><img src="./XiJinping.jpg"></img></div>
             <div class="flex-item secState">STATE<br><img src="./abe.jpg"></img></div>
-            <div class="flex-item secEdu">EDUCATION<br><img src="./abe.jpg"></img></div>
+            <div class="flex-item secEdu">EDUCATION<br><img src="./ben.jpg"></img></div>
+        </div>
+        <div class="flex-container">
+            <select ng-model='defMinister' ng-options="choice[0] for choice in ministers"></select>
+            <select ng-model='eduMinister' ng-options="choice[0] for choice in ministers"></select>
+            <select ng-model='ministers' ng-options="choice for choice in ministers"></select>
         </div>
 
 
