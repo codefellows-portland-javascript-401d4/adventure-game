@@ -13,7 +13,7 @@
   <div ng-controller="trail" ng-model="message">
     {{message}}</br>
 
-    <div ng-controller="begin" ng-show="day === ''" >
+    <div  ng-show="day === ''" >
       <p>Welcome to The Oregon Trail 2016 game! Before you begin your journey, you need to make a choice. You're a poor pioneer and you've only got enough coin to either buy food or a gun.</p>
       {{message}}</br>
       <button ng-click="supplies.food = true" ng-model="food" value="">Food</button>

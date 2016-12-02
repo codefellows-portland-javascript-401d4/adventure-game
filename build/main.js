@@ -32477,19 +32477,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// import begin from './begin';
-	// import day01 from './day01';
-	// import day20 from './day20';
-	// import day30 from './day30';
-	
 	var controllers = _angular2.default.module('controllers', []);
 	
 	controllers.controller('trail', _trail2.default);
-	// controllers.controller('begin', begin);
-	// controllers.controller('day01', day01);
-	// controllers.controller('day20', day20);
-	// controllers.controller('day30', day30);
-	
 	
 	exports.default = controllers.name;
 
