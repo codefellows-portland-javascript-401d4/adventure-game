@@ -12,10 +12,17 @@
     <!--location divs-->
     <div>
       <div ng-controller="locationController as loc">
-        <span>{{main.subControllers()}}</span>
-        <!--<span>{{main.lookAround(location)}}</span>-->
+        {{main.lookAround(loc[main.location])}}
+        <div ng-repeat="(direction, location) in loc[main.location].movement">
+            <button ng-click="main.move(location)">{{direction}}</button>
+
+        </div>
+
+        <div ng-show="cave.items.length" ng-repeat="item in cave.items">
+          <button ng-click="main.pickUpItem(item)">{{item}}</button>
+        </div>
       </div>
-      
+
       <!--<div ng-show="main.location === clearing.name" ng-class="clearing.name" ng-controller="clearingController as clearing">
           {{main.lookAround(clearing)}}
           <div ng-repeat="(direction, location) in clearing.movement">

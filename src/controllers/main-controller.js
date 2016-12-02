@@ -9,9 +9,9 @@ export default function mainController() {
   self.sasquatchLocation = 'clearing';
   self.gameOver = false;
 
-  self.subControllers = function() {
-    return 'clearingController';
-  };
+  // self.subControllers = function() {
+  //   return 'clearingController';
+  // };
   
   // {
   //   clearing: 'clearingController',
