@@ -11,4 +11,6 @@ export default function Controller($scope) {
   $scope.dining = function() { $scope.room = 'dining'; };
   $scope.makeRisotto = function() { $scope.risottoMade = true; };
   $scope.assignRisotto = function() { $scope.risottoAssigned = true; };
+  $scope.win = function() { $scope.room = 'victory'; };
+  $scope.lose = function() { $scope.room = 'defeat'; };
 }
