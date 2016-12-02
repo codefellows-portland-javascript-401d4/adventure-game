@@ -2,9 +2,11 @@ const profiles = {};
 
 profiles.chad = {
   name: 'Chad',
-  bio: 'Crush suds. Frisbee is life.',
-  img: '../src/img/chad-profile.jpg',
-  message: 'pickup line'
+  bio: 'Crush suds. Surf is life.',
+  // img: '../src/img/chad-profile.jpg',
+  message: 'I know the SICKEST bar, we should go!',
+  yesResponse: 'OMG I LOVE THAT PLACE',
+  noResponse: 'What is wrong with you?'
 };
 
 profiles.becky = {

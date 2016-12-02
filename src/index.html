@@ -5,14 +5,24 @@
   <title>Millenial Dating Game</title>
 </head>
 <body ng-controller="game">
-  <section ng-show="room === 'swipe'" ng-controller="swipe">
-    <h1>{{name}}</h1>
-    <h2>{{bio}}</h2>
-    <img src="{{img}}" alt="profile pic">
+  <section ng-controller="swipe">
+    <h1>date-finder</h1>
+    <div id="swipe-view" ng-show="room === 'swipe'">
+      <h3>{{name}}</h3>
+      <h4>{{bio}}</h4>
+      <!--<img src="{{img}}" alt="profile pic">-->
+    </div>
+    <section ng-show="room === 'message'" ng-controller="message">
+      <h3>It's a match!<br>Message from: {{name}}</h3>
+      <p>{{message}}</p>
+      </h3>
+    </section>
   </section>
-  <section>
-    <button ng-show="room === 'swipe'">Swipe right</button>
+  <section ng-controller="swipe">
     <button ng-show="room === 'swipe'">Swipe left</button>
+    <button ng-show="room === 'swipe'" ng-click="room = 'message'">Swipe right</button>
+    <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{noResponse}}</button>
+    <button ng-show="room === 'message'" ng-click="room = 'date'">{{yesResponse}}</button>
   </section>
 </body>
 </html>
