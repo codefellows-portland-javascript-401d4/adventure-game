@@ -19,7 +19,7 @@
     </section>
   </section>
   <section ng-controller="swipe">
-    <button ng-show="room === 'swipe'">Swipe left</button>
+    <button ng-show="room === 'swipe'" ng-click="current = current.next">Swipe left</button>
     <button ng-show="room === 'swipe'" ng-click="room = 'message'">Swipe right</button>
     <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{noResponse}}</button>
     <button ng-show="room === 'message'" ng-click="room = 'date'">{{yesResponse}}</button>
