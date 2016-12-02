@@ -56,7 +56,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(4);
+	__webpack_require__(8);
 	
 	_angular2.default.module('game', [_controllers2.default]);
 
@@ -32471,16 +32471,159 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
+	var _trail = __webpack_require__(4);
+	
+	var _trail2 = _interopRequireDefault(_trail);
+	
+	var _day = __webpack_require__(5);
+	
+	var _day2 = _interopRequireDefault(_day);
+	
+	var _day3 = __webpack_require__(6);
+	
+	var _day4 = _interopRequireDefault(_day3);
+	
+	var _day5 = __webpack_require__(7);
+	
+	var _day6 = _interopRequireDefault(_day5);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var controllers = _angular2.default.module('controllers', []);
 	
-	controllers.controller('trail', trail);
+	controllers.controller('trail', _trail2.default);
+	controllers.controller('day01', _day2.default);
+	controllers.controller('day20', _day4.default);
+	controllers.controller('day30', _day6.default);
 	
 	exports.default = controllers.name;
 
 /***/ },
 /* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = trailController;
+	trailController.$inject = ['$scope'];
+	
+	function trailController($scope) {
+	  $scope.message = 'You are on the trail.';
+	  $scope.day = '';
+	  $scope.supplies = {
+	    food: false,
+	    gun: false
+	  };
+	}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = day01Controller;
+	day01Controller.$inject = ['$scope'];
+	
+	function day01Controller($scope) {
+	  $scope.instructions = 'You ran into some bad dudes.';
+	
+	  $scope.fight = function () {
+	    if ($scope.supplies.gun === false) {
+	      $scope.day = 'dead';
+	      $scope.message = 'You are dead!';
+	    } else {
+	      $scope.day = 'day20';
+	      $scope.message = 'Nice shooting Tex!';
+	    }
+	  };
+	
+	  $scope.run = function () {
+	    if ($scope.supplies.food === false) {
+	      $scope.day = 'dead';
+	      $scope.message = 'You starved to death!';
+	    } else {
+	      $scope.day = 'day20';
+	      $scope.message = 'Nice running, yeller belly! Thems some good vittles!';
+	    }
+	  };
+	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = day20Controller;
+	day20Controller.$inject = ['$scope'];
+	
+	function day20Controller($scope) {
+	  $scope.instructions = 'Y\'all running low on grub.';
+	
+	  $scope.town = function () {
+	    if ($scope.supplies.gun === false) {
+	      $scope.day = 'day30';
+	      $scope.message = 'You bought food!';
+	    } else {
+	      $scope.day = 'dead';
+	      $scope.message = 'You got shot in a showdown!';
+	    }
+	  };
+	
+	  $scope.continue = function () {
+	    $scope.day = 'dead';
+	    $scope.message = 'You are dead!';
+	  };
+	
+	  $scope.hunt = function () {
+	    if ($scope.supplies.gun === false) {
+	      $scope.day = 'dead';
+	      $scope.message = 'Flattened by a herd of buffalo! See ya!';
+	    } else {
+	      $scope.day = 'day30';
+	      $scope.message = 'You bagged yourself a bison!';
+	    }
+	  };
+	}
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = day30Controller;
+	day30Controller.$inject = ['$scope'];
+	
+	function day30Controller($scope) {
+	  $scope.instructions = 'Many rivers to cross and you are at one now.';
+	
+	  $scope.ford = function () {
+	    $scope.day = 'dead';
+	    $scope.message = 'You done drowned!';
+	  };
+	
+	  $scope.wait = function () {
+	    $scope.day = 'win';
+	    $scope.message = 'You made it to Oregon, congrats!';
+	  };
+	}
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
