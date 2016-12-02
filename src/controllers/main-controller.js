@@ -9,6 +9,17 @@ export default function mainController() {
   self.sasquatchLocation = 'clearing';
   self.gameOver = false;
 
+  self.subControllers = function() {
+    return 'clearingController';
+  };
+  
+  // {
+  //   clearing: 'clearingController',
+  //   stream: 'streamController',
+  //   cave: 'caveController'
+  //   //TODO:  make sure to add any other rooms here
+  // };
+
   self.lookAround = function(location) {
     if (self.hasCrystal) {
       return location.descriptionCrystal;

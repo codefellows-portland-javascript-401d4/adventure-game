@@ -11,7 +11,12 @@
     </div>
     <!--location divs-->
     <div>
-      <div ng-show="main.location === clearing.name" ng-class="clearing.name" ng-controller="clearingController as clearing">
+      <div ng-controller="locationController as loc">
+        <span>{{main.subControllers()}}</span>
+        <!--<span>{{main.lookAround(location)}}</span>-->
+      </div>
+      
+      <!--<div ng-show="main.location === clearing.name" ng-class="clearing.name" ng-controller="clearingController as clearing">
           {{main.lookAround(clearing)}}
           <div ng-repeat="(direction, location) in clearing.movement">
               <button ng-click="main.move(location)">{{direction}}</button>
@@ -29,12 +34,12 @@
               <button ng-click="main.move(location)">{{direction}}</button>
 
 
-          </div>
+          </div>-->
             <!--item interaction button div-->
-          <div ng-repeat="item in cave.items">
+          <!--<div ng-show="cave.items.length" ng-repeat="item in cave.items">
             <button ng-click="main.pickUpItem(item)">{{item}}</button>
           </div>
-      </div>
+      </div>-->
     </div>
     <!--catch bigfoot button-->
     <div ng-show="main.location === main.sasquatchLocation">
