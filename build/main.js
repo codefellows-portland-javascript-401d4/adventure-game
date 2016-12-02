@@ -32517,7 +32517,9 @@
 	Controller.$inject = ['$scope'];
 	
 	function Controller($scope) {
-	  $scope.room = 'dining';
+	  $scope.room = 'kitchen';
+	  $scope.risottoAssigned = true;
+	  $scope.risottoMade = false;
 	}
 
 /***/ }

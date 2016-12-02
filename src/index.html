@@ -9,20 +9,26 @@
 	<div ng-show="room == 'dining'">
 		<h1>Dining Room</h1>
 		<p>descriptive text................</p>
-			<input type="button" value="Go to Chef Ramsay's Office'" ng-click="">
-			<input type="button" value="Go to the Hell's Kitchen" ng-click="">
+			<input type="button" value="Go to Chef Ramsay's Office'" ng-click="office()">
+			<input type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
 	</div>
 	 <div ng-show="room == 'kitchen'">
 		<h1>Kitchen</h1>
 		<p>descriptive text................</p>
-			<input type="button" value="Go to the Dining Room" ng-click="">
-			<input type="button" value="Make f**&ing Risotto*" ng-click="">
+			<input type="button" value="Go to the Dining Room" ng-click="dining()">
+			<span ng-show="risottoAssigned"><input type="button" value="Make f**&ing Risotto*" ng-click=""></span>
 	</div>
 	 <div ng-show="room == 'office'">
 		<h1>Chef Ramsay's Office</h1>
 		<p>descriptive text................</p>
-			<input type="button" value="Go to the Dining Room" ng-click="">
-			<input type="button" value="Give Chef Ramsay Risotto*" ng-click="">
+		<div ng-show="!risottoAssigned">
+			<p>Go make some f***ing risotto!</p>
+		</div>
+		<div ng-show="risottoMade">
+			<p>Is that your f***ing risotto?</p>
+		</div>
+			<input type="button" value="Go to the Dining Room" ng-click="dining()">
+			<span ng-show="risottoMade"><input type="button" value="Give Chef Ramsay Risotto*" ng-click=""></span>
 	</div>
     
 </body>
