@@ -18,17 +18,17 @@ app.controller('playerInfo', ['$scope', function ($scope) {
     $scope.rivalNation = 'Shaftistan';
     $scope.playerScore = 0;
     $scope.count = 1000;
-    $scope.defMinister = {name: "Gandi", def: 10, edu: 1, poli: 1, src: './Gandi.jpg'};
+    $scope.defMinister = {name: "Gandi", def: 10, edu: 1, poli: 1, src: './Gandhi.jpg'};
     $scope.eduMinister = {name: "Ben Franklin", def: 10, edu: 1, poli: 1, src: './ben.jpg'};
     $scope.primeMinister = {name: "Abe Lincoln", def: 10, edu: 10, poli: 10, src: './abe.jpg'};
     $scope.defMinisterRival = {name: "Putin", def: 10, edu: 1, poli: 1, src: './putin.jpg'};
     $scope.eduMinisterRival =  {name: "Xi Jinping", def: 10, edu: 10, poli: 10, src: './XiJinping.jpg'};
-    $scope.primeMinisterRival = {name: "Angela Merkle", def: 10, edu: 1, poli: 1, src: './aMerkle.jpg'};
+    $scope.primeMinisterRival = {name: "Angela Merkle", def: 10, edu: 1, poli: 1, src: './aMerkel.jpg'};
 
     $scope.objMinisters = [
         {name: "Abe Lincoln", def: 10, edu: 10, poli: 10, src: './abe.jpg'},
         {name: "Xi Jinping", def: 10, edu: 10, poli: 10, src: './XiJinping.jpg'},
-        {name: "Gandi", def: 10, edu: 1, poli: 1, src: './Gandi.jpg'},
+        {name: "Gandi", def: 10, edu: 1, poli: 1, src: './Gandhi.jpg'},
         {name: "Angela Merkle", def: 10, edu: 1, poli: 1, src: './aMerkle.jpg'},
         {name: "Catherine the Great", def: 10, edu: 1, poli: 1, src: './catherine.jpg'},
         {name: "Putin", def: 10, edu: 1, poli: 1, src: './putin.jpg'},

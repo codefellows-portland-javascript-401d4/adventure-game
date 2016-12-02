@@ -10,10 +10,10 @@
             <h1 ng-class="">{{ nationName }} vs {{ rivalNation }}</h1>
             <h3>Year: {{count}} </h1>
         </div>
-        <div class="flex-container">
-            <div class="flex-item secDef">DEFENCE<br><img src="./putin.jpg"></img></div>
-            <div class="flex-item secState">STATE<br><img src="./aMerkel.jpg"></img></div>
-            <div class="flex-item secEdu">EDUCATION<br><img src="./catherine.jpg"></img></div>
+        <div class="flex-container">     
+            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinisterRival.src }}"></img></div>
+            <div class="flex-item secState">STATE<br><img ng-src="{{ primeMinisterRival.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinisterRival.src }}"></img></div>
         </div>
         <br>
         <div class="flex-container">
@@ -23,9 +23,9 @@
         </div>
         <br>
         <div class="flex-container">
-            <div class="flex-item secDef">DEFENCE<br><img src="./XiJinping.jpg"></img></div>
-            <div class="flex-item secState">STATE<br><img src="./abe.jpg"></img></div>
-            <div class="flex-item secEdu">EDUCATION<br><img src="./ben.jpg"></img></div>
+            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinister.src }}"></img></div>
+            <div class="flex-item secState">STATE<br><img src="{{ primeMinister.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinister.src }}"></img></div>
         </div>
         <div class="flex-container">
             <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
