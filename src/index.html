@@ -9,13 +9,23 @@
         <li>{{item}}</li>
       </ul>
     </div>
-    <!--location divs-->
+    <!--location div-->
     <div>
       <div ng-controller="locationController as loc">
-        {{main.lookAround(loc[main.location])}}
-        <div ng-repeat="(direction, location) in loc[main.location].movement">
-            <button ng-click="main.move(location)">{{direction}}</button>
+        {{loc[main.location].initDescription}}
 
+        <!--this is the button for looking around the curr area-->
+        <button ng-show="loc[main.location].inspected === false" ng-click="main.setInspected(loc[main.location])">
+          Look around the {{main.location}}
+        </button>
+        
+        <!--This displays the description when the player inspects the area-->
+        <div ng-show="loc[main.location].inspected === true">
+          {{main.lookAround(loc[main.location])}}
+        </div>
+
+        <div ng-repeat="(direction, location) in loc[main.location].movement">
+            <button ng-click="main.move(loc[main.location], location)">{{direction}}</button>
         </div>
 
         <div ng-show="loc[main.location].items.length" ng-repeat="item in loc[main.location].items">

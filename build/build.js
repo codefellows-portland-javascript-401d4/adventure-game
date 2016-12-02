@@ -32474,26 +32474,25 @@
 
 	var _mainController2 = _interopRequireDefault(_mainController);
 
-	var _clearingController = __webpack_require__(5);
+	var _locationController = __webpack_require__(5);
 
-	var _clearingController2 = _interopRequireDefault(_clearingController);
-
-	var _streamController = __webpack_require__(6);
-
-	var _streamController2 = _interopRequireDefault(_streamController);
-
-	var _caveController = __webpack_require__(7);
-
-	var _caveController2 = _interopRequireDefault(_caveController);
+	var _locationController2 = _interopRequireDefault(_locationController);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// import clearingController from './clearing-controller';
+	// import streamController from './stream-controller';
+	// import caveController from './cave-controller';
+
 
 	var controllers = _angular2.default.module('controllers', []);
 
 	controllers.controller('mainController', _mainController2.default);
-	controllers.controller('clearingController', _clearingController2.default);
-	controllers.controller('streamController', _streamController2.default);
-	controllers.controller('caveController', _caveController2.default);
+	controllers.controller('locationController', _locationController2.default);
+
+	// controllers.controller('clearingController', clearingController);
+	// controllers.controller('streamController', streamController);
+	// controllers.controller('caveController', caveController);
 
 	exports.default = controllers.name;
 
@@ -32517,14 +32516,19 @@
 	  self.sasquatchLocation = 'clearing';
 	  self.gameOver = false;
 
-	  self.subControllers = {
-	    clearing: 'clearingController',
-	    stream: 'streamController',
-	    cave: 'caveController'
-	    //TODO:  make sure to add any other rooms here
-	  };
+	  // self.subControllers = function() {
+	  //   return 'clearingController';
+	  // };
+
+	  // {
+	  //   clearing: 'clearingController',
+	  //   stream: 'streamController',
+	  //   cave: 'caveController'
+	  //   //TODO:  make sure to add any other rooms here
+	  // };
 
 	  self.lookAround = function (location) {
+	    location.inspected = true;
 	    if (self.hasCrystal) {
 	      return location.descriptionCrystal;
 	    } else {
@@ -32561,62 +32565,44 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = clearingController;
-	function clearingController() {
+	exports.default = locationController;
+	function locationController() {
 	  var self = this;
-	  self.name = 'clearing';
-	  self.initDescription = 'This is a clearing';
-	  self.descriptionCrystal = 'You have a crystal';
-	  self.descriptionNoCrystal = 'You are missing a crystal';
-	  self.movement = {
-	    forward: 'stream'
+
+	  self.clearing = {
+	    name: 'clearing',
+	    inspected: false,
+	    initDescription: 'This is a clearing',
+	    descriptionCrystal: 'You have a crystal',
+	    descriptionNoCrystal: 'You are missing a crystal',
+	    movement: {
+	      forward: 'stream'
+	    },
+	    items: []
 	  };
-	  self.items = [];
-	}
 
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = streamController;
-	function streamController() {
-	  var self = this;
-	  self.name = 'stream';
-	  self.initDescription = 'This is a stream';
-	  self.descriptionCrystal = 'You have a crystal.  Bigfootprints have appeared!';
-	  self.descriptionNoCrystal = 'You are missing a crystal';
-	  self.movement = {
-	    forward: 'cave',
-	    backward: 'clearing'
+	  self.stream = {
+	    name: 'stream',
+	    initDescription: 'This is a stream',
+	    descriptionCrystal: 'You have a crystal.  Bigfootprints have appeared!',
+	    descriptionNoCrystal: 'You are missing a crystal',
+	    movement: {
+	      forward: 'cave',
+	      backward: 'clearing'
+	    },
+	    items: []
 	  };
-	  self.items = [];
-	}
 
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = caveController;
-	function caveController() {
-	  var self = this;
-	  self.name = 'cave';
-	  self.initDescription = 'This is a cave';
-	  self.descriptionCrystal = 'You have a crystal.  Bigfootprints have appeared!';
-	  self.descriptionNoCrystal = 'You are missing a crystal';
-	  self.movement = {
-	    backward: 'stream'
+	  self.cave = {
+	    name: 'cave',
+	    initDescription: 'This is a cave',
+	    descriptionCrystal: 'You have a crystal.  Bigfootprints have appeared!',
+	    descriptionNoCrystal: 'You are missing a crystal',
+	    movement: {
+	      backward: 'stream'
+	    },
+	    items: ['crystal']
 	  };
-	  self.items = ['crystal'];
 	}
 
 /***/ }
