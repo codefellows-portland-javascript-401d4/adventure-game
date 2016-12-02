@@ -13,4 +13,8 @@ export default function Controller($scope) {
   $scope.assignRisotto = function() { $scope.risottoAssigned = true; };
   $scope.win = function() { $scope.room = 'victory'; };
   $scope.lose = function() { $scope.room = 'defeat'; };
+  $scope.reset = function() {
+    $scope.room = 'dining';
+    $scope.risottoAssigned = false;
+    $scope.risottoMade = false; };
 }
