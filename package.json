@@ -1,0 +1,46 @@
+{
+  "name": "adventure-game",
+  "version": "1.0.0",
+  "description": "Choose your own adventure lab assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanPickard/adventure-game.git"
+  },
+  "author": "Nathan Pickard <nathan.pickard87@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanPickard/adventure-game/issues"
+  },
+  "homepage": "https://github.com/NathanPickard/adventure-game#readme",
+  "devDependencies": {
+    "angular-mocks": "^1.5.9",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.0",
+    "eslint": "^3.11.1",
+    "eslint-loader": "^1.6.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.24.1",
+    "karma": "^1.2.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-mocha": "^1.1.1",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.9"
+  }
+}
