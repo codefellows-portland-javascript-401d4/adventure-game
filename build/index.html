@@ -9,35 +9,19 @@
         <li>{{item}}</li>
       </ul>
     </div>
-    <!--location divs-->
+    <!--location div-->
     <div>
-      <div ng-controller="main.subControllers[main.location] as location">
-        <span>{{main.lookAround(location)}}</span>
-      </div>
-      <!--<div ng-show="main.location === clearing.name" ng-class="clearing.name" ng-controller="clearingController as clearing">
-          {{main.lookAround(clearing)}}
-          <div ng-repeat="(direction, location) in clearing.movement">
-              <button ng-click="main.move(location)">{{direction}}</button>
-          </div>
-      </div>
-      <div ng-show="main.location === stream.name" ng-class="stream.name" ng-controller="streamController as stream">
-          {{main.lookAround(stream)}}
-          <div ng-repeat="(direction, location) in stream.movement">
-              <button ng-click="main.move(location)">{{direction}}</button>
-          </div>
-      </div>
-      <div ng-show="main.location === cave.name" ng-class="cave.name" ng-controller="caveController as cave">
-          {{main.lookAround(cave)}}
-          <div ng-repeat="(direction, location) in cave.movement">
-              <button ng-click="main.move(location)">{{direction}}</button>
+      <div ng-controller="locationController as loc">
+        <button ng-click="main.lookAround(loc[main.location])">Look around the {{main.location}}</button>
+        <div ng-repeat="(direction, location) in loc[main.location].movement">
+            <button ng-click="main.move(location)">{{direction}}</button>
+        </div>
 
+        <div ng-show="loc[main.location].items.length" ng-repeat="item in loc[main.location].items">
+          <button ng-click="main.pickUpItem(item)">{{item}}</button>
+        </div>
+      </div>
 
-          </div>-->
-            <!--item interaction button div-->
-          <!--<div ng-show="cave.items.length" ng-repeat="item in cave.items">
-            <button ng-click="main.pickUpItem(item)">{{item}}</button>
-          </div>
-      </div>-->
     </div>
     <!--catch bigfoot button-->
     <div ng-show="main.location === main.sasquatchLocation">
