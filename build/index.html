@@ -5,14 +5,45 @@
   <title>Oregon Trail 2016</title>
 <link href="styles.css" rel="stylesheet"></head>
 <body>
+
   <div>
     <h1>Instructions</h1>
       <p>Welcome to the Oregon Trail game!</p>
   </div>
-  <div ng-controller="trailController" ng-model="message">
-    <button ng-model="food" value="">Food</button>
-    <button ng-model="gun" value="">Gun</button>
+
+  <div ng-controller="trail" ng-model="message">
+    <button ng-click="supplies.food = true" ng-model="food" value="">Food</button>
+    <button ng-click="supplies.gun = true" ng-model="gun" value="">Gun</button>
     {{message}}
+
+    {{supplies.food}}
+    {{supplies.gun}}
+
+    <div ng-controller="day01" >
+      <button ng-click="run()" ng-model="run" value="">Run</button>
+      <button ng-click="fight()" ng-model="fight" value="">Fight</button>
+      {{message}}
+      {{day}}
+    </div>
+
+    <div ng-controller="day20" >
+      <button ng-click="town()" ng-model="town" value="">Town</button>
+      <button ng-click="continue()" ng-model="continue" value="">Continue</button>
+      <button ng-click="hunt()" ng-model="hunt" value="">Hunt</button>
+      {{message}}
+      {{day}}
+    </div>
+
+    <div ng-controller="day30" >
+      <button ng-click="ford()">Ford</button>
+      <button ng-click="wait()">Wait</button>
+      {{message}}
+      {{day}}
+    </div>
+
+
   </div>
+
+
 <script type="text/javascript" src="main.js"></script></body>
 </html>

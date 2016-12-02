@@ -12,33 +12,28 @@
   </div>
 
   <div ng-controller="trail" ng-model="message">
-    <button ng-click="supplies.food = true" ng-model="food" value="">Food</button>
-    <button ng-click="supplies.gun = true" ng-model="gun" value="">Gun</button>
     {{message}}
 
-    {{supplies.food}}
-    {{supplies.gun}}
-
-    <div ng-controller="day01" >
-      <button ng-click="run()" ng-model="run" value="">Run</button>
-      <button ng-click="fight()" ng-model="fight" value="">Fight</button>
+    <div ng-controller="begin" ng-show="day === ''" >
+      <button ng-click="supplies.food = true" ng-model="food" value="">Food</button>
+      <button ng-click="supplies.gun = true" ng-model="gun" value="">Gun</button>
       {{message}}
-      {{day}}
     </div>
 
-    <div ng-controller="day20" >
+    <div ng-controller="day01" ng-show="day === 'day01'">
+      <button ng-click="run()" ng-model="run" value="">Run</button>
+      <button ng-click="fight()" ng-model="fight" value="">Fight</button>
+    </div>
+
+    <div ng-controller="day20" ng-show="day === 'day20'">
       <button ng-click="town()" ng-model="town" value="">Town</button>
       <button ng-click="continue()" ng-model="continue" value="">Continue</button>
       <button ng-click="hunt()" ng-model="hunt" value="">Hunt</button>
-      {{message}}
-      {{day}}
     </div>
 
-    <div ng-controller="day30" >
+    <div ng-controller="day30" ng-show="day === 'day30'">
       <button ng-click="ford()">Ford</button>
       <button ng-click="wait()">Wait</button>
-      {{message}}
-      {{day}}
     </div>
 
 
