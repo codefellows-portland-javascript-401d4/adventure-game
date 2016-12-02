@@ -56,7 +56,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(8);
+	__webpack_require__(5);
 	
 	_angular2.default.module('game', [_controllers2.default]);
 
@@ -32475,26 +32475,21 @@
 	
 	var _trail2 = _interopRequireDefault(_trail);
 	
-	var _day = __webpack_require__(5);
-	
-	var _day2 = _interopRequireDefault(_day);
-	
-	var _day3 = __webpack_require__(6);
-	
-	var _day4 = _interopRequireDefault(_day3);
-	
-	var _day5 = __webpack_require__(7);
-	
-	var _day6 = _interopRequireDefault(_day5);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// import begin from './begin';
+	// import day01 from './day01';
+	// import day20 from './day20';
+	// import day30 from './day30';
 	
 	var controllers = _angular2.default.module('controllers', []);
 	
 	controllers.controller('trail', _trail2.default);
-	controllers.controller('day01', _day2.default);
-	controllers.controller('day20', _day4.default);
-	controllers.controller('day30', _day6.default);
+	// controllers.controller('begin', begin);
+	// controllers.controller('day01', day01);
+	// controllers.controller('day20', day20);
+	// controllers.controller('day30', day30);
+	
 	
 	exports.default = controllers.name;
 
@@ -32511,119 +32506,77 @@
 	trailController.$inject = ['$scope'];
 	
 	function trailController($scope) {
-	  $scope.message = 'You are on the trail.';
+	  // $scope.start = true;
 	  $scope.day = '';
 	  $scope.supplies = {
 	    food: false,
 	    gun: false
 	  };
-	}
-
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = day01Controller;
-	day01Controller.$inject = ['$scope'];
-	
-	function day01Controller($scope) {
-	  $scope.instructions = 'You ran into some bad dudes.';
+	  $scope.$watchGroup(['supplies.gun', 'supplies.food'], function () {
+	    if ($scope.supplies.gun === true || $scope.supplies.food === true) {
+	      $scope.day = 'day01';
+	    }
+	  }, true);
 	
 	  $scope.fight = function () {
 	    if ($scope.supplies.gun === false) {
 	      $scope.day = 'dead';
-	      $scope.message = 'You are dead!';
+	      $scope.message = 'Can\'t bring fists to a gunfight! Shoulda bought a six shooter. Now yer dead!';
 	    } else {
 	      $scope.day = 'day20';
-	      $scope.message = 'Nice shooting Tex!';
+	      $scope.message = 'Nice shooting Tex! That\'s one less desperado out on the range.';
 	    }
 	  };
 	
 	  $scope.run = function () {
 	    if ($scope.supplies.food === false) {
 	      $scope.day = 'dead';
-	      $scope.message = 'You starved to death!';
+	      $scope.message = 'Why buy a gun if yer yeller? Too bad that there\'s no wild game to be found. Nothing to hunt, so you starved to death! Game over.';
 	    } else {
 	      $scope.day = 'day20';
-	      $scope.message = 'Nice running, yeller belly! Thems some good vittles!';
+	      $scope.message = 'Nice running, yeller belly!';
 	    }
 	  };
-	}
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = day20Controller;
-	day20Controller.$inject = ['$scope'];
-	
-	function day20Controller($scope) {
-	  $scope.instructions = 'Y\'all running low on grub.';
 	
 	  $scope.town = function () {
 	    if ($scope.supplies.gun === false) {
 	      $scope.day = 'day30';
-	      $scope.message = 'You bought food!';
+	      $scope.message = 'Smart thinking, now y\'all got enough vittles to make it a bit further down the trail.';
 	    } else {
 	      $scope.day = 'dead';
-	      $scope.message = 'You got shot in a showdown!';
+	      $scope.message = 'That desperado that you shot down a ways back had a bunch of brothers that were looking for you. You got ambushed and shot full of lead, now you\'re snake food. Game over.';
 	    }
 	  };
 	
 	  $scope.continue = function () {
 	    $scope.day = 'dead';
-	    $scope.message = 'You are dead!';
+	    $scope.message = 'Bad move, y\'all ran out of food. Game over.';
 	  };
 	
 	  $scope.hunt = function () {
 	    if ($scope.supplies.gun === false) {
 	      $scope.day = 'dead';
-	      $scope.message = 'Flattened by a herd of buffalo! See ya!';
+	      $scope.message = 'Is you ignant? You ain\'t got no gun and was flattened by a herd of buffalo! Game over!';
 	    } else {
 	      $scope.day = 'day30';
-	      $scope.message = 'You bagged yourself a bison!';
+	      $scope.message = 'Yer getting pretty good with that shootin\' iron, you bagged yourself a bison!';
 	    }
 	  };
-	}
-
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = day30Controller;
-	day30Controller.$inject = ['$scope'];
-	
-	function day30Controller($scope) {
-	  $scope.instructions = 'Many rivers to cross and you are at one now.';
 	
 	  $scope.ford = function () {
 	    $scope.day = 'dead';
-	    $scope.message = 'You done drowned!';
+	    $scope.message = 'You sank like a stone and drowned! Game over.';
 	  };
 	
 	  $scope.wait = function () {
 	    $scope.day = 'win';
-	    $scope.message = 'You made it to Oregon, congrats!';
+	    $scope.message = 'You made it to Oregon, congrats! And there\'s too many damn people in Portland, so could you leave already?';
 	  };
 	}
 
 /***/ },
-/* 8 */
+/* 5 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
