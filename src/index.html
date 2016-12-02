@@ -17,15 +17,21 @@
       <p>{{current.message}}</p>
       </h3>
     </section>
-  </section>
   <section ng-show="room === 'date'">
+    <h3>{{current.name}}</h3>
+    <p>You're on a date at the {{currentDate.location}}</p>
+    <p>{{currentDate.text}}</p>
+    
     
     </section>
+  </section>
   <section>
     <button ng-show="room === 'swipe'" ng-click="current = current.next">Swipe left</button>
     <button ng-show="room === 'swipe'" ng-click="room = 'message'">Swipe right</button>
     <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{current.noResponse}}</button>
-    <button ng-show="room === 'message'" ng-click="room = 'date'">{{current.yesResponse}}</button>
+    <button ng-show="room === 'message'" ng-click="currentDate = currentDate.bar; room = 'date'">{{current.yesResponse}}</button>
+    <button ng-show="room === 'date'" ng-click=optionA()>{{stage.optionA}}</button>
+    <button ng-show="room === 'date'" ng-click=optionB()>{{stage.optionB}}</button>
   </section>
 </body>
 </html>
