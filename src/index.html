@@ -16,19 +16,20 @@
 		<h1>Kitchen</h1>
 		<p>descriptive text................</p>
 			<input type="button" value="Go to the Dining Room" ng-click="dining()">
-			<span ng-show="risottoAssigned"><input type="button" value="Make f**&ing Risotto*" ng-click=""></span>
+			<span ng-show="risottoAssigned"><input type="button" value="Make f**&ing Risotto" ng-click="makeRisotto()"></span>
 	</div>
 	 <div ng-show="room == 'office'">
 		<h1>Chef Ramsay's Office</h1>
 		<p>descriptive text................</p>
 		<div ng-show="!risottoAssigned">
 			<p>Go make some f***ing risotto!</p>
+			<input type="button" value="Accept Chef's Risotto Challenge" ng-click="assignRisotto()">
 		</div>
 		<div ng-show="risottoMade">
 			<p>Is that your f***ing risotto?</p>
+			<input type="button" value="Give Chef Ramsay Your Risotto" ng-click="">
 		</div>
-			<input type="button" value="Go to the Dining Room" ng-click="dining()">
-			<span ng-show="risottoMade"><input type="button" value="Give Chef Ramsay Risotto*" ng-click=""></span>
+			<input type="button" value="Go to the Dining Room" ng-click="dining()">	
 	</div>
     
 </body>

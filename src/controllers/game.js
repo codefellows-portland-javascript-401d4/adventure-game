@@ -9,5 +9,6 @@ export default function Controller($scope) {
   $scope.office = function() { $scope.room = 'office'; };
   $scope.kitchen = function() { $scope.room = 'kitchen'; };
   $scope.dining = function() { $scope.room = 'dining'; };
-
+  $scope.makeRisotto = function() { $scope.risottoMade = true; };
+  $scope.assignRisotto = function() { $scope.risottoAssigned = true; };
 }
