@@ -28,9 +28,9 @@
             <div class="flex-item secEdu">EDUCATION<br><img src="./ben.jpg"></img></div>
         </div>
         <div class="flex-container">
-            <select ng-model='defMinister' ng-options="choice[0] for choice in ministers"></select>
-            <select ng-model='eduMinister' ng-options="choice[0] for choice in ministers"></select>
-            <select ng-model='ministers' ng-options="choice for choice in ministers"></select>
+            <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <select ng-model='primeMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <select ng-model='eduMinister' ng-options="choice.name for choice in objMinisters"></select>
         </div>
 
 
