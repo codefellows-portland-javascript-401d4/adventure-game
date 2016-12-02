@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" ng-controller="game">
 <head>
     <meta charset="UTF-8">
-    <title>Our First Webpack App</title>
+    <title>Hell's Kitchen Mini Adventure</title>
     <link rel="stylesheet" href="main.css">
 <link href="main.css" rel="stylesheet"></head>
 <body>
-    Show HTML: <input type="checkbox" ng-model="myVar">
-<div ng-show="myVar">
-<h1>Welcome</h1>
-<p>Welcome to my home.</p>
-</div>
-    <section ng-controller="cowsay">
-        <input ng-model="message">
-        <pre>{{say(message)}}</pre>
-    </section>
+	<div ng-show="room == 'dining'">
+		<h1>Dining Room</h1>
+		<p>descriptive text................</p>
+			<input type="button" value="Go to Chef Ramsay's Office'" ng-click="">
+			<input type="button" value="Go to the Hell's Kitchen" ng-click="">
+	</div>
+	 <div ng-show="room == 'kitchen'">
+		<h1>Kitchen</h1>
+		<p>descriptive text................</p>
+			<input type="button" value="Go to the Dining Room" ng-click="">
+			<input type="button" value="Make f**&ing Risotto*" ng-click="">
+	</div>
+	 <div ng-show="room == 'office'">
+		<h1>Chef Ramsay's Office</h1>
+		<p>descriptive text................</p>
+			<input type="button" value="Go to the Dining Room" ng-click="">
+			<input type="button" value="Give Chef Ramsay Risotto*" ng-click="">
+	</div>
+    
 <script type="text/javascript" src="main.js"></script></body>
 </html>

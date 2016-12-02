@@ -1,5 +1,5 @@
 import angular from 'angular';
-import cowsay from './cowsay';
+import game from './game';
 // for each controller...
 // 1) add an import here
 
@@ -8,7 +8,7 @@ import cowsay from './cowsay';
 const controllers = angular.module('controllers', []);
 
 // add the controllers to this app
-controllers.controller('cowsay', cowsay);
+controllers.controller('game', game);
 // and 2) create the controller here:
 
 // export the module
