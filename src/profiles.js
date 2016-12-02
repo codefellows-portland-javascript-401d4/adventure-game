@@ -1,12 +1,12 @@
 const profiles = {};
 
-chad = {
+profiles.chad = {
   name: 'Chad',
   bio: '../img/chad-profile.jpg',
   message: 'pickup line'
 };
 
-becky = {
+profiles.becky = {
   name: 'Becky',
   bio: 'basic bitch',
   message: 'pickup line2'

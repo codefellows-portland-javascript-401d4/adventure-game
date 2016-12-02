@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Millenial Dating Game</title>
 </head>
-<body>
-    <section ng-show="room === 'swipe'" ng-controller="game">
-        <h1>{{ profiles }}</h1>
+<body ng-controller="game">
+    <section ng-show="room === 'swipe'">
+        <h1>Welcome</h1>
+            {{ profiles }}
     </section>
     
     <section>
