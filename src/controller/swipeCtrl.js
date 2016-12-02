@@ -7,5 +7,5 @@ export default function swipe($scope) {
   // $scope.img = $scope.current.img;
   // $scope.yesResponse = $scope.current.yesResponse;
   // $scope.noResponse = $scope.current.noResponse;
-  console.log('this is scope.current:', $scope.current);
+  // console.log('this is scope.current:', $scope.current);
 }
