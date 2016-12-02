@@ -12,7 +12,27 @@ export default function locationController() {
     items: []
   };
 
-  self.stream = {};
-  self.cave = {};
+  self.stream = {
+    name: 'stream',
+    initDescription: 'This is a stream',
+    descriptionCrystal: 'You have a crystal.  Bigfootprints have appeared!',
+    descriptionNoCrystal: 'You are missing a crystal',
+    movement: {
+      forward: 'cave', 
+      backward: 'clearing'
+    },
+    items: []
+  };
+  
+  self.cave = {
+    name: 'cave',
+    initDescription: 'This is a cave',
+    descriptionCrystal: 'You have a crystal.  Bigfootprints have appeared!',
+    descriptionNoCrystal: 'You are missing a crystal',
+    movement: {
+      backward: 'stream'
+    },
+    items: ['crystal']
+  };
 
 }

@@ -18,7 +18,7 @@
 
         </div>
 
-        <div ng-show="cave.items.length" ng-repeat="item in cave.items">
+        <div ng-show="loc[main.location].items.length" ng-repeat="item in loc[main.location].items">
           <button ng-click="main.pickUpItem(item)">{{item}}</button>
         </div>
       </div>
