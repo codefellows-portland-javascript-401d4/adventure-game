@@ -26,12 +26,12 @@
     </section>
   </section>
   <section>
-    <button ng-show="room === 'swipe'" ng-click="current = current.next">Swipe left</button>
+    <button ng-show="room === 'swipe'" ng-click="swipeLeft()">Swipe left</button>
     <button ng-show="room === 'swipe'" ng-click="room = 'message'">Swipe right</button>
     <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{current.noResponse}}</button>
     <button ng-show="room === 'message'" ng-click="currentDate = currentDate.bar; room = 'date'">{{current.yesResponse}}</button>
-    <button ng-show="room === 'date'" ng-click=optionA()>{{stage.optionA}}</button>
-    <button ng-show="room === 'date'" ng-click=optionB()>{{stage.optionB}}</button>
+    <button ng-show="room === 'date'" ng-click=optionA()>{{dateStage.optionA}}</button>
+    <button ng-show="room === 'date'" ng-click=optionB()>{{dateStage.optionB}}</button>
   </section>
 </body>
 </html>

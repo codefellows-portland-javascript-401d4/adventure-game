@@ -6,22 +6,35 @@ export default function game($scope) {
   $scope.current = profiles.chad;
   $scope.score = 0;
   $scope.currentDate = dates;
-  $scope.stage = $scope.currentDate.bar.stage1;
+  $scope.dateStage = $scope.currentDate.bar.stage1;
+  $scope.profileStage = $scope.current.stage1;
+
+  $scope.swipeLeft = () => {
+    $scope.current = $scope.current.next;
+    $scope.profileStage = $scope.current.stage1;
+  };
 
   $scope.optionA = () => {
-    if ($scope.current.date1.optionA.response) {
+    if ($scope.profileStage.optionA.response) {
       $scope.score ++;
 
     }
-    $scope.currentDate.text = $scope.current.date1.optionA.description;
-    $scope.stage = $scope.stage.next;
+    $scope.currentDate.text = $scope.profileStage.optionA.description;
+    $scope.dateStage = $scope.dateStage.next;
+    $scope.profileStage = $scope.profileStage.next;
+
+    console.log('Your score:', $scope.score);
   };
 
   $scope.optionB = () => {
-    if ($scope.current.date1.optionB.response) {
+    if ($scope.profileStage.optionB.response) {
       $scope.score ++;
       
     }
-    $scope.currentDate.text = $scope.current.date1.optionB.description;
+    $scope.currentDate.text = $scope.profileStage.optionB.description;
+    $scope.dateStage = $scope.dateStage.next;
+    $scope.profileStage = $scope.profileStage.next;
+
+    console.log('Your score:', $scope.score);
   };
-};
+};  
