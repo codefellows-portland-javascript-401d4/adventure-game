@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Oregon Trail 2016</title>
+  <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
 </head>
 <body>
 
@@ -10,7 +11,7 @@
     <h1>The Oregon Trail</h1>
   </div>
 
-  <div ng-controller="trail" ng-model="message">
+  <div class="container" ng-controller="trail" ng-model="message">
     {{message}}</br>
 
     <div  ng-show="day === ''" >
@@ -37,12 +38,15 @@
       <p>Day 30: You need to cross the Snake River,and it's running high: Do you try to ford it or wait for the waters to fall and hope that your food lasts?</p>
       <button ng-click="ford()">Ford</button>
       <button ng-click="wait()">Wait</button>
+      <img class="river" src="src/images/river.jpg" alt="">
     </div>
 
-    <div  ng-show="day === 'dead'">
+    <div ng-show="day === 'dead'">
+      <img class="dead" src="src/images/dead.jpg" alt="">
     </div>
 
     <div ng-show="day === 'win'">
+      <img class="win" src="src/images/win.png" alt="">
     </div>
 
 

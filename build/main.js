@@ -32496,7 +32496,6 @@
 	trailController.$inject = ['$scope'];
 	
 	function trailController($scope) {
-	  // $scope.start = true;
 	  $scope.day = '';
 	  $scope.supplies = {
 	    food: false,
