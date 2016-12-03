@@ -38,11 +38,15 @@ describe('main controller', () => {
 
   it('move function', () => {
     const ctrl = $controller('mainController');
-    ctrl.location = 'here';
+    const location = {
+      inspected: true
+    };
+    ctrl.location.inspected = true;
     const newLocation = 'there';
     
-    ctrl.move(newLocation);
+    ctrl.move(location, newLocation);
     assert.equal(ctrl.location, newLocation);
+    assert.deepEqual(location.inspected, false);
   });
 
   it('catch Bigfoot with crystal', () => {
@@ -60,11 +64,14 @@ describe('main controller', () => {
 
   it('pickup item', () => {
     const ctrl = $controller('mainController')
+    const location = {
+      items: ['item'],
+    };  
     ctrl.items = [];
     const item = 'item';
-    ctrl.pickUpItem(item);
+    ctrl.pickUpItem(item, location);
     assert.equal(ctrl.items[0], item);
-
+    assert.equal(location.items.length, 0);
     ctrl.pickUpItem(item);
     assert.deepEqual(ctrl.items, [item]);
   });

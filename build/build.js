@@ -32516,28 +32516,22 @@
 	  self.sasquatchLocation = 'clearing';
 	  self.gameOver = false;
 
-	  // self.subControllers = function() {
-	  //   return 'clearingController';
-	  // };
-
-	  // {
-	  //   clearing: 'clearingController',
-	  //   stream: 'streamController',
-	  //   cave: 'caveController'
-	  //   //TODO:  make sure to add any other rooms here
-	  // };
+	  self.setInspected = function (location) {
+	    location.inspected = true;
+	  };
 
 	  self.lookAround = function (location) {
-	    location.inspected = true;
 	    if (self.hasCrystal) {
 	      return location.descriptionCrystal;
 	    } else {
 	      return location.descriptionNoCrystal;
 	    }
 	  };
-	  self.move = function (newLocation) {
+	  self.move = function (currLocation, newLocation) {
+	    currLocation.inspected = false;
 	    self.location = newLocation;
 	  };
+
 	  self.catchBigfoot = function () {
 	    self.gameOver = true;
 	    if (self.hasCrystal) {
@@ -32571,10 +32565,10 @@
 
 	  self.clearing = {
 	    name: 'clearing',
+	    initDescription: 'You are in an open clearing.  Through the trees on the other side is a stream.',
+	    descriptionCrystal: 'Omigosh, there goes Bigfoot!  Quick!  What do you do?',
+	    descriptionNoCrystal: 'Omigosh, there goes Bigfoot!  Quick!  What do you do?',
 	    inspected: false,
-	    initDescription: 'This is a clearing',
-	    descriptionCrystal: 'You have a crystal',
-	    descriptionNoCrystal: 'You are missing a crystal',
 	    movement: {
 	      forward: 'stream'
 	    },
@@ -32583,9 +32577,10 @@
 
 	  self.stream = {
 	    name: 'stream',
-	    initDescription: 'This is a stream',
-	    descriptionCrystal: 'You have a crystal.  Bigfootprints have appeared!',
-	    descriptionNoCrystal: 'You are missing a crystal',
+	    initDescription: 'You are by a charming stream.  It burbles gently through the forest past a mysterious cave.',
+	    descriptionCrystal: 'Now that you have the crystal, Bigfootprints have appeared!',
+	    descriptionNoCrystal: 'Seems like Sasquatch had to come this way, but all you see are some pretty rocks.',
+	    inspected: false,
 	    movement: {
 	      forward: 'cave',
 	      backward: 'clearing'
@@ -32595,9 +32590,10 @@
 
 	  self.cave = {
 	    name: 'cave',
-	    initDescription: 'This is a cave',
-	    descriptionCrystal: 'You have a crystal.  Bigfootprints have appeared!',
-	    descriptionNoCrystal: 'You are missing a crystal',
+	    inspected: false,
+	    initDescription: 'Inside, the cave smells funky and puts a chill in your bones.',
+	    descriptionCrystal: 'Now that you have the crystal, this is obviously the Sasquatch lair!',
+	    descriptionNoCrystal: 'Ew! Just a dank and smelly cave. But there are some pretty rocks and crystals lying around.',
 	    movement: {
 	      backward: 'stream'
 	    },

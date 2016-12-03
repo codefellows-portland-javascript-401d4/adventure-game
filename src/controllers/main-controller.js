@@ -35,10 +35,13 @@ export default function mainController() {
       return 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
     }
   };
-  self.pickUpItem = function(item) {
+  self.pickUpItem = function(item, location) {
     if (self.items.indexOf(item) === -1) {
       self.items.push(item);
       self.hasCrystal = self.items.indexOf('crystal') !== -1;
+
+      const index = location.items.indexOf(item);
+      location.items.splice(index, 1);
     }
   };
 }
