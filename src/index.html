@@ -1,0 +1,38 @@
+<html ng-app="myApp">
+<head><title>Sasquatch</title></head>
+<body ng-controller="mainController as main">
+    {{main.location}}
+    <!--satchel -->
+    <div>
+      <h2>Satchel</h2>
+      <ul ng-show="main.items.length" ng-repeat="item in main.items">
+        <li>{{item}}</li>
+      </ul>
+    </div>
+    <!--location divs-->
+    <div>
+      <div ng-controller="locationController as loc">
+        {{main.lookAround(loc[main.location])}}
+        <div ng-repeat="(direction, location) in loc[main.location].movement">
+            <button ng-click="main.move(location)">{{direction}}</button>
+
+        </div>
+
+        <div ng-show="loc[main.location].items.length" ng-repeat="item in loc[main.location].items">
+          <button ng-click="main.pickUpItem(item)">{{item}}</button>
+        </div>
+      </div>
+
+    </div>
+    <!--catch bigfoot button-->
+    <div ng-show="main.location === main.sasquatchLocation">
+      <button ng-click="main.catchBigfoot()">Catch Bigfoot</button>
+      <div ng-show="main.gameOver && main.hasCrystal">
+        You caught Bigfoot!  Fame and fortune will surely be yours.
+      </div>
+      <div ng-show="main.gameOver && !main.hasCrystal">
+        Awww!  He ran right over you and got away.  Go home and tell all your friends.
+      </div>
+    </div>
+</body>
+</html>
