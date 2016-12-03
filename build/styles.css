@@ -1,5 +1,38 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Rye', cursive;
+  text-align: center;
+  background-image: url('/images/wood.jpg');
+  background-size: cover;
 }
 
+h1 {
+  border-bottom: solid 2px grey;
+  background-color: forestgreen;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+button {
+  font-family: 'Rye', cursive;
+  border: none;
+  width:100px;
+  height: 45px;
+  background-color: grey;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.dead {
+  max-width: 80%;
+}
+.win {
+  max-width: 80%;
+}
+
+.river {
+  max-width: 80%;
+}
 /*# sourceMappingURL=styles.css.map*/
