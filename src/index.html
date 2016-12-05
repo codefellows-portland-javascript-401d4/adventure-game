@@ -36,8 +36,8 @@
     <button ng-show="room === 'date' && dateStage !== 'end'" ng-click=optionA()>{{dateStage.optionA}}</button>
     <button ng-show="room === 'date' && dateStage !== 'end'" ng-click=optionB()>{{dateStage.optionB}}</button>
     <button ng-show="room === 'date' && dateStage === 'end'" ng-click="checkScore()">Reflect on the date.</button>
-    <button ng-show="room === 'win'" ng-click="room = 'swipe'; score = 0">Restart</button>
-    <button ng-show="room === 'lose'" ng-click="room = 'swipe'; score = 0">Get back out there</button>
+    <button ng-show="room === 'win'" ng-click="room = 'swipe'">Restart</button>
+    <button ng-show="room === 'lose'" ng-click="room = 'swipe'">Get back out there</button>
   </section>
 </body>
 </html>
