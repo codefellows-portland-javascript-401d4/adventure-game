@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -8,11 +9,14 @@ module.exports = {
     filename: 'build.js'
   }, 
 
-    // devtool: 'source-map',
+  devtool: 'source-map',
 
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/index.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }), 
+    new ExtractTextPlugin('styles.css')
+  ],
 
   module: {
     preLoaders: [{
@@ -28,14 +32,12 @@ module.exports = {
         presets: ['es2015'] //,
         // cacheDirectory: true,
         // plugins: ['transform-runtime']
-      }, 
+      } 
 
     }, 
-
-    //change CSS style-loader
     {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
     }
     ]
   }
