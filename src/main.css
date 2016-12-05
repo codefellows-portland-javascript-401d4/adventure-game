@@ -37,3 +37,7 @@ button {
 .river {
   max-width: 80%;
 }
+
+.buttons {
+  display: block;
+}
