@@ -1,0 +1,54 @@
+<html ng-app="myApp">
+<head><title>Sasquatch</title></head>
+<body ng-controller="mainController as main">
+    {{main.location}}
+    <!--satchel -->
+    <div>
+      <h2>Satchel</h2>
+      <ul ng-show="main.items.length" ng-repeat="item in main.items">
+        <li>{{item}}</li>
+      </ul>
+    </div>
+
+    <!--location div-->
+    <div ng-controller="locationController as loc">
+      <div ng-show="!main.gameOver">
+        {{loc[main.location].initDescription}}
+
+        <!--this is the button for looking around the curr area-->
+        <button ng-show="!loc[main.location].inspected" ng-click="main.setInspected(loc[main.location])">
+          Look around the {{main.location}}
+        </button>
+        
+        <!--This displays the description when the player inspects the area-->
+        <div ng-show="loc[main.location].inspected">
+          {{main.lookAround(loc[main.location])}}
+        </div>
+
+        <div ng-repeat="(direction, location) in loc[main.location].movement">
+            <button ng-click="main.move(loc[main.location], location)">{{direction}}</button>
+        </div>
+
+        <div ng-show="loc[main.location].items.length && loc[main.location].inspected" ng-repeat="item in loc[main.location].items">
+          <button ng-click="main.pickUpItem(item, loc[main.location])">Pick Up {{item}}</button>
+        </div>
+      </div>
+
+  <!--catch bigfoot button-->
+      <div ng-show="main.location === main.sasquatchLocation && loc[main.location].inspected">
+        <button ng-show="!main.gameOver" ng-click="main.catchBigfoot()">Catch Bigfoot</button>
+        <div ng-show="main.gameOver && main.hasCrystal">
+          You caught Bigfoot! Fame and fortune will surely be yours.
+        </div>
+        <div ng-show="main.gameOver && !main.hasCrystal">
+          Awww!  He ran right over you and got away.  Go home and tell all your friends.
+        </div>
+      </div>
+
+    <div ng-show="main.gameOver">
+      <button ng-click="main.resetGame()">Start New Game</button>
+    </div>
+
+  </div>
+</body>
+</html>
