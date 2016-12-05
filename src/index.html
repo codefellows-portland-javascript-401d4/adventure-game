@@ -45,14 +45,14 @@
       <input class="button" type="button" value="Make F***ing Risotto" ng-click="makeRisotto()">
       <input class="button" type="button" value="Go to the Pantry" ng-click="pantry()">
     </span>
-    <span ng-show="!drankWine && risottoAssigned && risottoMade">
+    <span ng-show="risottoMade">
       <p>Go show Chef Ramsay your wonderful risotto.</p>
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
-    </span>
+    <!-- </span>
     <span ng-show="drankWine && risottoAssigned && risottoMade">
       <p>Go show Chef Ramsay your "wonderful" risotto.</p>
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
-    </span>
+    </span> -->
 	</div>
 
   <div ng-show="room == 'pantry'">
@@ -81,7 +81,7 @@
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
     <span ng-show="drankWine && risottoAssigned && !risottoMade && haveIngredients">
-      <p>Well, wino ... now that you have all the ingredients for the risotto, go to the kitchen and start cooking!</p>
+      <p>Now that you have all the ingredients for the risotto, go to the kitchen and start cooking!</p>
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
     <span ng-show="drankWine && risottoAssigned && !risottoMade && !haveIngredients">
@@ -114,9 +114,8 @@
 			<input class="button" type="button" value="Ask Chef to Stop Cursing" ng-click="lose()">
 			<input class="button" type="button" value="Present Risotto" ng-click="presentRisotto()">
       </span>
-
     <span ng-show="risottoPresented && !drankWine">
-      <p>"Chef Ramsay reviews your presentation."</p>
+      <p>Chef Ramsay reviews your presentation.</p>
 				<input class="button" type="button" value="Chef Ramsay's Verdict" ng-click="victory()">
     </span>
 
@@ -126,17 +125,16 @@
 			<input class="button" type="button" value="Ask Chef to Stop Cursing" ng-click="lose()">
 			<input class="button" type="button" value="Present Risotto" ng-click="presentRisotto()">
       </span>
-
     <span ng-show="risottoPresented && drankWine">
-      <p>"Chef Ramsay reviews your presentation."</p>
+      <p>Chef Ramsay reviews your presentation.</p>
 				<input class="button" type="button" value="Chef Ramsay's Verdict" ng-click="defeat()">
     </span>
 	</div>
 
 	<div ng-show="room == 'victory'">
 		<h1>Victory!</h1>
-		<p>Chef Ramsey finds your risotto to be an excellent classic Italian rissoto</p>
-    <p>Beautiful presentation ... perfect consistency ... delicious!</p>
+    <p>"Beautiful presentation ... perfect consistency ... absolutely delicious!"</p>
+		<p>"Your lobster risotto is a fine example of a classic Italian rissoto ... well done!</p>
     <img src="../imgs/risotto1.png" style="border: 5px solid black;">
     <p>You are safe from elimination in tonight's challenge.</p>
 		<input class="button" type="button" value="Play Again?" ng-click="reset()">
