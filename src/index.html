@@ -5,13 +5,13 @@
   <title>Millenial Dating Game</title>
 </head>
 <body ng-controller="game">
-  <section ng-controller="swipe">
+  <section>
     <h1>date-finder</h1>
     <div id="swipe-view" ng-show="room === 'swipe'">
       <h3>{{currentProfile.name}}</h3>
       <h4>{{currentProfile.bio}}</h4>
     </div>
-    <section ng-show="room === 'message'" ng-controller="message">
+    <section ng-show="room === 'message'">
       <h3>It's a match!<br>Message from: {{currentProfile.name}}</h3>
       <p>{{currentProfile.message}}</p>
       </h3>
