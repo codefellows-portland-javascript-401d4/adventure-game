@@ -45,7 +45,7 @@ module.exports = function(config) {
     concurrency: Infinity,
     
     if (process.env.TRAVIS) {
-      config.browsers = ['Chrome_travis_ci'];
+      cfg.browsers = ['Chrome_travis_ci'];
     }
 
   });
