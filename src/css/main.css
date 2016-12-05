@@ -1,7 +1,7 @@
 h1 {
   font-family: 'Almendra', serif;
   font-style: italic;
-  font-size: 40px;
+  font-size: 175%;
   font-weight: bolder;
   color: black;
 }
@@ -9,7 +9,7 @@ h1 {
 p {
   font-family: 'Almendra', serif;
   font-style: italic;
-  font-size: 26px;
+  font-size: 125%;
   font-weight: bold;
   color: black;
 }
