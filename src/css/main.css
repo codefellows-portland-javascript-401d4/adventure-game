@@ -22,9 +22,50 @@ body {
   display: inline-block;
   width: 250px;
   height: 30px;
+  margin-right: 10px;
+  border-width: medium;
+  border-radius: 5px;
+  border-color: blue;
+  background-color: yellow;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.button1 {
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+  margin-right: 10px;
   border-width: medium;
   border-radius: 5px;
   border-color: black;
+  background-color: lightgreen;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.button2 {
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+  margin-right: 10px;
+  border-width: medium;
+  border-radius: 5px;
+  border-color: black;
+  background-color: yellow;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.buttonW {
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+  margin-right: 10px;
+  border-width: medium;
+  border-radius: 5px;
+  border-color: black;
+  background-color: lightgreen;
   font-size: 14px;
   font-weight: bold;
 }
