@@ -26,7 +26,7 @@
         <!-- Rename the player and country-->
         <div ng-show='intro'>
             <h2> What is Potato republic?</h2>
-            <h4> Pick a minister of Defennce, Education, and Politics then perfom an action against the computer. You either gain or lose points depending on how your ministers perform. You gain potatoes that can be used to buy new ministes at Kim's Warehouse.</h4>
+            <h4> Pick a minister of Defence, Education, and Politics then perfom an action against the computer. You either gain or lose points depending on how your ministers perform. You gain potatoes that can be used to buy new ministes at Kim's Warehouse.</h4>
             
         </div>
 
@@ -87,12 +87,14 @@
             <h1>Kims Glorius Leaders</h1>
             <p>Welcome to the Great General, Fatty Kim the thirds, warehouse of Glorious Leaders. Please browse our great collection of models, more come in every day.</p>
             <img src="img/fatkimmy.jpg">yes</img>
-            <div class="flex-item secState">
+            <div class="secState">
                 Availible for {{priceToHire}} Potatoes
                 <br>
                 <select ng-model='hireMinister' ng-options="choice.name for choice in extraMinisters"></select>
-                <img ng-src="{{ hireMinister.src }}"></img>
                 <button ng-click="buyMinister()"> Buy Minister?</button>
+                <div>
+                    <img ng-src="{{ hireMinister.src }}"></img>
+                </div>
             </div>
         </div>
 

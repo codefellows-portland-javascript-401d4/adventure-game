@@ -39,7 +39,12 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         {name: 'Xi Jinping', def: 5, edu: 9, poli: 7, src: 'img/XiJinping.jpg', skill: ['Economy!', 'Silk Road']},
         {name: 'Catherine the Great', def: 10, edu: 1, poli: 5, src: 'img/catherine.jpg', skill: ['Golden Age!', 'The Arts!']},
         {name: 'Putin', def: 8, edu: 4, poli: 7, src: 'img/putin.jpg', skill: ['Referendum!', 'Nuclear Winter']},
-        {name: 'Albert', def: 10, edu: 10, poli: 4, src: 'img/einstein.jpg', skill: ['Split-Atoms!', 'E=MC2']}
+        {name: 'Albert Einstein', def: 10, edu: 10, poli: 4, src: 'img/einstein.jpg', skill: ['Split-Atoms!', 'E=MC2']},
+        {name: 'Nelson Mandela', def: 3, edu: 8, poli: 8, src: 'img/mandela.jpg', skill: ['Father of the Nation', 'Social Reform!']},
+        {name: 'Sun Tzu', def: 16, edu: 6, poli: 6, src: 'img/sunTzu.jpg', skill: ['Art of War!', 'Deception!']},
+        {name: 'Chuck Norris', def: 16, edu: 6, poli: 6, src: 'img/norris.jpg', skill: ['Roundhouse Kick!', 'Texas Justice!']},
+        {name: 'GabeN', def: 12, edu: 16, poli: 4, src: 'img/gaben.jpg', skill: ['DLC!', 'Steam Sale!']},
+        {name: 'Steve Wozniak', def: 6, edu: 15, poli: 9, src: 'img/wozniak.jpg', skill: ['Garage Startup!', 'APPLE!']}
     ];
 
     $scope.rivalMinisters = [
@@ -51,7 +56,7 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         {name: 'Albert Einstein', def: 10, edu: 10, poli: 4, src: 'img/einstein.jpg', skill: ['Split-Atoms!', 'E=MC2']},
         {name: 'Nelson Mandela', def: 3, edu: 8, poli: 8, src: 'img/mandela.jpg', skill: ['Father of the Nation', 'Social Reform!']},
         {name: 'Sun Tzu', def: 16, edu: 6, poli: 6, src: 'img/sunTzu.jpg', skill: ['Art of War!', 'Deception!']},
-        {name: 'Albert', def: 16, edu: 6, poli: 6, src: 'img/norris.jpg', skill: ['Roundhouse Kick!', 'Texas Justice!']}
+        {name: 'Chuck Norris', def: 16, edu: 6, poli: 6, src: 'img/norris.jpg', skill: ['Roundhouse Kick!', 'Texas Justice!']}
     ];
 
     function getRandScore(minister) {
@@ -94,6 +99,7 @@ app.controller('playerInfo', ['$scope', function ($scope) {
             $scope.potato += 25;
             $scope.score += 3
         }
+        $scope.opponent();
         return null;
     };
     
@@ -168,6 +174,5 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         $scope.eduMinisterRival =  $scope.rivalMinisters[eduMini];
         $scope.primeMinisterRival = $scope.rivalMinisters[poliMini];
     };
-
 
 }]);
