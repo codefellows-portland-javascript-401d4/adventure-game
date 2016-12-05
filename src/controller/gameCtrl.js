@@ -18,20 +18,28 @@ export default function game($scope) {
     if ($scope.profileStage.optionA.response) {
       $scope.score ++;
     }
-    $scope.currentDate.text = $scope.profileStage.optionA.description;
     $scope.dateStage = $scope.dateStage.next;
+    if (!$scope.dateStage.next) {
+      $scope.currentDate.text = $scope.profileStage.optionA.description;
+    } else {
+      $scope.currentDate.text = $scope.profileStage.optionA.description + $scope.dateStage.text;
+    }
     $scope.profileStage = $scope.profileStage.next;
-    console.log('Your score:', $scope.score);
+    console.log('Your score: ', $scope.score);
   };
 
   $scope.optionB = () => {
     if ($scope.profileStage.optionB.response) {
       $scope.score ++;
     }
-    $scope.currentDate.text = $scope.profileStage.optionB.description;
     $scope.dateStage = $scope.dateStage.next;
+    if (!$scope.dateStage.next) {
+      $scope.currentDate.text = $scope.profileStage.optionB.description;
+    } else {
+      $scope.currentDate.text = $scope.profileStage.optionB.description + $scope.dateStage.text;
+    }
     $scope.profileStage = $scope.profileStage.next;
-    console.log('Your score:', $scope.score);
+    console.log('Your score: ', $scope.score);
   };
 
   $scope.checkScore = () => {
@@ -40,8 +48,15 @@ export default function game($scope) {
     } else {
       $scope.room = 'lose';
     }
+    $scope.resetGame();
+  };
+
+  $scope.resetGame = () => {
+    $scope.currentProfile = profiles.chad;
+    $scope.currentDate = dates;
+    $scope.dateStage = $scope.currentDate.bar.stage1;
+    $scope.profileStage = $scope.currentProfile.stage1;
     $scope.score = 0;
-    $scope.dateStage = null;
   };
 
 };  
