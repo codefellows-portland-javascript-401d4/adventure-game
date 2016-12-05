@@ -1,4 +1,5 @@
 const profiles = {};
+const dates = {};
 
 profiles.chad = {
   name: 'Chad',
@@ -9,31 +10,31 @@ profiles.chad = {
   stage1: {
     optionA: {
       response: true,
-      description: 'chad loves beer'
+      description: 'Chad loves beer. Great job.'
     },
     optionB: {
       response: false,
-      description: 'gross, water'
+      description: '"Gross, water." Oops.'
     }
   },
   stage2: {
     optionA: {
       response: true,
-      description: 'chad agrees and you play pool'
+      description: 'Chad agrees and you play pool.'
     },
     optionB: {
       response: false,
-      description: 'chad has zero emotional intelligence, it\'s a no-go'
+      description: 'Chad has zero emotional intelligence, it\'s a no-go.'
     }
   },
   stage3: {
     optionA: {
       response: false,
-      description: 'oh hell no, chad can\'t be dating a peace maker'
+      description: 'You leave, but Chad is upset. "Oh hell no, chad can\'t be dating a peace maker."'
     },
     optionB: {
       response: true,
-      description: 'chad enters a roid rage and you both get arrested'
+      description: 'Chad enters a roid rage and you both get arrested. He sees no problem with this.'
     }
   }
 };
@@ -47,51 +48,52 @@ profiles.becky = {
   stage1: {
     optionA: {
       response: true,
-      description: 'becky can put them away'
+      description: 'Becky can put them away.'
     },
     optionB: {
       response: false,
-      description: 'EW.'
+      description: '"EW." Oops.'
     }
   },
   stage2: {
     optionA: {
       response: false,
-      description: 'games are super lame'
+      description: '"Games are super lame." Well, that was a mistake.'
     },
     optionB: {
       response: true,
-      description: 'baggage for days and no therapist'
+      description: 'Baggage for days and no therapist. She\'s really getting into this.'
     }
   },
   stage3: {
     optionA: {
       response: false,
-      description: 'defend becky\'s honor or ELSE'
+      description: 'Defend Becky\'s honor or ELSE. She is NOT happy.'
     },
     optionB: {
       response: true,
-      description: 'becky starts pulling hair'
+      description: 'Becky starts pulling hair, and looks oddly at-ease.'
     }
   }
 };
-
-const dates = {};
 
 dates.bar = {
   location: 'bar',
   text: 'you and your date sit down at the bar, the waiter asks what you want to drink',
   stage1: {
-    optionA: 'order beer',
-    optionB: 'order water'
+    text: '',
+    optionA: 'Order beer',
+    optionB: 'Order water'
   },
   stage2: {
-    optionA: 'play pool',
-    optionB: 'have a heart to heart'
+    text: 'With drinks in hand, you glance around the bar. You spot a pool table. Should you suggest a game of pool to ease things along, or have a deep conversation instead?',
+    optionA: 'Play pool',
+    optionB: 'Have a heart to heart'
   },
   stage3: {
-    optionA: 'let\'s get out of here!',
-    optionB: 'you\'re out for blood, you punch a random'
+    text: 'As the night goes on, you notice some bar patrons are getting into a heated argument. Suddenly, a fight breaks out. ',
+    optionA: 'Let\'s get out of here!',
+    optionB: 'You\'re out for blood, you punch a random'
   }
 };
 
@@ -105,9 +107,6 @@ profiles.becky.stage2.next = profiles.becky.stage3;
 
 dates.bar.stage1.next = dates.bar.stage2;
 dates.bar.stage2.next = dates.bar.stage3;
-
-
+dates.bar.stage3.next = 'end';
 
 export {profiles, dates};
-
-  // img: '../src/img/becky-profile.jpg',

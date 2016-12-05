@@ -3,38 +3,60 @@ import { profiles, dates } from '../profiles';
 
 export default function game($scope) {
   $scope.room = 'swipe';
-  $scope.current = profiles.chad;
-  $scope.score = 0;
+  $scope.currentProfile = profiles.chad;
   $scope.currentDate = dates;
   $scope.dateStage = $scope.currentDate.bar.stage1;
-  $scope.profileStage = $scope.current.stage1;
+  $scope.profileStage = $scope.currentProfile.stage1;
+  $scope.score = 0;
 
   $scope.swipeLeft = () => {
-    $scope.current = $scope.current.next;
-    $scope.profileStage = $scope.current.stage1;
+    $scope.currentProfile = $scope.currentProfile.next;
+    $scope.profileStage = $scope.currentProfile.stage1;
   };
 
   $scope.optionA = () => {
     if ($scope.profileStage.optionA.response) {
       $scope.score ++;
-
     }
-    $scope.currentDate.text = $scope.profileStage.optionA.description;
     $scope.dateStage = $scope.dateStage.next;
+    if (!$scope.dateStage.next) {
+      $scope.currentDate.text = $scope.profileStage.optionA.description;
+    } else {
+      $scope.currentDate.text = $scope.profileStage.optionA.description + $scope.dateStage.text;
+    }
     $scope.profileStage = $scope.profileStage.next;
-
-    console.log('Your score:', $scope.score);
+    console.log('Your score: ', $scope.score);
   };
 
   $scope.optionB = () => {
     if ($scope.profileStage.optionB.response) {
       $scope.score ++;
-      
     }
-    $scope.currentDate.text = $scope.profileStage.optionB.description;
     $scope.dateStage = $scope.dateStage.next;
+    if (!$scope.dateStage.next) {
+      $scope.currentDate.text = $scope.profileStage.optionB.description;
+    } else {
+      $scope.currentDate.text = $scope.profileStage.optionB.description + $scope.dateStage.text;
+    }
     $scope.profileStage = $scope.profileStage.next;
-
-    console.log('Your score:', $scope.score);
+    console.log('Your score: ', $scope.score);
   };
+
+  $scope.checkScore = () => {
+    if ($scope.score >= 2) {
+      $scope.room = 'win';
+    } else {
+      $scope.room = 'lose';
+    }
+    $scope.resetGame();
+  };
+
+  $scope.resetGame = () => {
+    $scope.currentProfile = profiles.chad;
+    $scope.currentDate = dates;
+    $scope.dateStage = $scope.currentDate.bar.stage1;
+    $scope.profileStage = $scope.currentProfile.stage1;
+    $scope.score = 0;
+  };
+
 };  

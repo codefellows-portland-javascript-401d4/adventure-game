@@ -8,30 +8,36 @@
   <section ng-controller="swipe">
     <h1>date-finder</h1>
     <div id="swipe-view" ng-show="room === 'swipe'">
-      <h3>{{current.name}}</h3>
-      <h4>{{current.bio}}</h4>
-      <!--<img src="{{img}}" alt="profile pic">-->
+      <h3>{{currentProfile.name}}</h3>
+      <h4>{{currentProfile.bio}}</h4>
     </div>
     <section ng-show="room === 'message'" ng-controller="message">
-      <h3>It's a match!<br>Message from: {{current.name}}</h3>
-      <p>{{current.message}}</p>
+      <h3>It's a match!<br>Message from: {{currentProfile.name}}</h3>
+      <p>{{currentProfile.message}}</p>
       </h3>
     </section>
+  </section>
   <section ng-show="room === 'date'">
-    <h3>{{current.name}}</h3>
+    <h3>{{currentProfile.name}}</h3>
     <p>You're on a date at the {{currentDate.location}}</p>
     <p>{{currentDate.text}}</p>
-    
-    
-    </section>
+  </section>
+  <section ng-show="room === 'win'">
+    <p>Date went well! You go on a second date and escape the Millenial dating hellscape.</p>
+  </section>
+  <section ng-show="room === 'lose'">
+    <p>That... did not go so well. You wake up alone and re-open the app.</p>
   </section>
   <section>
     <button ng-show="room === 'swipe'" ng-click="swipeLeft()">Swipe left</button>
     <button ng-show="room === 'swipe'" ng-click="room = 'message'">Swipe right</button>
-    <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{current.noResponse}}</button>
-    <button ng-show="room === 'message'" ng-click="currentDate = currentDate.bar; room = 'date'">{{current.yesResponse}}</button>
-    <button ng-show="room === 'date'" ng-click=optionA()>{{dateStage.optionA}}</button>
-    <button ng-show="room === 'date'" ng-click=optionB()>{{dateStage.optionB}}</button>
+    <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{currentProfile.noResponse}}</button>
+    <button ng-show="room === 'message'" ng-click="currentDate = currentDate.bar; room = 'date'">{{currentProfile.yesResponse}}</button>
+    <button ng-show="room === 'date' && dateStage !== 'end'" ng-click=optionA()>{{dateStage.optionA}}</button>
+    <button ng-show="room === 'date' && dateStage !== 'end'" ng-click=optionB()>{{dateStage.optionB}}</button>
+    <button ng-show="room === 'date' && dateStage === 'end'" ng-click="checkScore()">Reflect on the date.</button>
+    <button ng-show="room === 'win'" ng-click="room = 'swipe'; score = 0">Restart</button>
+    <button ng-show="room === 'lose'" ng-click="room = 'swipe'; score = 0">Get back out there</button>
   </section>
 </body>
 </html>
