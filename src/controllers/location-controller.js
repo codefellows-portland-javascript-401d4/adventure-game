@@ -32,7 +32,7 @@ export default function locationController() {
     descriptionNoCrystal: 'Omigosh, there goes Bigfoot!  Quick!  What do you do?',
     inspected: false,
     movement: {
-      forward: 'stream'
+      Forward: 'stream'
     },
     items: []
   };
@@ -44,8 +44,8 @@ export default function locationController() {
     descriptionNoCrystal: 'Seems like Sasquatch had to come this way, but all you see are some pretty rocks.',
     inspected: false,
     movement: {
-      forward: 'cave', 
-      backward: 'clearing'
+      Forward: 'cave', 
+      Back: 'clearing'
     },
     items: []
   };
@@ -57,7 +57,7 @@ export default function locationController() {
     descriptionCrystal: 'Now that you have the crystal, this is obviously the Sasquatch lair!',
     descriptionNoCrystal: 'Ew! Just a dank and smelly cave. But there are some pretty rocks and crystals lying around.',
     movement: {
-      backward: 'stream'
+      Back: 'stream'
     },
     items: self.generateRandomItems(3)
   };
