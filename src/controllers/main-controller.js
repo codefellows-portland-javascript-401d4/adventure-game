@@ -45,4 +45,10 @@ export default function mainController() {
       location.items.splice(index, 1);
     }
   };
+
+  self.resetGame = function() {
+    self.gameOver = false;
+    self.items = [];
+    self.hasCrystal = false;
+  };
 }
