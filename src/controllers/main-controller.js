@@ -29,13 +29,13 @@ export default function mainController() {
     self.gameOver = true;
     if (self.hasCrystal) {
       console.log(1);
-      return 'You caught Bigfoot!  Fame and fortune will surely be yours.';
+      self.gameOverMessage = 'You caught Bigfoot!  Fame and fortune will surely be yours.';
     } else {
       console.log(2);
-      return 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
+      self.gameOverMessage = 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
     }
   };
-  
+ 
   self.pickUpItem = function(item, location) {
     if (self.items.indexOf(item) === -1) {
       self.items.push(item);

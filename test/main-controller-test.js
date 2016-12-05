@@ -63,7 +63,7 @@ describe('main controller', () => {
   });
 
   it('pickup item', () => {
-    const ctrl = $controller('mainController')
+    const ctrl = $controller('mainController');
     const location = {
       items: ['item'],
     };  
