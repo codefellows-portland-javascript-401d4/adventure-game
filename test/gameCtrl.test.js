@@ -30,4 +30,22 @@ describe('game controller', () => {
     assert.equal($scope.profileStage.optionA.description, 'Chad agrees and you play pool.');
   });
 
+  it('checks player score', () => {
+    $scope.score = 3;
+    $scope.checkScore();
+    assert.equal($scope.room, 'win');
+
+    $scope.score = 0;
+    $scope.checkScore();
+    assert.equal($scope.room, 'lose');
+  });
+
+it('resets game conditions after date', () => {
+    $scope.score = 3;
+    $scope.currentProfile = $scope.currentProfile.next;
+    $scope.resetGame();
+    assert.equal($scope.score, 0);
+    assert.equal($scope.currentProfile.name, 'Chad');
+  });
+
 }); 
