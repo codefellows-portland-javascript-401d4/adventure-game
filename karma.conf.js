@@ -2,7 +2,9 @@ const webpackConfig = require( './webpack.config' );
 webpackConfig.entry = {};
 
 module.exports = function(config) {
-  config.set({
+
+	// Define the configuration first, because we need to mod it if we're testing in Travis
+  let configuration = {
         // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
@@ -56,5 +58,19 @@ module.exports = function(config) {
         // how many browser should be started simultaneous
     concurrency: Infinity
 
-  });
+  };
+
+// Configuration changes for running tests on Travis CI
+  if (process.env.TRAVIS) {
+    configuration.customLaunchers = {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    };
+    configuration.browsers = ['Chrome_travis_ci', 'Firefox'];
+    configuration.singleRun = true;
+  }
+
+  config.set(configuration);
 };
