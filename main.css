@@ -1,0 +1,66 @@
+table td {
+  /*border: 1px dashed cyan;*/
+  min-width: 100px;
+  height: 100px;
+}
+
+button {
+  min-height: 75px;
+  min-width: 75px;
+  background: url(/src/images/door1.png) no-repeat;
+  background-size: 100%;
+  border: none;
+}
+
+html {
+  background: url(/src/images/background.jpg) no-repeat;
+  background-size: 100%;
+  background-color: #2B303F;
+}
+
+body {
+  width: 85%;
+  margin: 2% auto;
+  background-color: rgba(83, 103, 138, .8);
+}
+
+#doors-and-room {
+  margin: auto;
+  width: 30rem;
+  height: 30rem;
+  text-align: center;
+  background: url(/src/images/room.jpg) no-repeat;
+  background-size: 100%;
+}
+
+table {
+  position: relative;
+  right: 0%;
+  top: 50%;
+  display: inline;
+}
+
+#northButton {
+  position: relative;
+  top: 1%;
+}
+
+#westButton {
+  position: relative;
+  display: inline;
+  right: 0;
+  top: 7rem;
+}
+
+#eastButton {
+  position: relative;
+  display: inline;
+  left: 0;
+  top: 7rem;
+}
+
+#southButton {
+  position: relative;
+  bottom: 0;
+}
+
