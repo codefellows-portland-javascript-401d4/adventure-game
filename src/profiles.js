@@ -105,9 +105,6 @@ profiles.becky.stage2.next = profiles.becky.stage3;
 
 dates.bar.stage1.next = dates.bar.stage2;
 dates.bar.stage2.next = dates.bar.stage3;
-
-
+dates.bar.stage3.next = 'end';
 
 export {profiles, dates};
-
-  // img: '../src/img/becky-profile.jpg',
