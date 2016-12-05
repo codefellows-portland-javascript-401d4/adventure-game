@@ -21,5 +21,7 @@ export default function Controller($scope) {
   $scope.reset = function() {
     $scope.room = 'dining';
     $scope.risottoAssigned = false;
+    $scope.drankWine = false;
+    $scope.haveIngredients = false;
     $scope.risottoMade = false; };
 }
