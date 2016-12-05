@@ -1,7 +1,7 @@
 body {
   font-family: 'Rye', cursive;
   text-align: center;
-  background-image: url('/images/wood.jpg');
+  background-image: url('http://static.wixstatic.com/media/1f4af5_f24add87e8e340f2a35cb7e7367176c6.jpg_srz_1903_1269_85_22_0.50_1.20_0.00_jpg_srz');
   background-size: cover;
 }
 
@@ -11,8 +11,10 @@ h1 {
 }
 
 .container {
+  background: rgba(150,150,150,0.7);
   width: 80%;
   margin: auto;
+  padding: 10px;
 }
 
 button {
@@ -20,7 +22,7 @@ button {
   border: none;
   width:100px;
   height: 45px;
-  background-color: grey;
+  background-color: forestgreen;
   border-radius: 3px;
   margin: 5px;
 }
@@ -34,5 +36,9 @@ button {
 
 .river {
   max-width: 80%;
+}
+
+.buttons {
+  display: block;
 }
 /*# sourceMappingURL=styles.css.map*/
