@@ -5,45 +5,61 @@
         <title>Potato Republic</title>
     </head>
     <body ng-controller="playerInfo" >
+        
+        <!--Navbar-->
         <nav id="nav">
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#" ng-click="fatKims()">Kim's wares</a></li>
-
         </nav>
 
+        <!--Scoreboard and Teams-->
         <div class="flex-container">
             <h3>SCORE: {{playerScore}}  |  Potatoes: {{potato}} </h1>
             <h1 ng-class="">{{ nationName }} vs {{ rivalNation }}</h1>
             <h3>Year: {{count}} </h1>
         </div>
+
+        <!-- Rival Team -->
         <div class="flex-container rival" ng-hide="kim">     
             <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinisterRival.src }}"></img></div>
             <div class="flex-item secState">STATE<br><img ng-src="{{ primeMinisterRival.src }}"></img></div>
             <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinisterRival.src }}"></img></div>
         </div>
+        
         <br>
+
+        <!-- Player Actions -->
         <div class="flex-container" ng-hide="kim">
             <button ng-click="defMan()">Attempt Invasion</button>
             <button ng-click="makeLaw()">Legislative Loophole</button>
             <button ng-click="eduPop()">Attempt Discovery</button>
         </div>
+
+        <!--Battle Report -->
         <div ng-class="battleReport" ng-show="battle" ng-hide="kim" ng-click="hideBattle()">
             <h3 >{{battleReport}}</h3>
             <button ng-click="hideBattle()" ng-show="battle">Done?</button>
         </div>
+
         <br>
+        
+        <!-- Player Team -->
         <div class="flex-container" ng-hide="kim">
             <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinister.src }}"></img></div>
             <div class="flex-item secState">STATE<br><img src="{{ primeMinister.src }}"></img></div>
             <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinister.src }}"></img></div>
         </div>
+
         <br>
+
+        <!-- Minister Selector-->
         <div class="flex-container" ng-hide="kim">
             <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
             <select ng-model='primeMinister' ng-options="choice.name for choice in objMinisters"></select>
             <select ng-model='eduMinister' ng-options="choice.name for choice in objMinisters"></select>
         </div>
         
+        <!-- Kims Warehouse feature  -->
         <div class="flex-container-col" ng-show="kim">
             <h1>Kims Glorius Leaders</h1>
             <p>Welcome to the Great General, Fatty Kim the thirds, warehouse of Glorious Leaders. Please browse our great collection of models, more come in every day.</p>
