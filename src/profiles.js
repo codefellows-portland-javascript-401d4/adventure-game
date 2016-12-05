@@ -79,9 +79,9 @@ profiles.becky = {
 
 dates.bar = {
   location: 'bar',
-  text: 'you and your date sit down at the bar, the waiter asks what you want to drink',
+  text: 'You and your date sit down at the bar, the waiter asks what you want to drink.',
   stage1: {
-    text: '',
+    text: 'You and your date sit down at the bar, the waiter asks what you want to drink.',
     optionA: 'Order beer',
     optionB: 'Order water'
   },
