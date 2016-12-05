@@ -35,8 +35,8 @@ module.exports = function(config) {
 
     singleRun: false,
 
-    concurrency: Infinity
-
+    concurrency: Infinity,
+    
   };
 
   if (process.env.TRAVIS) {
@@ -52,4 +52,3 @@ module.exports = function(config) {
 
   config.set(configuration);
 };
-
