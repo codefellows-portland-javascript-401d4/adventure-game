@@ -32542,10 +32542,14 @@
 	      return 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
 	    }
 	  };
-	  self.pickUpItem = function (item) {
+
+	  self.pickUpItem = function (item, location) {
 	    if (self.items.indexOf(item) === -1) {
 	      self.items.push(item);
 	      self.hasCrystal = self.items.indexOf('crystal') !== -1;
+
+	      var index = location.items.indexOf(item);
+	      location.items.splice(index, 1);
 	    }
 	  };
 	}
@@ -32562,6 +32566,25 @@
 	exports.default = locationController;
 	function locationController() {
 	  var self = this;
+
+	  var possibleItems = ['net', 'shrooms', 'stun gun', 'bait', 'bow and arrow', 'binoculars', 'camera', 'encyclopedia', 'field guide', 'bandana', 'mirror'];
+
+	  function generateRandomItems(num) {
+	    var indexArr = [];
+	    var items = [];
+	    // generate random numbers and push into array
+	    for (var i = 0; i < num; i++) {
+	      indexArr.push(Math.floor(Math.random() * (possibleItems.length - i)));
+	    }
+	    // adding for testing to be able to pass in known random numbers
+	    var randoms = arguments[1] ? arguments[1] : indexArr;
+
+	    for (var _i = 0; _i < randoms.length; _i++) {
+	      items.push(possibleItems.splice(_i, 1)[0]);
+	    }
+
+	    return items;
+	  }
 
 	  self.clearing = {
 	    name: 'clearing',
@@ -32597,8 +32620,10 @@
 	    movement: {
 	      backward: 'stream'
 	    },
-	    items: ['crystal']
+	    items: generateRandomItems(3)
 	  };
+
+	  console.log(generateRandomItems(3, ['testItem1', 'testItem2', 'testItem3']));
 	}
 
 /***/ }
