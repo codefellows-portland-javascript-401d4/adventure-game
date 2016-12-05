@@ -4,8 +4,8 @@ import { profiles, dates } from '../profiles';
 export default function game($scope) {
   $scope.room = 'swipe';
   $scope.currentProfile = profiles.chad;
-  $scope.currentDate = dates;
-  $scope.dateStage = $scope.currentDate.bar.stage1;
+  $scope.currentDate = dates.bar;
+  $scope.dateStage = $scope.currentDate.stage1;
   $scope.profileStage = $scope.currentProfile.stage1;
   $scope.score = 0;
 
@@ -53,9 +53,10 @@ export default function game($scope) {
 
   $scope.resetGame = () => {
     $scope.currentProfile = profiles.chad;
-    $scope.currentDate = dates;
-    $scope.dateStage = $scope.currentDate.bar.stage1;
+    $scope.currentDate = dates.bar;
+    $scope.dateStage = $scope.currentDate.stage1;
     $scope.profileStage = $scope.currentProfile.stage1;
+    $scope.currentDate.text = $scope.currentDate.stage1.text;
     $scope.score = 0;
   };
 
