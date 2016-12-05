@@ -1,6 +1,29 @@
 export default function locationController() {
   const self = this;
 
+  var possibleItems = ['net', 'shrooms', 'stun gun', 'bait', 'bow and arrow', 'binoculars', 'camera', 'encyclopedia', 'field guide', 'bandana', 'mirror'];
+
+  function generateRandomItems (num, arr) {
+    var indexArr = [];
+    var items = [];
+    // generate random numbers and push into array
+    for (let i = 0; i < num; i ++) {
+      indexArr.push(Math.floor(Math.random() * (possibleItems.length - i)));
+    }
+    // adding for testing to be able to pass in known random numbers
+    var randoms = arr || indexArr;
+
+    //use random indices to get items out of possibleItems
+    for (let i = 0; i < randoms.length; i++) {
+      items.push(possibleItems.splice(randoms[i], 1)[0]);
+    }
+
+    //add the crystal at a random index 
+    items.splice(Math.floor(Math.random() * num), 0, 'crystal');
+    return items;
+
+  }
+
   self.clearing = {
     name: 'clearing',
     initDescription: 'You are in an open clearing.  Through the trees on the other side is a stream.',
@@ -35,7 +58,7 @@ export default function locationController() {
     movement: {
       backward: 'stream'
     },
-    items: ['crystal']
+    items: generateRandomItems(3)
   };
 
 }

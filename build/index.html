@@ -27,22 +27,22 @@
         <div ng-repeat="(direction, location) in loc[main.location].movement">
             <button ng-click="main.move(loc[main.location], location)">{{direction}}</button>
         </div>
+        {{loc[main.location].items}}
+        <div ng-show="loc[main.location].items.length && loc[main.location].inspected === true" ng-repeat="item in loc[main.location].items">
+          <button ng-click="main.pickUpItem(item, loc[main.location])">{{item}}</button>
+        </div>
 
-        <div ng-show="loc[main.location].items.length" ng-repeat="item in loc[main.location].items">
-          <button ng-click="main.pickUpItem(item)">{{item}}</button>
+        <div ng-show="main.location === main.sasquatchLocation && loc[main.location].inspected === true">
+          <button ng-click="main.catchBigfoot()">Catch Bigfoot</button>
+          <div ng-show="main.gameOver && main.hasCrystal">
+            You caught Bigfoot!  Fame and fortune will surely be yours.
+          </div>
+          <div ng-show="main.gameOver && !main.hasCrystal">
+            Awww!  He ran right over you and got away.  Go home and tell all your friends.
+          </div>
         </div>
       </div>
-
     </div>
     <!--catch bigfoot button-->
-    <div ng-show="main.location === main.sasquatchLocation">
-      <button ng-click="main.catchBigfoot()">Catch Bigfoot</button>
-      <div ng-show="main.gameOver && main.hasCrystal">
-        You caught Bigfoot!  Fame and fortune will surely be yours.
-      </div>
-      <div ng-show="main.gameOver && !main.hasCrystal">
-        Awww!  He ran right over you and got away.  Go home and tell all your friends.
-      </div>
-    </div>
 <script type="text/javascript" src="build.js"></script></body>
 </html>

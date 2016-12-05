@@ -35,6 +35,7 @@ export default function mainController() {
       return 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
     }
   };
+  
   self.pickUpItem = function(item, location) {
     if (self.items.indexOf(item) === -1) {
       self.items.push(item);
