@@ -1,21 +1,22 @@
 export default function locationController() {
   const self = this;
 
-  var possibleItems = ['net', 'shrooms', 'stun gun', 'bait', 'bow and arrow', 'binoculars', 'camera', 'encyclopedia', 'field guide', 'bandana', 'mirror'];
+  self.possibleItems = ['net', 'shrooms', 'stun gun', 'bait', 'bow and arrow', 'binoculars', 'camera', 'encyclopedia', 'field guide', 'bandana', 'mirror'];
 
-  function generateRandomItems (num, arr) {
+  self.generateRandomItems = function (num, arr) {
+
     var indexArr = [];
     var items = [];
     // generate random numbers and push into array
     for (let i = 0; i < num; i ++) {
-      indexArr.push(Math.floor(Math.random() * (possibleItems.length - i)));
+      indexArr.push(Math.floor(Math.random() * (self.possibleItems.length - i)));
     }
     // adding for testing to be able to pass in known random numbers
     var randoms = arr || indexArr;
 
-    //use random indices to get items out of possibleItems
+    //use random indices to get items out of self.possibleItems
     for (let i = 0; i < randoms.length; i++) {
-      items.push(possibleItems.splice(randoms[i], 1)[0]);
+      items.push(self.possibleItems.splice(randoms[i], 1)[0]);
     }
 
     //add the crystal at a random index 
@@ -58,7 +59,7 @@ export default function locationController() {
     movement: {
       backward: 'stream'
     },
-    items: generateRandomItems(3)
+    items: self.generateRandomItems(3)
   };
 
 }
