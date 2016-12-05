@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline|Unica+One);/*.flex-container .img {
+    max-width: 100%;
+    height: 10px;
+}*/
+.img {
+    max-width: 100%;
+    width: 140px;
+}
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around; 
+    text-align: center;
+
+}
+
+.secState {
+    font-family: 'Bangers', sans-serif;
+    color: lightblue;
+    font-size: 1.6em;
+}
+
+.secDef {
+    font-size: 1.4em;
+    font-family: 'Bangers Inline', sans-serif;
+    color: lightgreen;
+}
+
+.secEdu {
+    font-family: 'Unica Onea', sans-serif;
+    color: lightsalmon;
+    font-size: 1.4em;
+}
+
+.flex-item {
+  width: 30%;
+  text-align: center;
+}
+
+.rival {
+    background-color: beige;
+}
+/*# sourceMappingURL=style.css.map*/

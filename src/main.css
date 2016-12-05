@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline|Unica+One');
 
+body {
+    font-family: 'Bungee Inline', san-serif;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 12px;
+}
 /*.flex-container .img {
     max-width: 100%;
     height: 10px;
@@ -17,23 +23,27 @@
     display: flex;
     justify-content: space-around; 
     text-align: center;
-
+}
+.flex-container-col {
+    flex-direction: column;
+    text-align: center;
 }
 
 .secState {
     font-family: 'Bangers', sans-serif;
     color: lightblue;
-    font-size: 1.6em;
+    font-size: 1.6em;    text-decoration: none;
+
 }
 
 .secDef {
     font-size: 1.4em;
-    font-family: 'Bangers Inline', sans-serif;
+    font-family: 'Bungee Inline', sans-serif;
     color: lightgreen;
 }
 
 .secEdu {
-    font-family: 'Unica Onea', sans-serif;
+    font-family: 'Unica One', sans-serif;
     color: lightsalmon;
     font-size: 1.4em;
 }
@@ -44,5 +54,30 @@
 }
 
 .rival {
-    background-color: beige;
+    /*background-color: beige;*/
+}
+
+.battleReport {
+    text-align: center;
+    font-weight: bold;
+}
+#nav, ul, li {
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	box-sizing: border-box;
+	display: inline-block;
+    text-decoration: none;
+}
+
+#nav, ul, li a {
+    text-decoration: none;
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.6em;
+    color: brown;
+}
+#nav, ul, li a:hover {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.6em;
+    color: grey;
 }
