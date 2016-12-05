@@ -23,38 +23,32 @@
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
       <input class="button" type="button" value="Go to the Pantry" ng-click="pantry()">
     </span>
-
     <span ng-show="!drankWine && risottoAssigned && !risottoMade && !haveIngredients">
       <p>Go collect your ingredients for the risotto.</p>
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
       <input class="button" type="button" value="Go to the Pantry" ng-click="pantry()">
     </span>
-
+    <span ng-show="drankWine && risottoAssigned && !risottoMade && !haveIngredients">
+      <p>Yo! ... you need to get the ingredients first.</p>
+			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
+      <input class="button" type="button" value="Go to the Pantry" ng-click="pantry()">
+    </span>
     <span ng-show="!drankWine && risottoAssigned && !risottoMade && haveIngredients">
       <p>Great! ... start cooking!</p>
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
       <input class="button" type="button" value="Make F***ing Risotto" ng-click="makeRisotto()">
       <input class="button" type="button" value="Go to the Pantry" ng-click="pantry()">
     </span>
-
-    <span ng-show="drankWine && risottoAssigned && !risottoMade && !haveIngredients">
-      <p>Yo! ... you need to get the ingredients first.</p>
-			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
-      <input class="button" type="button" value="Go to the Pantry" ng-click="pantry()">
-    </span>
-
 		<span ng-show="drankWine && risottoAssigned && !risottoMade && haveIngredients">
       <p>Well ... get to it!!!</p>
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
       <input class="button" type="button" value="Make F***ing Risotto" ng-click="makeRisotto()">
       <input class="button" type="button" value="Go to the Pantry" ng-click="pantry()">
     </span>
-
     <span ng-show="!drankWine && risottoAssigned && risottoMade">
       <p>Go show Chef Ramsay your wonderful risotto.</p>
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
     </span>
-
     <span ng-show="drankWine && risottoAssigned && risottoMade">
       <p>Go show Chef Ramsay your "wonderful" risotto.</p>
 			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
@@ -71,36 +65,29 @@
       <input class="button" type="button" value="Sample the Bordeaux" ng-click="drinkWine()">
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
-
     <span ng-show="drankWine && !risottoAssigned && !risottoMade && !haveIngredients">
       <p>Absolutely brilliant! ... You just chugged down a $5,000 bottle of wine.</p>
       <p>Do you even know what Chef Ramsay wants you to make?</p>
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
-
     <span ng-show="!drankWine && risottoAssigned && !risottoMade && !haveIngredients">
       <p>Now that you're in the Pantry, what are you going to do?</p>
-      <input class="button" type="button" value="Collect Ingredients for Recipe #1" ng-click="getIngredients()">
-      <input class="button" type="button" value="Collect Ingredients for Recipe #2" ng-click="getIngredients()">
+      <input class="button" type="button" value="Collect Ingredients for Risotto" ng-click="getIngredients()">
       <input class="button" type="button" value="Sample the Bordeaux" ng-click="drinkWine()">
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
-
     <span ng-show="!drankWine && risottoAssigned && !risottoMade && haveIngredients">
       <p>Now that you have all the ingredients, go to the kitchen and start cooking!</p>
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
-
     <span ng-show="drankWine && risottoAssigned && !risottoMade && haveIngredients">
       <p>Well, wino ... now that you have all the ingredients for the risotto, go to the kitchen and start cooking!</p>
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
-
     <span ng-show="drankWine && risottoAssigned && !risottoMade && !haveIngredients">
       <p>Do you still have the spine to make risotto after you chugged down that $5,000 bottle of Château Lafite?</p>
       <p>What are you going to do now?</p>
-      <input class="button" type="button" value="Collect Ingredients for Recipe #1" ng-click="getIngredients()">
-      <input class="button" type="button" value="Collect Ingredients for Recipe #2" ng-click="getIngredients()">
+      <input class="button" type="button" value="Collect Ingredients for Risotto" ng-click="getIngredients()">
 			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
     </span>
   </div>
@@ -108,35 +95,64 @@
 	 <div ng-show="room == 'office'">
 		<h1>Chef Ramsay's Office</h1>
 		<p>Chef Ramsey's office is spartan and sparkling clean. Hanging from the wall behind Chef Ramsey is a well-worn cricket bat that has been wielded upon many an unfortunate sous chef. Will you be next? Beads of sweat drip from your brow as Chef Ramsay glares up at you from his desk and yells:</p>
-		<div ng-show="!risottoAssigned">
+		<span ng-show="!risottoAssigned && !risottoMade">
 			<p>"Hey, donkey! Go make me some f***ing risotto to prove you are worthy of staying in this reality competition!"</p>
-		</div>
-		<div ng-show="risottoAssigned && !risottoMade">
+      <input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
+      <input class="button" type="button" value="Ask Chef to Stop Cursing" ng-click="lose()">
+	    <input class="button" type="button" value="Accept Chef's Risotto Challenge" ng-click="assignRisotto()">
+    </span>
+
+    <span ng-show="risottoAssigned && !risottoMade">
 			<p>"Well, don't just stand around waiting for validation. Get to it, you dumb s***!"</p>
-		</div>
-		<div ng-show="risottoMade">
+      <input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
+      <input class="button" type="button" value="Ask Chef to Stop Cursing" ng-click="lose()">
+    </span>
+
+		<span ng-show="risottoMade && !drankWine">
 			<p>"Is that your f***ing risotto? Bring it here, donkey!"</p>
-		</div>
       <input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
 			<input class="button" type="button" value="Ask Chef to Stop Cursing" ng-click="lose()">
-			<span ng-show="!risottoAssigned">
-				<input class="button" type="button" value="Accept Chef's Risotto Challenge" ng-click="assignRisotto()">
-			</span>
-			<span ng-show="risottoMade">
-				<input class="button" type="button" value="Present Risotto" ng-click="win()">
-			</span>
+			<input class="button" type="button" value="Present Risotto" ng-click="presentRisotto()">
+      </span>
+
+    <span ng-show="risottoPresented && !drankWine">
+      <p>"Chef Ramsay reviews your presentation."</p>
+				<input class="button" type="button" value="Chef Ramsay's Verdict" ng-click="victory()">
+    </span>
+
+    <span ng-show="risottoMade && drankWine">
+			<p>"Is that your f***ing risotto? Bring it here, donkey!"</p>
+      <input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
+			<input class="button" type="button" value="Ask Chef to Stop Cursing" ng-click="lose()">
+			<input class="button" type="button" value="Present Risotto" ng-click="presentRisotto()">
+      </span>
+
+    <span ng-show="risottoPresented && drankWine">
+      <p>"Chef Ramsay reviews your presentation."</p>
+				<input class="button" type="button" value="Chef Ramsay's Verdict" ng-click="defeat()">
+    </span>
 	</div>
 
 	<div ng-show="room == 'victory'">
 		<h1>Victory!</h1>
-		<p>Chef Ramsey finds your risotto acceptable and you are safe from elimination in tonight's challenge.</p>
+		<p>Chef Ramsey finds your risotto to be an excellent classic Italian rissoto</p>
+    <p>Beautiful presentation ... perfect consistency ... delicious!</p>
+    <p>You are safe from elimination in tonight's challenge.</p>
 		<input class="button" type="button" value="Play Again?" ng-click="reset()">
 	</div>
 
-	<div ng-show="room == 'defeat'">
+	<div ng-show="room == 'lose'">
 		<h1>Defeat!</h1>
-		<p>Chef Ramsey has no need for someone of your delicate sensibilities. You are eliminated from competition. Remove your chef's coat and leave the premises.
-		</p>
+		<p>Chef Ramsey has no need for someone of your delicate sensibilities.</p>
+    <p>You are eliminated from competition. Remove your chef's coat and leave the premises.</p>
+		<input class="button" type="button" value="Try Again?" ng-click="reset()">
+	</div>
+
+  <div ng-show="room == 'defeat'">
+		<h1>Defeat!</h1>
+    <p>"Bloody f**king Hell! ... your risotto looks like dog's vomit!"
+		<p>"Get out of my sight! ... and you owe me $5,000 for that bottle of Château Lafite, you stupid git!"</p>
+    <p>You are eliminated from competition. Remove your chef's coat and leave the premises.</p>
 		<input class="button" type="button" value="Try Again?" ng-click="reset()">
 	</div>
 
