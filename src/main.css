@@ -32,12 +32,12 @@ body {
 .secState {
     font-family: 'Bangers', sans-serif;
     color: lightblue;
-    font-size: 1.6em;    text-decoration: none;
+    font-size: 2.6em;    text-decoration: none;
 
 }
 
 .secDef {
-    font-size: 1.4em;
+    font-size: 2.4em;
     font-family: 'Bungee Inline', sans-serif;
     color: lightgreen;
 }
@@ -45,7 +45,7 @@ body {
 .secEdu {
     font-family: 'Unica One', sans-serif;
     color: lightsalmon;
-    font-size: 1.4em;
+    font-size: 2.4em;
 }
 
 .flex-item {
@@ -60,6 +60,9 @@ body {
 .battleReport {
     text-align: center;
     font-weight: bold;
+    font-family: 'Bangers', san-serif;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 #nav, ul, li {
 	padding-left: 10px;

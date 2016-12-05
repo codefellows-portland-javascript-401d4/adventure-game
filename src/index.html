@@ -4,13 +4,31 @@
         <meta charset="UTF-8">
         <title>Potato Republic</title>
     </head>
+
     <body ng-controller="playerInfo" >
-        
+
+        <!-- Rename the player and country-->
+        <div ng-show='rename'>
+            <label>Nation: <input type="text" ng-model="nationName" /></label>
+            <label>Player: <input type="text" ng-model="userName" /></label>
+            <input type="submit" ng-click="userUpdate()" />
+        </div>
+
         <!--Navbar-->
         <nav id="nav">
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#" ng-click="fatKims()">Kim's wares</a></li>
+            <li><a href="#" ng-click="userUpdate()">Rename Country</a></li>
+            <li><a href="#" ng-click="opponent()">New Opponent</a></li>
+            <li><a href="#" ng-click="instructions()">Instructions</a></li>
         </nav>
+
+        <!-- Rename the player and country-->
+        <div ng-show='intro'>
+            <h2> What is Potato republic?</h2>
+            <h4> Pick a minister of Defennce, Education, and Politics then perfom an action against the computer. You either gain or lose points depending on how your ministers perform. You gain potatoes that can be used to buy new ministes at Kim's Warehouse.</h4>
+            
+        </div>
 
         <!--Scoreboard and Teams-->
         <div class="flex-container">
@@ -19,26 +37,13 @@
             <h3>Year: {{count}} </h1>
         </div>
 
-        <!-- Rival Team -->
-        <div class="flex-container rival" ng-hide="kim">     
-            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinisterRival.src }}"></img></div>
-            <div class="flex-item secState">STATE<br><img ng-src="{{ primeMinisterRival.src }}"></img></div>
-            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinisterRival.src }}"></img></div>
-        </div>
-        
         <br>
 
-        <!-- Player Actions -->
+        <!-- Minister Selector-->
         <div class="flex-container" ng-hide="kim">
-            <button ng-click="defMan()">Attempt Invasion</button>
-            <button ng-click="makeLaw()">Legislative Loophole</button>
-            <button ng-click="eduPop()">Attempt Discovery</button>
-        </div>
-
-        <!--Battle Report -->
-        <div ng-class="battleReport" ng-show="battle" ng-hide="kim" ng-click="hideBattle()">
-            <h3 >{{battleReport}}</h3>
-            <button ng-click="hideBattle()" ng-show="battle">Done?</button>
+            <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <select ng-model='primeMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <select ng-model='eduMinister' ng-options="choice.name for choice in objMinisters"></select>
         </div>
 
         <br>
@@ -52,11 +57,29 @@
 
         <br>
 
-        <!-- Minister Selector-->
+        <!-- Player Actions -->
         <div class="flex-container" ng-hide="kim">
-            <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
-            <select ng-model='primeMinister' ng-options="choice.name for choice in objMinisters"></select>
-            <select ng-model='eduMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <button ng-click="defMan()">Attempt Invasion</button>
+            <button ng-click="makeLaw()">Legislative Loophole</button>
+            <button ng-click="eduPop()">Attempt Discovery</button>
+        </div>
+
+        <!--Battle Report -->
+        <div class="battleReport" ng-show="battle" ng-hide="kim" ng-click="hideBattle()">
+            <br>
+            <h2 >{{battleReport}}</h2>
+            <br>
+            <button ng-click="hideBattle()" ng-show="battle">Done?</button>
+            <br><br>
+        </div>
+
+        <br><br>
+
+        <!-- Rival Team -->
+        <div class="flex-container rival" ng-hide="kim">     
+            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinisterRival.src }}"></img></div>
+            <div class="flex-item secState">STATE<br><img ng-src="{{ primeMinisterRival.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinisterRival.src }}"></img></div>
         </div>
         
         <!-- Kims Warehouse feature  -->
