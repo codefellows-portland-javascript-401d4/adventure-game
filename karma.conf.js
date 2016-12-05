@@ -42,7 +42,11 @@ module.exports = function(config) {
 
     singleRun: false,
 
-    concurrency: Infinity
+    concurrency: Infinity,
+    
+    if (process.env.TRAVIS) {
+      config.browsers = ['Chrome_travis_ci'];
+    }
 
   });
 };
