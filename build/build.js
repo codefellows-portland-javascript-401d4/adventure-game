@@ -54,10 +54,12 @@
 	
 	var _controllers2 = _interopRequireDefault(_controllers);
 	
+	__webpack_require__(6);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_angular2.default.module('myApp', [_controllers2.default]);
 	//TODO: make a css file and require it in
+	_angular2.default.module('myApp', [_controllers2.default]);
 
 /***/ },
 /* 1 */
@@ -32627,6 +32629,12 @@
 	    items: self.generateRandomItems(3)
 	  };
 	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
