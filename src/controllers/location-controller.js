@@ -23,7 +23,7 @@ export default function locationController() {
     items.splice(Math.floor(Math.random() * num), 0, 'crystal');
     return items;
 
-  }
+  };
 
   self.clearing = {
     name: 'clearing',
