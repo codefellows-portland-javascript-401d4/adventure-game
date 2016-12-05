@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline|Unica+One');
+@import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline|Unica+One|Aref+Ruqaa');
 
 body {
     font-family: 'Bungee Inline', san-serif;
@@ -78,9 +78,19 @@ body {
     font-family: 'Bangers', sans-serif;
     font-size: 1.6em;
     color: brown;
+    margin: 10px;
 }
 #nav, ul, li a:hover {
     font-family: 'Bangers', sans-serif;
     font-size: 1.6em;
     color: grey;
+    margin: 9px;
+}
+
+h5 {
+    margin: .4em;
+    color: black;
+    font-size: .8em;
+    font-family: 'Aref Ruqaa', sans-serif;
+    margin: .2em;
 }

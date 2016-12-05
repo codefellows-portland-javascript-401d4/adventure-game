@@ -21,6 +21,7 @@
             <li><a href="#" ng-click="userUpdate()">Rename Country</a></li>
             <li><a href="#" ng-click="opponent()">New Opponent</a></li>
             <li><a href="#" ng-click="instructions()">Instructions</a></li>
+            <li><a href="#" ng-click="buyDLC()" ng-hide="hasDLC">Buy DLC</a></li>
         </nav>
 
         <!-- Rename the player and country-->
@@ -38,21 +39,21 @@
         </div>
 
         <br>
+        
+        <!-- Player Team -->
+        <div class="flex-container" ng-hide="kim">
+            <div class="flex-item secDef">DEFENCE<h5>{{defMinister.name}} | {{defMinister.def}} </h5><img src="{{ defMinister.src }}"></img></div>
+            <div class="flex-item secState">STATE<h5>{{primeMinister.name}} | {{primeMinister.poli}} </h5><img src="{{ primeMinister.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<h5>{{eduMinister.name}} | {{defMinister.edu}} </h5><img src="{{ eduMinister.src }}"></img></div>
+        </div>
+
+        <br>
 
         <!-- Minister Selector-->
         <div class="flex-container" ng-hide="kim">
             <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
             <select ng-model='primeMinister' ng-options="choice.name for choice in objMinisters"></select>
             <select ng-model='eduMinister' ng-options="choice.name for choice in objMinisters"></select>
-        </div>
-
-        <br>
-        
-        <!-- Player Team -->
-        <div class="flex-container" ng-hide="kim">
-            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinister.src }}"></img></div>
-            <div class="flex-item secState">STATE<br><img src="{{ primeMinister.src }}"></img></div>
-            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinister.src }}"></img></div>
         </div>
 
         <br>
@@ -77,9 +78,9 @@
 
         <!-- Rival Team -->
         <div class="flex-container rival" ng-hide="kim">     
-            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinisterRival.src }}"></img></div>
-            <div class="flex-item secState">STATE<br><img ng-src="{{ primeMinisterRival.src }}"></img></div>
-            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinisterRival.src }}"></img></div>
+            <div class="flex-item secDef">DEFENCE<h5>{{defMinisterRival.name}}</h5><img src="{{ defMinisterRival.src }}"></img></div>
+            <div class="flex-item secState">STATE<h5>{{primeMinisterRival.name}}</h5><img ng-src="{{ primeMinisterRival.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<h5>{{eduMinisterRival.name}}</h5><img src="{{ eduMinisterRival.src }}"></img></div>
         </div>
         
         <!-- Kims Warehouse feature  -->

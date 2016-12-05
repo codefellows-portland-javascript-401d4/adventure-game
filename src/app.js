@@ -24,6 +24,7 @@ app.controller('playerInfo', ['$scope', function ($scope) {
     $scope.intro = false;
     $scope.battleReport = '';
     $scope.priceToHire = 1000;
+    $scope.hasDLC = false;
 
     $scope.objMinisters = [
         {name: 'Abe Lincoln', def: 10, edu: 10, poli: 10, src: 'img/abe.jpg', skill: ['Abolish!', 'Presidential Address']},
@@ -44,7 +45,14 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         {name: 'Sun Tzu', def: 16, edu: 6, poli: 6, src: 'img/sunTzu.jpg', skill: ['Art of War!', 'Deception!']},
         {name: 'Chuck Norris', def: 16, edu: 6, poli: 6, src: 'img/norris.jpg', skill: ['Roundhouse Kick!', 'Texas Justice!']},
         {name: 'GabeN', def: 12, edu: 16, poli: 4, src: 'img/gaben.jpg', skill: ['DLC!', 'Steam Sale!']},
-        {name: 'Steve Wozniak', def: 6, edu: 15, poli: 9, src: 'img/wozniak.jpg', skill: ['Garage Startup!', 'APPLE!']}
+        {name: 'Steve Wozniak', def: 6, edu: 15, poli: 9, src: 'img/wozniak.jpg', skill: ['Garage Startup!', 'APPLE!']},
+        {name: 'Fidel Castro', def: 6, edu: 4, poli: 6, src: 'img/castro.jpg.jpg', skill: ['Soviet Friends!', 'Resources!']},
+        {name: 'DaVinci', def: 2, edu: 12, poli: 6, src: 'img/vinci.jpg.jpg', skill: ['Physics!', 'Enlightenment']},
+        {name: 'Martin Luther King', def: 6, edu: 4, poli: 6, src: 'img/Martin_Luther_King1.jpg', skill: ['DREAM!', 'Rally a Nation!']},
+        {name: 'Desmond Tutu', def: 6, edu: 5, poli: 6, src: 'img/Desmond_tutu.jpg', skill: ['Soviet Friends!', 'Resources!']},
+        {name: 'Dalai Lama', def: 1, edu: 12, poli: 13, src: 'img/dalaiLama.jpg', skill: ['Mindfullness!', 'Reincarnation!']},
+        {name: 'Pope Francis', def: 6, edu: 7, poli: 13, src: 'img/castro.jpg', skill: ['Reunite!', 'Empathy!']},
+        {name: 'Thomas Edison', def: 6, edu: 12, poli: 6, src: 'img/edison.jpg', skill: ['Lightbulb!', 'Electricity!']}
     ];
 
     $scope.rivalMinisters = [
@@ -56,7 +64,14 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         {name: 'Albert Einstein', def: 10, edu: 10, poli: 4, src: 'img/einstein.jpg', skill: ['Split-Atoms!', 'E=MC2']},
         {name: 'Nelson Mandela', def: 3, edu: 8, poli: 8, src: 'img/mandela.jpg', skill: ['Father of the Nation', 'Social Reform!']},
         {name: 'Sun Tzu', def: 16, edu: 6, poli: 6, src: 'img/sunTzu.jpg', skill: ['Art of War!', 'Deception!']},
-        {name: 'Chuck Norris', def: 16, edu: 6, poli: 6, src: 'img/norris.jpg', skill: ['Roundhouse Kick!', 'Texas Justice!']}
+        {name: 'Chuck Norris', def: 16, edu: 6, poli: 6, src: 'img/norris.jpg', skill: ['Roundhouse Kick!', 'Texas Justice!']},
+        {name: 'Fidel Castro', def: 6, edu: 4, poli: 6, src: 'img/castro.jpg', skill: ['Soviet Friends!', 'Resources!']},
+        {name: 'DaVinci', def: 2, edu: 12, poli: 6, src: 'img/vinci.jpg', skill: ['Physics!', 'Enlightenment']},
+        {name: 'Martin Luther King', def: 6, edu: 4, poli: 6, src: 'img/Martin_Luther_King1.jpg', skill: ['DREAM!', 'Rally a Nation!']},
+        {name: 'Desmond Tutu', def: 6, edu: 5, poli: 6, src: 'img/Desmond_tutu.jpg', skill: ['Soviet Friends!', 'Resources!']},
+        {name: 'Dalai Lama', def: 1, edu: 12, poli: 13, src: 'img/dalaiLama.jpg', skill: ['Mindfullness!', 'Reincarnation!']},
+        {name: 'Pope Francis', def: 6, edu: 7, poli: 13, src: 'img/castro.jpg', skill: ['Reunite!', 'Empathy!']},
+        {name: 'Thomas Edison', def: 6, edu: 12, poli: 6, src: 'img/edison.jpg', skill: ['Lightbulb!', 'Electricity!']}
     ];
 
     function getRandScore(minister) {
@@ -153,6 +168,21 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         }
         $scope.fatKims();
         $scope.battleReport = 'Success! ' + $scope.hireMinister.name + ' has been added.';
+        showBattle();
+    };
+
+    $scope.buyDLC = function(){        
+        
+        $scope.objMinisters.push(
+                {name: 'Steve Wozniak', def: 6, edu: 15, poli: 9, src: 'img/wozniak.jpg', skill: ['Garage Startup!', 'APPLE!']}
+        );
+
+        $scope.objMinisters.push(
+                {name: 'GabeN', def: 12, edu: 16, poli: 4, src: 'img/gaben.jpg', skill: ['DLC!', 'Steam Sale!']}
+        );
+
+        $scope.battleReport = 'Success! DLC has been added.';
+        $scope.hasDLC = true;
         showBattle();
     };
 
