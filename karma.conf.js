@@ -2,7 +2,7 @@ const webpackConfig = require( './webpack.config' );
 webpackConfig.entry = {};
 
 module.exports = function(config) {
-  config.set({
+  let configuration = {
     
     basePath: '',
 
@@ -23,13 +23,6 @@ module.exports = function(config) {
 
     browsers: ['Chrome'],
 
-    customLaunchers: {
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
-
     reporters: ['spec'],
 
     port: 9876,
@@ -44,9 +37,18 @@ module.exports = function(config) {
 
     concurrency: Infinity,
     
-    if (process.env.TRAVIS) {
-      var cfg.browsers = ['Chrome_travis_ci'];
-    }
+  };
 
-  });
+  if (process.env.TRAVIS) {
+    configuration.customLaunchers = {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    };
+    configuration.browsers = ['Chrome_travis_ci', 'Firefox'];
+    configuration.singleRun = true;
+  }
+
+  config.set(configuration);
 };
