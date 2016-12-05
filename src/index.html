@@ -25,7 +25,7 @@
         </div>
 
         <div ng-repeat="(direction, location) in loc[main.location].movement">
-            <button ng-click="main.move(loc[main.location], location)">{{direction}}</button>
+            <label>{{direction}} to <button ng-click="main.move(loc[main.location], location)">{{location}}</button></label>
         </div>
         <div ng-show="loc[main.location].items.length && loc[main.location].inspected === true" ng-repeat="item in loc[main.location].items">
           <button ng-click="main.pickUpItem(item, loc[main.location])">Pick Up {{item}}</button>
