@@ -160,7 +160,7 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         }
     };
 
-    $scope.buyMinister = function(){
+    $scope.buyMinister = function() {
         if ($scope.potato > $scope.priceToHire) {            
             $scope.objMinisters.push($scope.hireMinister);
             $scope.potato -= $scope.priceToHire
@@ -186,11 +186,11 @@ app.controller('playerInfo', ['$scope', function ($scope) {
         showBattle();
     };
 
-    $scope.userUpdate = function(){
+    $scope.userUpdate = function() {
         $scope.rename = !$scope.rename;
     };
 
-    $scope.instructions = function(){
+    $scope.instructions = function() {
         $scope.intro = !$scope.intro;
     };
 
@@ -206,3 +206,6 @@ app.controller('playerInfo', ['$scope', function ($scope) {
     };
 
 }]);
+
+
+// module.exports = app;

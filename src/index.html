@@ -21,13 +21,18 @@
             <li><a href="#" ng-click="userUpdate()">Rename Country</a></li>
             <li><a href="#" ng-click="opponent()">New Opponent</a></li>
             <li><a href="#" ng-click="instructions()">Instructions</a></li>
-            <li><a href="#" ng-click="buyDLC()" ng-hide="hasDLC">Buy DLC</a></li>
+            <li><a href="#" ng-click="buyDLC()" ng-hide="hasDLC" class="dlc-test" >Buy DLC</a></li>
         </nav>
 
         <!-- Rename the player and country-->
-        <div ng-show='intro'>
+        <div ng-hide='intro' class="intro" ng-click="instructions()">
             <h2> What is Potato republic?</h2>
-            <h4> Pick a minister of Defence, Education, and Politics then perfom an action against the computer. You either gain or lose points depending on how your ministers perform. You gain potatoes that can be used to buy new ministes at Kim's Warehouse.</h4>
+            <p>First pick ministers of Defence, Education, and Politics.
+               Then choose either Synergize, Nation build, or Education Reform and click on the button.
+            </p>
+            <p>  
+                You gain potatoes that can be used to buy new ministes at Kim's Warehouse.
+            </p>
             
         </div>
 

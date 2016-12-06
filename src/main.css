@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline|Unica+One|Aref+Ruqaa');
+@import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline|Unica+One|Aref+Ruqaa|Rubik');
 
 body {
-    font-family: 'Bungee Inline', san-serif;
+    font-family: 'Rubik', san-serif;
     margin-left: 7%;
     margin-right: 7%;
     margin-top: 12px;
@@ -10,6 +10,7 @@ body {
     max-width: 100%;
     height: 10px;
 }*/
+
 .img {
     max-width: 100%;
     width: 140px;
@@ -87,10 +88,11 @@ body {
     margin: 9px;
 }
 
-h5 {
+.intro {
     margin: .4em;
     color: black;
-    font-size: .8em;
-    font-family: 'Aref Ruqaa', sans-serif;
+    font-size: 1.8em;
+    font-family: 'Rubik', san-serif;
     margin: .2em;
+    margin: 10%;
 }
