@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title>Hungry Oregon Trail</title>
+    <link href="https://fonts.googleapis.com/css?family=Ewert|Open+Sans:400,700,800" rel="stylesheet">
+  </head>
+  <body ng-app="appName" ng-controller="food">
+    <h1 class="title">Hungry Oregon Trail</h1>
+    <div ng-hide="beginGame">
+      <p>Welcome to the harrowing game of Oregon Trail.
+        The government has sent you and your family out into 
+        the wild abandon with some food and a wagon with which
+        to make the journey across the US.</p>
+      <p>As you begin your journey, your hopes are high,
+        and your bellies full.</p>
+      <button ng-click="choice = !choice; beginGame = !beginGame">Start</button>
+    </div>
+    <div ng-show="choice">
+      <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+      <p>Uh-oh! You've encountered a river. What do you do?</p>
+      <button ng-click="choice1 = !choice1; choice = !choice; eatFood()">Ford the River</button>
+      <button ng-click="choice2 = !choice2; choice = !choice; eatFood()">Take the Ferry</button>
+    </div>
+    <div ng-show="choice1">
+      <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+      <p>Your wagon has tipped over. What should you do?</p>
+      <button ng-click="choice3 = !choice3; choice1 = !choice1; eatFood()">Leave family and swim ashore.</button>
+      <button ng-click="choice4 = !choice4; choice1 = !choice1; loseFood()">Stay in the water and try to save your drowning family.</button>
+    </div>
+    <div ng-show="choice2">
+      <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+      <p>You took the ferry and were murdered aboard the ship. </p>
+      <p><b>GAME OVER!</b></p>
+      <button ng-click="restart(); choice2 = !choice2">Play again</button>
+    </div> 
+    <div ng-show="choice3">
+      <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+      <p>You made it ashore, not giving a shit about the rest of your family. You see another wagon approaching. What do you do?</p>
+      <button ng-click="offer(); choice3 = !choice3; eatFood()">Offer food in exchange for a ride.</button>
+      <button ng-click="choice6 = !choice6; choice3 = !choice3; addFood()">Kill everyone on board and take their food.</button>
+    </div>
+    <div ng-show="choice4">
+      <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+      <p>You managed to get everyone ashore alive, but realize that all of your food was lost in the water. What do you do?</p>
+      <button ng-click="choice7 = !choice7; choice4 = !choice4">Talk to the Native people</button>
+      <button ng-click="choice8 = !choice8; choice4 = !choice4">Make weapons to hunt</button>
+    </div>   
+    <div ng-controller="sharing">
+      <div ng-show="choice5" >
+          <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+          <p>What percentage of your food are you willing to offer?</p>
+          <div >
+          <input type="number" min="0" max="100" ng-model="percentage">
+          <button ng-click="submitWagon(); choice9 = !choice9; $parent.choice5 = !$parent.choice5">Submit</button>
+          </div>
+      </div>
+      <div ng-show="choice9">
+        <p>{{fate}}</p>
+        <button ng-click="restart(); choice9 = !choice9">Play Again!</button>
+      </div>
+      <div ng-show="choice6">
+          <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+          <p>You have new food stores as a reward for your murderous rage. The bad news is that you were seen doing it. The Native people that saw you do it are asking you to spare some food. What percentage of your food are willing to give them?</p>
+          <input type="number" min="0" max="100" ng-model="percentage">
+          <button ng-click="submitIndian(); choice10 = !choice10; $parent.choice6 = !$parent.choice6">Submit</button>
+      </div>
+      <div ng-show="choice10">
+        <p>{{fate}}</p>
+        <button ng-click="restart(); choice10 = !choice10">Play Again!</button>
+      </div>
+    </div>
+    <div ng-show="choice7">
+      <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+      <p>The Native people suspected that you were going to try to take their shit, so they killed you.</p> 
+      <p><b>GAME OVER!</b></p>
+      <button ng-click="restart(); choice7 = !choice7">Play again</button>
+    </div>
+    <div ng-show="choice8">
+      <p class="currentFood">Current Food Level: {{foodLevel}}</p>
+      <p>You sliced your arm open while trying to sharpen a blade. You bled out and died.</p> 
+      <p><b>GAME OVER!</b></p>
+      <button ng-click="restart(); choice8 = !choice8">Play again</button>
+    </div> 
+  </body>
+</html>
