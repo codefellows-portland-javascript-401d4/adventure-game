@@ -11,7 +11,7 @@ app.controller('playerInfo', ['$scope', function ($scope) {
     $scope.rivalNation = 'Shaftistan';
     $scope.playerScore = 0;
     $scope.potato = 0;
-    $scope.count = 1000;
+    $scope.count = 1;
     $scope.defMinister = {};
     $scope.eduMinister = {};
     $scope.primeMinister = {};

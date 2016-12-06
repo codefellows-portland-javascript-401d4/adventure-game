@@ -43,8 +43,6 @@
             <h3>Year: {{count}} </h1>
         </div>
 
-        <br>
-        
         <!-- Player Team -->
         <div class="flex-container" ng-hide="kim">
             <div class="flex-item secDef">DEFENSE<h5>{{defMinister.name}} | {{defMinister.age}} | {{defMinister.def}} </h5><img src="{{ defMinister.src }}"></img></div>
@@ -52,22 +50,18 @@
             <div class="flex-item secEdu">EDUCATION<h5>{{eduMinister.name}} | {{eduMinister.age}} | {{eduMinister.edu}} </h5><img src="{{ eduMinister.src }}"></img></div>
         </div>
 
-        <br>
-
         <!-- Minister Selector-->
         <div class="flex-container" ng-hide="kim">
-            <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
-            <select ng-model='primeMinister' ng-options="choice.name for choice in objMinisters"></select>
-            <select ng-model='eduMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <select ng-model='defMinister' ng-options="(choice.name + ' Age: ' + choice.age + ' Skill: ' + choice.def) for choice in objMinisters" class="btnAction"></select>
+            <select ng-model='primeMinister' ng-options="(choice.name + ' Age: ' + choice.age + ' Skill: ' + choice.poli) for choice in objMinisters" class="btnAction"></select>
+            <select ng-model='eduMinister' ng-options="(choice.name + ' Age: ' + choice.age + ' Skill: ' + choice.edu) for choice in objMinisters" class="btnAction"></select>
         </div>
-
-        <br>
 
         <!-- Player Actions -->
         <div class="flex-container" ng-hide="kim">
-            <button ng-click="defMan()">Nation Build</button>
-            <button ng-click="makeLaw()">Synergize</button>
-            <button ng-click="eduPop()">Reform Education</button>
+            <button ng-click="defMan()" class="btnAction">Nation Build</button>
+            <button ng-click="makeLaw()" class="btnAction">Synergize</button>
+            <button ng-click="eduPop()" class="btnAction">Reform Education</button>
         </div>
 
         <!--Battle Report -->
@@ -79,10 +73,8 @@
             <br><br>
         </div>
 
-        <br><br>
-
         <!-- Rival Team -->
-        <div class="flex-container rival" ng-hide="kim">     
+        <div class="flex-container rival" ng-hide="kim">
             <div class="flex-item secDef">DEFENCE<h5>{{defMinisterRival.name}}</h5><img src="{{ defMinisterRival.src }}"></img></div>
             <div class="flex-item secState">STATE<h5>{{primeMinisterRival.name}}</h5><img ng-src="{{ primeMinisterRival.src }}"></img></div>
             <div class="flex-item secEdu">EDUCATION<h5>{{eduMinisterRival.name}}</h5><img src="{{ eduMinisterRival.src }}"></img></div>
@@ -103,7 +95,6 @@
                 </div>
             </div>
         </div>
-
 
     </body>
 

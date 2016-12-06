@@ -81,6 +81,9 @@ body {
     margin-left: 7%;
     margin-right: 7%;
 }
+#nav {
+    justify-content: center;
+}
 #nav, ul, li {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -105,11 +108,9 @@ body {
 }
 
 .intro {
-    margin: .4em;
     color: black;
     font-size: 2em;
     font-family: 'Rubik', san-serif;
-    margin: .2em;
     margin: 4%;
     text-align: center;
 }
@@ -120,4 +121,25 @@ body {
 
 h5 {
     margin: 8px;
+}
+
+
+.btnAction {
+  background: darkgrey;
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  font-family: "Bangers";
+  color: brown;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid brown 6px;
+  text-decoration: none;
+  width: 32%;
+  margin-bottom: .5em;
+}
+
+.btnAction:hover {
+  background: lightslategray;
+  text-decoration: none;
 }
