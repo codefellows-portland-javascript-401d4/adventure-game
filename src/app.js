@@ -125,8 +125,8 @@ app.controller('playerInfo', ['$scope', function ($scope) {
     };
 
     function makeOlderAndDie(minister) {
-        if (minister[0].age < 40) {
-            $scope.battleReport += minister[0].name + ' has retired.'
+        if (minister[0].age > 39) {
+            $scope.battleReport += ' ' + minister[0].name + ' has retired.'
             let remove = $scope.objMinisters.indexOf(minister[0]);
             $scope.objMinisters.splice(remove, 1);
         }
