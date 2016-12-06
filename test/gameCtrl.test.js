@@ -22,14 +22,14 @@ describe('controller functions', () => {
   it('changes currentProfile when player swipes left', () => {
     $scope.swipeLeft();
     assert.equal($scope.currentProfile.name, 'Becky');
-    assert.equal($scope.profileStage.optionA.description, 'Becky can put them away.');
+    assert.equal($scope.profileStage.optionA.description, 'Becky can put them away -- great choice. ');
   });
 
   it('scores player response and advances stage', () => {
     $scope.optionA();
     assert.equal($scope.score, 1);
     assert.equal($scope.dateStage.optionA, 'PLAY POOL');
-    assert.equal($scope.profileStage.optionA.description, 'Chad welcomes any chance to dominate people in a physical contest. Chad is thrilled.');
+    assert.equal($scope.profileStage.optionA.description, 'Chad welcomes any chance to dominate people in a physical contest. Chad is thrilled. ');
   });
 
   it('checks player score', () => {
