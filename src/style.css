@@ -1,0 +1,81 @@
+/*
+    darkgreen = #21563C
+    medgreen = #33774E
+    medblue = #629FB4
+    lightblue = #82BCD0
+    light grey = #C9CACC
+*/
+
+body {
+    /*margin: none;*/
+    background-color: #21563C;  
+    font-family: monospace;
+}
+header {
+    min-height: 25%;
+}
+h1 {
+    background-color: #21563C;
+    margin: auto;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    
+    font-size: 5em;
+
+}
+h2 {
+    margin: 0;
+    padding: 1em;
+    background-color: #629FB4;
+    text-align: center;
+}
+
+button {
+    font-family: monospace;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: .5, 1.5em;
+    min-width: 5em;
+}
+
+.room {
+    padding: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-height: 30%;
+    font-size: 1.5em;
+}
+div {
+    padding-top: .75em;
+}
+.clearing {
+    background-color: #33774E;
+}
+
+.stream {
+    background-color: #629FB4;
+
+}
+.cave {
+    background-color: #888;
+}
+
+.satchel {
+    font-size: 1.25em;
+    margin-left: 10%;
+    margin-right: 10%;
+    list-style: none;
+}
+
+.game-over {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.game-over h3 {
+    color: white;
+    font-size: 2em;
+}
