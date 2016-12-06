@@ -1,14 +1,16 @@
 const assert = chai.assert;
 
-describe('game controller', () => {
+describe('controller functions', () => {
 
   beforeEach(angular.mock.module('controllers'));
 
   let $controller, $scope;
+
   beforeEach(angular.mock.inject(function($rootScope, _$controller_) {
     $scope = $rootScope.$new();
     $controller = _$controller_;
     $controller('game', { $scope });
+    $controller('score', { $scope });
   }));
 
   it('initializes game', () => {
@@ -26,21 +28,22 @@ describe('game controller', () => {
   it('scores player response and advances stage', () => {
     $scope.optionA();
     assert.equal($scope.score, 1);
-    assert.equal($scope.dateStage.optionA, 'Play pool');
-    assert.equal($scope.profileStage.optionA.description, 'Chad agrees and you play pool.');
+    assert.equal($scope.dateStage.optionA, 'PLAY POOL');
+    assert.equal($scope.profileStage.optionA.description, 'Chad welcomes any chance to dominate people in a physical contest. Chad is thrilled.');
   });
 
   it('checks player score', () => {
+    console.log('scope.room initially', $scope.room);
     $scope.score = 3;
     $scope.checkScore();
-    assert.equal($scope.room, 'win');
+    assert.equal($scope.$parent.room, 'win');
 
     $scope.score = 0;
     $scope.checkScore();
-    assert.equal($scope.room, 'lose');
+    assert.equal($scope.$parent.room, 'lose');
   });
 
-it('resets game conditions after date', () => {
+  it('resets game conditions after date', () => {
     $scope.score = 3;
     $scope.currentProfile = $scope.currentProfile.next;
     $scope.resetGame();

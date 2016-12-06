@@ -42,15 +42,6 @@ export default function game($scope) {
     console.log('Your score: ', $scope.score);
   };
 
-  $scope.checkScore = () => {
-    if ($scope.score >= 2) {
-      $scope.room = 'win';
-    } else {
-      $scope.room = 'lose';
-    }
-    $scope.resetGame();
-  };
-
   $scope.resetGame = () => {
     $scope.currentProfile = profiles.chad;
     $scope.currentDate = dates.bar;
