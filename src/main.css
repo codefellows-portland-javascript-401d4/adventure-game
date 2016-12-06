@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline|Unica+One|Aref+Ruqaa|Rubik');
+
+body {
+    font-family: 'Rubik', san-serif;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 12px;
+}
+/*.flex-container .img {
+    max-width: 100%;
+    height: 10px;
+}*/
+
+.img {
+    max-width: 100%;
+    width: 140px;
+}
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around; 
+    text-align: center;
+}
+.flex-container-col {
+    flex-direction: column;
+    text-align: center;
+}
+
+.secState {
+    font-family: 'Bangers', sans-serif;
+    color: lightblue;
+    font-size: 2.6em;    text-decoration: none;
+
+}
+
+.secDef {
+    font-size: 2.4em;
+    font-family: 'Bungee Inline', sans-serif;
+    color: lightgreen;
+}
+
+.secEdu {
+    font-family: 'Unica One', sans-serif;
+    color: lightsalmon;
+    font-size: 2.4em;
+}
+.secEduSmall {
+    font-family: 'Unica One', sans-serif;
+    color: lightsalmon;
+    font-size: 1.4em;
+}
+.secDefSmall {
+    font-size: 1.4em;
+    font-family: 'Bungee Inline', sans-serif;
+    color: lightgreen;
+}
+.secStateSmall {
+    font-family: 'Bangers', sans-serif;
+    color: lightblue;
+    font-size: 1.2em;
+    text-decoration: none;
+
+}
+.flex-item {
+  width: 30%;
+  text-align: center;
+}
+
+.rival {
+    /*background-color: beige;*/
+}
+
+.battleReport {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Rubik', san-serif;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+#nav {
+    justify-content: center;
+}
+#nav, ul, li {
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	box-sizing: border-box;
+	display: inline-block;
+    text-decoration: none;
+}
+
+#nav, ul, li a {
+    text-decoration: none;
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.6em;
+    color: brown;
+    margin: 10px;
+}
+#nav, ul, li a:hover {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.6em;
+    color: grey;
+    margin: 9px;
+}
+
+.intro {
+    color: black;
+    font-size: 2em;
+    font-family: 'Rubik', san-serif;
+    margin: 4%;
+    text-align: center;
+}
+.intro p {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h5 {
+    margin: 8px;
+}
+
+
+.btnAction {
+  background: darkgrey;
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  font-family: "Bangers";
+  color: brown;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid brown 6px;
+  text-decoration: none;
+  width: 32%;
+  margin-bottom: .5em;
+}
+
+.btnAction:hover {
+  background: lightslategray;
+  text-decoration: none;
+}

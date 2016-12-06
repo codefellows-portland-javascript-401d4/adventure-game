@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html ng-app="primary">
+    <head>
+        <meta charset="UTF-8">
+        <title>Potato Republic</title>
+    <link href="style.css" rel="stylesheet"></head>
+    <body ng-controller="playerInfo" >
+        <div class="flex-container">
+            <h3>SCORE: {{playerScore}} </h1>
+            <h1 ng-class="">{{ nationName }} vs {{ rivalNation }}</h1>
+            <h3>Year: {{count}} </h1>
+        </div>
+        <div class="flex-container rival">     
+            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinisterRival.src }}"></img></div>
+            <div class="flex-item secState">STATE<br><img ng-src="{{ primeMinisterRival.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinisterRival.src }}"></img></div>
+        </div>
+        <br>
+        <div class="flex-container">
+            <button ng-click="defMan()">Attempt Invasion</button>
+            <button ng-click="makeLaw()">Legislative Loophole</button>
+            <button ng-click="eduPop()">Attempt Discovery</button>
+        </div>
+        <div ng-show="battle">
+            <h1>its the end of the world as we know it.</h1>
+
+        </div>
+        <br>
+        <div class="flex-container">
+            <div class="flex-item secDef">DEFENCE<br><img src="{{ defMinister.src }}"></img></div>
+            <div class="flex-item secState">STATE<br><img src="{{ primeMinister.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<br><img src="{{ eduMinister.src }}"></img></div>
+        </div>
+        <br>
+        <div class="flex-container">
+            <select ng-model='defMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <select ng-model='primeMinister' ng-options="choice.name for choice in objMinisters"></select>
+            <select ng-model='eduMinister' ng-options="choice.name for choice in objMinisters"></select>
+        </div>
+
+
+    <script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
+
+
+
+

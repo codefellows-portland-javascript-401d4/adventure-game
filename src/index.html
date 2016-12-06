@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html ng-app="primary">
+    <head>
+        <meta charset="UTF-8">
+        <title>Potato Republic</title>
+    </head>
+
+    <body ng-controller="playerInfo" >
+
+        <!-- Rename the player and country-->
+        <div ng-show='rename'>
+            <label>Nation: <input type="text" ng-model="nationName" /></label>
+            <label>Player: <input type="text" ng-model="userName" /></label>
+            <input type="submit" ng-click="userUpdate()" />
+        </div>
+
+        <!--Navbar-->
+        <nav id="nav">
+            <li><a href="#" ng-click="instructions()">Instructions</a></li>
+            <li><a href="#" ng-click="fatKims()">Kim's wares</a></li>
+            <li><a href="#" ng-click="userUpdate()">Rename?</a></li>
+            <li><a href="#" ng-click="opponent()">New Opponent</a></li>
+            <li><a href="#" ng-click="buyDLC()" ng-hide="hasDLC" class="dlc-test" >Buy DLC</a></li>
+            <li><a href="#" ng-click="senate()">Senate</a></li>
+        </nav>
+
+        <!-- Rename the player and country-->
+        <div ng-hide='intro' class="intro" ng-click="instructions()">
+            <h2> What is Potato Republic?</h2>
+            <p>A cunning game of potato politics, specifically trading potatoes for politicians with Kim Fatty the Third. Best to get out before the profits drop. </p> 
+            <p>First pick ministers of Defense, Education, and Politics. Then select an opponent you think suits your minister</p>
+            <p>Synergize is based on the <span class="secStateSmall"> State </span> attribute of the Minister</p>
+            <p>Nation Building is based on the <span class="secDefSmall"> Defense </span> attribute the Minister</p>
+            <p>Education Reform is based on the <span class="secEduSmall"> State </span> attribute the Minister</p>
+            <p>Ministers retire at 41 years, so you will need to replace them</p>
+            <p>You gain potatoes that can be used to buy new ministers at Kim's Warehouse but beware the price increase. Eventually it wont be worth it.</p>
+        </div>
+
+        <!--Scoreboard and Teams-->
+        <div class="flex-container">
+            <h3>SCORE: {{playerScore}}  |  Potatoes: {{potato}} </h1>
+            <h1 ng-class="">{{ nationName }} vs {{ rivalNation }}</h1>
+            <h3>Year: {{count}} </h1>
+        </div>
+
+        <!-- Player Team -->
+        <div class="flex-container" ng-hide="kim">
+            <div class="flex-item secDef">DEFENSE<h5></h5><img src="{{ defMinister.src }}"></img></div>
+            <div class="flex-item secState">STATE<h5></h5><img src="{{ primeMinister.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<h5></h5><img src="{{ eduMinister.src }}"></img></div>
+        </div>
+
+        <!-- Minister Selector-->
+        <div class="flex-container" ng-hide="kim">
+            <select ng-model='defMinister' ng-options="(choice.name + ' Age: ' + choice.age + ' Skill: ' + choice.def) for choice in objMinisters" class="btnAction"></select>
+            <select ng-model='primeMinister' ng-options="(choice.name + ' Age: ' + choice.age + ' Skill: ' + choice.poli) for choice in objMinisters" class="btnAction"></select>
+            <select ng-model='eduMinister' ng-options="(choice.name + ' Age: ' + choice.age + ' Skill: ' + choice.edu) for choice in objMinisters" class="btnAction"></select>
+        </div>
+
+        <!-- Player Actions -->
+        <div class="flex-container" ng-hide="kim">
+            <button ng-click="defMan()" class="btnAction">Nation Build</button>
+            <button ng-click="makeLaw()" class="btnAction">Synergize</button>
+            <button ng-click="eduPop()" class="btnAction">Reform Education</button>
+        </div>
+
+        <!--Battle Report -->
+        <div class="battleReport" ng-show="battle" ng-hide="kim" ng-click="hideBattle()">
+            <br>
+            <h2 >{{battleReport}}</h2>
+            <br>
+            <button ng-click="hideBattle()" ng-show="battle">Done?</button>
+            <br><br>
+        </div>
+
+        <!-- Rival Team -->
+        <div class="flex-container rival" ng-hide="kim">
+            <div class="flex-item secDef">DEFENCE<h5>{{defMinisterRival.name}}</h5><img src="{{ defMinisterRival.src }}"></img></div>
+            <div class="flex-item secState">STATE<h5>{{primeMinisterRival.name}}</h5><img ng-src="{{ primeMinisterRival.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<h5>{{eduMinisterRival.name}}</h5><img src="{{ eduMinisterRival.src }}"></img></div>
+        </div>
+        
+        <!-- Kims Warehouse feature  -->
+        <div class="flex-container-col" ng-show="kim">
+            <h1>Kims Glorius Leaders</h1>
+            <p>Welcome to the Great General, Fatty Kim the thirds, warehouse of Glorious Leaders. Please browse our great collection of models, more come in every day.</p>
+            <img src="img/fatkimmy.jpg">yes</img>
+            <div class="secState">
+                Availible for {{priceToHire}} Potatoes
+                <br>
+                <select ng-model='hireMinister' ng-options="choice.name for choice in extraMinisters" class="btnAction"></select>
+                <button ng-click="buyMinister()" class="btnAction"> Buy Minister?</button>
+                <div>
+                    <img ng-src="{{ hireMinister.src }}"></img>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
+
+
+
