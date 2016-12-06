@@ -20,25 +20,22 @@ main {
   text-align: center;
 }
 
-#swipe-view {
-  
-}
-
 .current-person img {
-  float: left;
-  clear: right;
   width: 30%;
   border: 2px solid #282a2f;
   border-radius: 50%;
 }
 
 .current-profile {
+  margin: 0 auto;
   width: 40%;
   border: 2px solid #282a2f;
 }
 
 .current-profile h3 {
-
+  margin: 2%;
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
 }
 
 .current-profile h4 {
