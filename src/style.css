@@ -12,7 +12,7 @@ body {
     font-family: monospace;
 }
 header {
-    min-height: 30%;
+    min-height: 25%;
 }
 h1 {
     background-color: #21563C;
@@ -44,7 +44,8 @@ button {
     padding: 2em;
     margin-left: 10%;
     margin-right: 10%;
-    min-height: 40%;
+    min-height: 30%;
+    font-size: 1.5em;
 }
 div {
     padding-top: .75em;
@@ -62,8 +63,10 @@ div {
 }
 
 .satchel {
+    font-size: 1.25em;
     margin-left: 10%;
     margin-right: 10%;
+    list-style: none;
 }
 
 .game-over {
