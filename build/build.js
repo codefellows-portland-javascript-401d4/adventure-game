@@ -56,10 +56,12 @@
 	
 	__webpack_require__(6);
 	
+	__webpack_require__(10);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//TODO: make a css file and require it in
 	_angular2.default.module('myApp', [_controllers2.default]);
+	//TODO: make a css file and require it in
 
 /***/ },
 /* 1 */
@@ -32538,10 +32540,10 @@
 	    self.gameOver = true;
 	    if (self.hasCrystal) {
 	      console.log(1);
-	      return 'You caught Bigfoot!  Fame and fortune will surely be yours.';
+	      self.gameOverMessage = 'You caught Bigfoot!  Fame and fortune will surely be yours.';
 	    } else {
 	      console.log(2);
-	      return 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
+	      self.gameOverMessage = 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
 	    }
 	  };
 	
@@ -32553,6 +32555,12 @@
 	      var index = location.items.indexOf(item);
 	      location.items.splice(index, 1);
 	    }
+	  };
+	
+	  self.resetGame = function () {
+	    self.gameOver = false;
+	    self.items = [];
+	    self.hasCrystal = false;
 	  };
 	}
 
@@ -32599,7 +32607,7 @@
 	    descriptionNoCrystal: 'Omigosh, there goes Bigfoot!  Quick!  What do you do?',
 	    inspected: false,
 	    movement: {
-	      forward: 'stream'
+	      Forward: 'stream'
 	    },
 	    items: []
 	  };
@@ -32611,8 +32619,8 @@
 	    descriptionNoCrystal: 'Seems like Sasquatch had to come this way, but all you see are some pretty rocks.',
 	    inspected: false,
 	    movement: {
-	      forward: 'cave',
-	      backward: 'clearing'
+	      Forward: 'cave',
+	      Back: 'clearing'
 	    },
 	    items: []
 	  };
@@ -32624,7 +32632,7 @@
 	    descriptionCrystal: 'Now that you have the crystal, this is obviously the Sasquatch lair!',
 	    descriptionNoCrystal: 'Ew! Just a dank and smelly cave. But there are some pretty rocks and crystals lying around.',
 	    movement: {
-	      backward: 'stream'
+	      Back: 'stream'
 	    },
 	    items: self.generateRandomItems(3)
 	  };
@@ -32632,6 +32640,15 @@
 
 /***/ },
 /* 6 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
