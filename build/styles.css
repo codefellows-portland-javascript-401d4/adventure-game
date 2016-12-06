@@ -1,0 +1,68 @@
+body {
+  margin: 0 auto;
+  height: 100%;
+  max-width: 100%;
+  background-color: #e6e6e6;
+  font-family: 'Ubuntu Mono', monospace;
+  color: #282a2f;
+}
+
+#container h1 {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+
+main {
+  margin: 5% 10%;
+  padding: 3%;
+  background-color: rgba(255,106,106,.8);
+  border-radius: 1%;
+  text-align: center;
+}
+
+#swipe-view {
+  
+}
+
+.current-person img {
+  float: left;
+  clear: right;
+  width: 30%;
+  border: 2px solid #282a2f;
+  border-radius: 50%;
+}
+
+.current-profile {
+  width: 40%;
+  border: 2px solid #282a2f;
+}
+
+.current-profile h3 {
+
+}
+
+.current-profile h4 {
+
+}
+
+#message-view {
+
+}
+
+#date-view {
+
+}
+
+#win-view {
+
+}
+
+#lose-view {
+
+}
+
+#buttons {
+  margin: 5%;
+}
+
+/*# sourceMappingURL=styles.css.map*/

@@ -43,7 +43,7 @@ profiles.chad = {
 profiles.becky = {
   name: 'Becky',
   bio: 'Lavender is so IN this season.',
-  picture: 'https://i.imgur.com/T5WWsmI.jpg',
+  picture: 'http://i.imgur.com/T5WWsmI.jpg?1',
   message: 'I can\'t even!',
   yesResponse: 'ME NEITHER, GIRL',
   noResponse: 'What?',
@@ -160,7 +160,7 @@ profiles.azul = {
 profiles.doug = {
   name:'Doug',
   bio: 'Work responsibly, play responsibly',
-  picture: 'src/img/doug.jpg',
+  picture: 'http://i.imgur.com/VsxgYVX.png',
   message:'You are attractive. We should go out',
   yesResponse: 'The strong silent type, I like it',
   noResponse: 'SNORE',
@@ -199,7 +199,7 @@ profiles.doug = {
 profiles.carrie = {
   name: 'Carrie',
   bio: 'I\'m doing my best',
-  picture: 'src/img/carrie.jpg',
+  picture: 'http://i.imgur.com/1XsiKTx.png',
   message: 'My mom is making me do this',
   yesResponse: 'Your mom will LOVE me',
   noResponse: 'she shouldn\'t have. you gross',
