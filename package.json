@@ -8,9 +8,9 @@
     "build": "webpack",
     "start": "webpack-dev-server --port 3000 --inline"
   },
-  // "babel": {
-  //   "presets": [ "ES2015" ]
-  // },
+  "babel": {
+    "presets": [ "es2015" ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OrcSlayers/OrcSlayer.git"
