@@ -57,9 +57,9 @@
           <button ng-show="room === 'swipe'" ng-click="room = 'message'">Swipe right</button>
           <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{currentProfile.noResponse}}</button>
           <button ng-show="room === 'message'" ng-click="room = 'date'">{{currentProfile.yesResponse}}</button>
-          <button ng-show="room === 'date' && dateStage !== 'end'" ng-click=optionA()>{{dateStage.optionA}}</button>
-          <button ng-show="room === 'date' && dateStage !== 'end'" ng-click=optionB()>{{dateStage.optionB}}</button>
-          <button ng-show="room === 'date' && dateStage === 'end'" ng-click="checkScore()">Reflect on the date.</button>
+          <button ng-show="room === 'date' && dateStage !== 'end'" ng-click="optionA()">{{dateStage.optionA}}</button>
+          <button ng-show="room === 'date' && dateStage !== 'end'" ng-click="optionB()">{{dateStage.optionB}}</button>
+          <button ng-show="room === 'date' && dateStage === 'end'" ng-click="checkScore()" ng-controller="score">Reflect on the date.</button>
           <button ng-show="room === 'win'" ng-click="room = 'swipe'">Restart</button>
           <button ng-show="room === 'lose'" ng-click="room = 'swipe'">Get back out there</button>
         </section>
