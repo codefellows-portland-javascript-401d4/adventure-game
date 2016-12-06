@@ -45,9 +45,9 @@
 
         <!-- Player Team -->
         <div class="flex-container" ng-hide="kim">
-            <div class="flex-item secDef">DEFENSE<h5>{{defMinister.name}} | {{defMinister.age}} | {{defMinister.def}} </h5><img src="{{ defMinister.src }}"></img></div>
-            <div class="flex-item secState">STATE<h5>{{primeMinister.name}} | {{primeMinister.age}} | {{primeMinister.poli}} </h5><img src="{{ primeMinister.src }}"></img></div>
-            <div class="flex-item secEdu">EDUCATION<h5>{{eduMinister.name}} | {{eduMinister.age}} | {{eduMinister.edu}} </h5><img src="{{ eduMinister.src }}"></img></div>
+            <div class="flex-item secDef">DEFENSE<h5></h5><img src="{{ defMinister.src }}"></img></div>
+            <div class="flex-item secState">STATE<h5></h5><img src="{{ primeMinister.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<h5></h5><img src="{{ eduMinister.src }}"></img></div>
         </div>
 
         <!-- Minister Selector-->
@@ -88,8 +88,8 @@
             <div class="secState">
                 Availible for {{priceToHire}} Potatoes
                 <br>
-                <select ng-model='hireMinister' ng-options="choice.name for choice in extraMinisters"></select>
-                <button ng-click="buyMinister()"> Buy Minister?</button>
+                <select ng-model='hireMinister' ng-options="choice.name for choice in extraMinisters" class="btnAction"></select>
+                <button ng-click="buyMinister()" class="btnAction"> Buy Minister?</button>
                 <div>
                     <img ng-src="{{ hireMinister.src }}"></img>
                 </div>
