@@ -16,24 +16,24 @@
 
         <!--Navbar-->
         <nav id="nav">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#" ng-click="fatKims()">Kim's wares</a></li>
-            <li><a href="#" ng-click="userUpdate()">Rename Country</a></li>
-            <li><a href="#" ng-click="opponent()">New Opponent</a></li>
             <li><a href="#" ng-click="instructions()">Instructions</a></li>
+            <li><a href="#" ng-click="fatKims()">Kim's wares</a></li>
+            <li><a href="#" ng-click="userUpdate()">Rename?</a></li>
+            <li><a href="#" ng-click="opponent()">New Opponent</a></li>
             <li><a href="#" ng-click="buyDLC()" ng-hide="hasDLC" class="dlc-test" >Buy DLC</a></li>
+            <li><a href="#" ng-click="senate()">Senate</a></li>
         </nav>
 
         <!-- Rename the player and country-->
         <div ng-hide='intro' class="intro" ng-click="instructions()">
-            <h2> What is Potato republic?</h2>
-            <p>First pick ministers of Defence, Education, and Politics.
-               Then choose either Synergize, Nation build, or Education Reform and click on the button.
-            </p>
-            <p>  
-                You gain potatoes that can be used to buy new ministes at Kim's Warehouse.
-            </p>
-            
+            <h2> What is Potato Republic?</h2>
+            <p>A cunning game of potato politics, specifically trading potatoes for politicians with Kim Fatty the Third. Best to get out before the profits drop. </p> 
+            <p>First pick ministers of Defense, Education, and Politics. Then select an opponent you think suits your minister</p>
+            <p>Synergize is based on the <span class="secStateSmall"> State </span> attribute of the Minister</p>
+            <p>Nation Building is based on the <span class="secDefSmall"> Defense </span> attribute the Minister</p>
+            <p>Education Reform is based on the <span class="secEduSmall"> State </span> attribute the Minister</p>
+            <p>Ministers die at 40 years, so you will need to replace them</p>
+            <p>You gain potatoes that can be used to buy new ministers at Kim's Warehouse but beware the price increase. Eventually it wont be worth it.</p>
         </div>
 
         <!--Scoreboard and Teams-->
@@ -47,9 +47,9 @@
         
         <!-- Player Team -->
         <div class="flex-container" ng-hide="kim">
-            <div class="flex-item secDef">DEFENCE<h5>{{defMinister.name}} | {{defMinister.def}} </h5><img src="{{ defMinister.src }}"></img></div>
-            <div class="flex-item secState">STATE<h5>{{primeMinister.name}} | {{primeMinister.poli}} </h5><img src="{{ primeMinister.src }}"></img></div>
-            <div class="flex-item secEdu">EDUCATION<h5>{{eduMinister.name}} | {{defMinister.edu}} </h5><img src="{{ eduMinister.src }}"></img></div>
+            <div class="flex-item secDef">DEFENSE<h5>{{defMinister.name}} | {{defMinister.age}} | {{defMinister.def}} </h5><img src="{{ defMinister.src }}"></img></div>
+            <div class="flex-item secState">STATE<h5>{{primeMinister.name}} | {{primeMinister.age}} | {{primeMinister.poli}} </h5><img src="{{ primeMinister.src }}"></img></div>
+            <div class="flex-item secEdu">EDUCATION<h5>{{eduMinister.name}} | {{eduMinister.age}} | {{eduMinister.edu}} </h5><img src="{{ eduMinister.src }}"></img></div>
         </div>
 
         <br>
@@ -65,9 +65,9 @@
 
         <!-- Player Actions -->
         <div class="flex-container" ng-hide="kim">
-            <button ng-click="defMan()">Attempt Invasion</button>
-            <button ng-click="makeLaw()">Legislative Loophole</button>
-            <button ng-click="eduPop()">Attempt Discovery</button>
+            <button ng-click="defMan()">Nation Build</button>
+            <button ng-click="makeLaw()">Synergize</button>
+            <button ng-click="eduPop()">Reform Education</button>
         </div>
 
         <!--Battle Report -->

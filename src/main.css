@@ -48,7 +48,23 @@ body {
     color: lightsalmon;
     font-size: 2.4em;
 }
+.secEduSmall {
+    font-family: 'Unica One', sans-serif;
+    color: lightsalmon;
+    font-size: 1.4em;
+}
+.secDefSmall {
+    font-size: 1.4em;
+    font-family: 'Bungee Inline', sans-serif;
+    color: lightgreen;
+}
+.secStateSmall {
+    font-family: 'Bangers', sans-serif;
+    color: lightblue;
+    font-size: 1.2em;
+    text-decoration: none;
 
+}
 .flex-item {
   width: 30%;
   text-align: center;
@@ -91,8 +107,17 @@ body {
 .intro {
     margin: .4em;
     color: black;
-    font-size: 1.8em;
+    font-size: 2em;
     font-family: 'Rubik', san-serif;
     margin: .2em;
-    margin: 10%;
+    margin: 4%;
+    text-align: center;
+}
+.intro p {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h5 {
+    margin: 8px;
 }
