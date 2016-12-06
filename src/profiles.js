@@ -77,6 +77,45 @@ profiles.becky = {
   }
 };
 
+profiles.doug = {
+  name:'Doug',
+  bio: 'Work responsibly, play responsibly',
+  message:'You are attractive. We should go out',
+  yesResponse: 'The strong silent type, I like it',
+  noResponse: 'SNORE',
+  stage1: {
+    optionA: {
+      response: false,
+      description: 'Doug thinks you have a drinking problem and give you an AA pamphlet',
+    },
+    optionB: {
+      response: true,
+      description: '"this water is great! So flavorful" Doug finishes his glass and orders another'
+    }
+  },
+  stage2: {
+    optionA: {
+      response: false,
+      description: '"Let\'s leave sports to the professional athletes." You sit in silence for an uncomfortable amount of time'
+    },
+    optionB: {
+      response: true,
+      description: 'This is the longest conversation Doug has had in a while, and he\'s thrilled'
+    }
+  },
+  stage3: {
+    optionA: {
+      response: true,
+      description: 'Doug appears to be very relieved that you\'re leaving the bar.'
+    },
+    optionB: {
+      response: false,
+      description: 'Doug accidentally get\'s thrown in the fray and is knocked unconcious.'
+    }
+  }
+
+};
+
 dates.bar = {
   location: 'bar',
   text: 'you and your date sit down at the bar, the waiter asks what you want to drink',
