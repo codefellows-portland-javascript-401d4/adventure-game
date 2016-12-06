@@ -4,23 +4,23 @@ const dates = {};
 profiles.chad = {
   name: 'Chad',
   bio: 'Crush suds. Surf is life.',
-  message: 'I know the SICKEST bar, we should go!',
-  yesResponse: 'OMG I LOVE THAT PLACE',
-  noResponse: 'What is wrong with you?',
+  message: 'I know the SICKEST speakeasy. I\'ll buy the first round of Jaegerbombs.',
+  yesResponse: 'Sure!',
+  noResponse: 'No way.',
   stage1: {
     optionA: {
       response: true,
-      description: 'Chad loves beer. Great job.'
+      description: 'As an equal opportunity drinker, Chad loves beer. Great job.'
     },
     optionB: {
       response: false,
-      description: '"Gross, water." Oops.'
+      description: '"Whatever bro, that\'s your choice, but I\'m going to get twice as smashed to make up for it." Oops.'
     }
   },
   stage2: {
     optionA: {
       response: true,
-      description: 'Chad agrees and you play pool.'
+      description: 'Chad welcomes any chance to dominate people in a physical contest. Chad is thrilled.'
     },
     optionB: {
       response: false,
@@ -78,22 +78,22 @@ profiles.becky = {
 };
 
 dates.bar = {
-  location: 'bar',
-  text: 'You and your date sit down at the bar, the waiter asks what you want to drink.',
+  location: 'St. Tipsy\'s Bar',
+  text: 'You walk into a dimly lit bar and spot your date in a booth. As you sit down the server arrives to take your drink order.',
   stage1: {
-    text: 'You and your date sit down at the bar, the waiter asks what you want to drink.',
-    optionA: 'Order beer',
-    optionB: 'Order water'
+    text: 'You walk into a dimly lit bar and spot your date in a booth. As you sit down the server arrives to take your drink order.',
+    optionA: 'ORDER BEER',
+    optionB: 'ORDER WATER'
   },
   stage2: {
-    text: 'With drinks in hand, you glance around the bar. You spot a pool table. Should you suggest a game of pool to ease things along, or have a deep conversation instead?',
-    optionA: 'Play pool',
-    optionB: 'Have a heart to heart'
+    text: 'With a drink in hand, you glance around the bar. You spot a pool table. Should you dig deep into conversation or suggest a game of pool?',
+    optionA: 'PLAY POOL',
+    optionB: 'HEART-TO-HEART'
   },
   stage3: {
-    text: 'As the night goes on, you notice some bar patrons are getting into a heated argument. Suddenly, a fight breaks out. ',
-    optionA: 'Let\'s get out of here!',
-    optionB: 'You\'re out for blood, you punch a random'
+    text: 'The night progresses: the lights grow dimmer, the patrons grow drunker, and the jukebox grows more irritating. Towards the front of the room, a fight breaks out.',
+    optionA: 'LEAVE BAR',
+    optionB: 'PUNCH SOMEONE'
   }
 };
 
