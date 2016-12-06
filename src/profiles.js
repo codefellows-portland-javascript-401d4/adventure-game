@@ -86,31 +86,31 @@ profiles.doug = {
   stage1: {
     optionA: {
       response: false,
-      description: 'Doug thinks you have a drinking problem and give you an AA pamphlet',
+      description: 'Doug thinks you have a drinking problem and give you an AA pamphlet. ',
     },
     optionB: {
       response: true,
-      description: '"this water is great! So flavorful" Doug finishes his glass and orders another'
+      description: '"this water is great! So flavorful" Doug finishes his glass and orders another. '
     }
   },
   stage2: {
     optionA: {
       response: false,
-      description: '"Let\'s leave sports to the professional athletes." You sit in silence for an uncomfortable amount of time'
+      description: '"Let\'s leave sports to the professional athletes." You sit in silence for an uncomfortable amount of time. '
     },
     optionB: {
       response: true,
-      description: 'This is the longest conversation Doug has had in a while, and he\'s thrilled'
+      description: 'This is the longest conversation Doug has had in a while, and he\'s thrilled. '
     }
   },
   stage3: {
     optionA: {
       response: true,
-      description: 'Doug appears to be very relieved that you\'re leaving the bar.'
+      description: 'Doug appears to be very relieved that you\'re leaving the bar. '
     },
     optionB: {
       response: false,
-      description: 'Doug accidentally get\'s thrown in the fray and is knocked unconcious.'
+      description: 'Doug accidentally get\'s thrown in the fray and is knocked unconcious. '
     }
   }
 };
@@ -120,38 +120,39 @@ profiles.carrie = {
   bio: 'I\'m doing my best',
   message: 'My mom is making me do this',
   yesResponse: 'Your mom will LOVE me',
-  noResponse: 'she shouldn\'t have',
+  noResponse: 'she shouldn\'t have. you gross',
   stage1: {
     optionA: {
       response: true,
-      description: '"maybe if I drink enough it will make the date go by faster." Yep, she said that out loud'
+      description: '"maybe if I drink enough it will make the date go by faster." Yep, she said that out loud. '
     },
     optionB: {
       response: false,
-      description: '"We can\'t both be the boring one"'
+      description: '"We can\'t both be the boring one." '
     }
   },
   stage2: {
     optionA: {
       response: true,
-      description: '"Good idea, you\'re cuter when you don\'t talk." But she genuinely has a good time'
+      description: '"Good idea, you\'re cuter when you don\'t talk." But she genuinely has a good time. '
     },
     optionB: {
       response: false,
-      description: 'She talks about her turtle\'s fungal infection for an hour' 
-    },
-    stage3: {
-      optionA: {
-        response: true,
-        description: '"I\'d like to see the fight, but I need to get back to my chopstick collection"'
-      },
-      optionB: {
-        response: false,
-        description: 'The most interesting part about Carrie is that she\'s a championship boxer and beats you up'
-      }
+      description: 'She talks about her turtle\'s fungal infection for an hour. ' 
     }
-
+  },
+  stage3: {
+    optionA: {
+      response: true,
+      description: '"I\'d like to see the fight, but I need to get back to my chopstick collection." '
+    },
+    optionB: {
+      response: false,
+      description: 'The most interesting part about Carrie is that she\'s a championship boxer and beats you up. '
+    }
   }
+
+  
 };
 
 dates.bar = {
@@ -178,9 +179,17 @@ profiles.chad.next = profiles.becky;
 profiles.chad.stage1.next = profiles.chad.stage2;
 profiles.chad.stage2.next = profiles.chad.stage3;
 
-profiles.becky.next = null;
+profiles.becky.next = profiles.doug;
 profiles.becky.stage1.next = profiles.becky.stage2;
 profiles.becky.stage2.next = profiles.becky.stage3;
+
+profiles.doug.next = profiles.carrie;
+profiles.doug.stage1.next = profiles.doug.stage2;
+profiles.doug.stage2.next = profiles.doug.stage3;
+
+profiles.carrie.next = null;
+profiles.carrie.stage1.next = profiles.carrie.stage2;
+profiles.carrie.stage2.next = profiles.carrie.stage3;
 
 dates.bar.stage1.next = dates.bar.stage2;
 dates.bar.stage2.next = dates.bar.stage3;
