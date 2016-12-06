@@ -32604,7 +32604,7 @@
 	    name: 'clearing',
 	    initDescription: 'You are in an open clearing.  Through the trees on the other side is a stream.',
 	    descriptionCrystal: 'Omigosh, there goes Bigfoot!  Quick!  What do you do?',
-	    descriptionNoCrystal: 'Omigosh, there goes Bigfoot!  Quick!  What do you do?',
+	    descriptionNoCrystal: 'Omigosh, there goes Bigfoot!  Explore to see if you can find anything that will help you trap such a mythical creature.  Quick!  What do you do?',
 	    inspected: false,
 	    movement: {
 	      Forward: 'stream'
@@ -32630,7 +32630,7 @@
 	    inspected: false,
 	    initDescription: 'Inside, the cave smells funky and puts a chill in your bones.',
 	    descriptionCrystal: 'Now that you have the crystal, this is obviously the Sasquatch lair!',
-	    descriptionNoCrystal: 'Ew! Just a dank and smelly cave. But there are some pretty rocks and crystals lying around.',
+	    descriptionNoCrystal: 'Ew! Just a dank and smelly cave. But there are some strange items lying around. Maybe one of these will help you capture Bigfoot back in the clearing\.',
 	    movement: {
 	      Back: 'stream'
 	    },

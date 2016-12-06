@@ -52,13 +52,15 @@ describe('main controller', () => {
   it('catch Bigfoot with crystal', () => {
     const ctrl = $controller('mainController');  
     ctrl.hasCrystal = true;
-    assert.equal(ctrl.catchBigfoot(), 'You caught Bigfoot!  Fame and fortune will surely be yours.');
+    ctrl.catchBigfoot();
+    assert.equal(ctrl.gameOverMessage, 'You caught Bigfoot!  Fame and fortune will surely be yours.');
     assert.isOk(ctrl.gameOver);
   });
 
   it('catch Bigfoot without crystal', () => {
-    const ctrl = $controller('mainController');  
-    assert.equal(ctrl.catchBigfoot(), 'Awww!  He ran right over you and got away.  Go home and tell all your friends.');
+    const ctrl = $controller('mainController');
+    ctrl.catchBigfoot();
+    assert.equal(ctrl.gameOverMessage, 'Awww!  He ran right over you and got away.  Go home and tell all your friends.');
     assert.isOk(ctrl.gameOver);
   });
 
