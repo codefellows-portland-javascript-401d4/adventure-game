@@ -4,6 +4,7 @@ const dates = {};
 profiles.chad = {
   name: 'Chad',
   bio: 'Crush suds. Surf is life.',
+  picture: 'src/img/chad.png',
   message: 'I know the SICKEST speakeasy. I\'ll buy the first round of Jaegerbombs.',
   yesResponse: 'Sure!',
   noResponse: 'No way.',
