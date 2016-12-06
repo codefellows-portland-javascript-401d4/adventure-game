@@ -28,10 +28,8 @@ export default function mainController() {
   self.catchBigfoot = function() {
     self.gameOver = true;
     if (self.hasCrystal) {
-      console.log(1);
       self.gameOverMessage = 'You caught Bigfoot!  Fame and fortune will surely be yours.';
     } else {
-      console.log(2);
       self.gameOverMessage = 'Awww!  He ran right over you and got away.  Go home and tell all your friends.';
     }
   };

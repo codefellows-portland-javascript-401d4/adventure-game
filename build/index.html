@@ -10,7 +10,7 @@
 
     <!--location div-->
       <div ng-controller="locationController as loc">
-        <div ng-show="!main.gameOver">
+        <div ng-show="!main.gameOver" ng-class="[main.location, 'room']">
           {{loc[main.location].initDescription}}
 
           <!--this is the button for looking around the curr area-->
@@ -23,31 +23,30 @@
             {{main.lookAround(loc[main.location])}}
           </div>
 
-        <div ng-repeat="(direction, location) in loc[main.location].movement">
-            <label>{{direction}} to <button ng-click="main.move(loc[main.location], location)">{{location}}</button></label>
-        </div>
 
           <div ng-show="loc[main.location].items.length && loc[main.location].inspected" ng-repeat="item in loc[main.location].items">
             <button ng-click="main.pickUpItem(item, loc[main.location])">Pick Up {{item}}</button>
           </div>
-        </div>
-
     <!--catch bigfoot button-->
         <div ng-show="main.location === main.sasquatchLocation && loc[main.location].inspected">
           <button ng-show="!main.gameOver" ng-click="main.catchBigfoot()">Catch Bigfoot</button>
         </div>
+        <div ng-repeat="(direction, location) in loc[main.location].movement">
+            <label>{{direction}} to <button ng-click="main.move(loc[main.location], location)">{{location}}</button></label>
+        </div>
+        </div>
+
     <!--satchel -->
-    <div>
-      <h4>Pick up items and store them here</h4>
+    <div ng-show="!main.gameOver" class="satchel">
       <h3>Your Satchel</h3>
       <ul ng-show="main.items.length" ng-repeat="item in main.items">
         <li>{{item}}</li>
       </ul>
     </div>
     <!--Game over div-->
-      <div ng-show="main.gameOver">
-        {{main.gameOverMessage}}
-        <button ng-click="main.resetGame()">Start New Game</button>
+      <div ng-show="main.gameOver" class="game-over">
+        <h3>{{main.gameOverMessage}}</h3>
+        <button ng-click="main.resetGame()"><h4>Start New Game</h4></button>
       </div>
     </div>
 <script type="text/javascript" src="build.js"></script></body>
