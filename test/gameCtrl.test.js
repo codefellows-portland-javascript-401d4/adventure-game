@@ -29,7 +29,7 @@ describe('controller functions', () => {
     $scope.optionA();
     assert.equal($scope.score, 1);
     assert.equal($scope.dateStage.optionA, 'PLAY POOL');
-    assert.equal($scope.profileStage.optionA.description, 'Chad welcomes any chance to dominate people in a physical contest. Chad is thrilled. ');
+    assert.equal($scope.profileStage.optionA.description, 'Chad welcomes any chance to dominate people in a physical contest. ');
   });
 
   it('checks player score', () => {
