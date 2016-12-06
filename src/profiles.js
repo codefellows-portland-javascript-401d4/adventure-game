@@ -113,7 +113,45 @@ profiles.doug = {
       description: 'Doug accidentally get\'s thrown in the fray and is knocked unconcious.'
     }
   }
+};
 
+profiles.carrie = {
+  name: 'Carrie',
+  bio: 'I\'m doing my best',
+  message: 'My mom is making me do this',
+  yesResponse: 'Your mom will LOVE me',
+  noResponse: 'she shouldn\'t have',
+  stage1: {
+    optionA: {
+      response: true,
+      description: '"maybe if I drink enough it will make the date go by faster." Yep, she said that out loud'
+    },
+    optionB: {
+      response: false,
+      description: '"We can\'t both be the boring one"'
+    }
+  },
+  stage2: {
+    optionA: {
+      response: true,
+      description: '"Good idea, you\'re cuter when you don\'t talk." But she genuinely has a good time'
+    },
+    optionB: {
+      response: false,
+      description: 'She talks about her turtle\'s fungal infection for an hour' 
+    },
+    stage3: {
+      optionA: {
+        response: true,
+        description: '"I\'d like to see the fight, but I need to get back to my chopstick collection"'
+      },
+      optionB: {
+        response: false,
+        description: 'The most interesting part about Carrie is that she\'s a championship boxer and beats you up'
+      }
+    }
+
+  }
 };
 
 dates.bar = {
