@@ -1,33 +1,37 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Angular Adventure Game
-====
+# Orc Slayer Adventure Game
 
-Create a "text" based adventure game! For this assignment you'll be creating a 
-text based adventure game ala Zork or choose your own adventure.
+## Description
 
-**Work in teams of 2-3 for this project**
+This is a typical adventure game with left, right, up, down controls to navigate. You are able to enter rooms and can fight, talk, run with any monsters you encounter.
 
-* This game should have at least three rooms or scenes that the player can move between. 
 
-* Have at least one item that the player can interact and at least one monster or character
-the player defeats or interacts with. 
+## Motivation
 
-* You need to provide ways for user to specify what they want to do (button, input, etc) 
+This was written as a lab assignment for Code Fellows 401 class.
 
-* No need to try and persist the data (though you can put on localStorage if you want)
+## API Reference
 
-* Test your controllers. Remember test the code you wrote, not Angular!
+### Put in descriptions...
 
-* For a choose your own adventure style game, you will need to use `ng-if`, `ng-show`, to change scenes, etc.
+### ...of API calls if applicable
 
-* A text adventure will likely retain state.
+## Tests
 
-* The goal is to jump into Angular and try and build something more complex than first assignment.
+The accompanying test suite can be run using the 'npm test' command.
 
-* To share state ($scope data) across controllers, you need to introduce the data in a parent that encompases those
-child controllers. (Yes, controllers in angular can be nested. Child $scope prototypically inherits the $scope of the parent)
+## Contributors
 
-## Rubric
-* Templating directives, design, features: 10pts 
-* Controllers: 5pts 
-* Project Org: 5pts
-* Testing: 10pts
+[Mark Greenwood](https://github.com/markgreenwood)
+[Michelle Sri](https://github.com/michellesri)
+[Mugsy Carter](https://github.com/mugsycarter)
+
+## License
+
+The MIT License (MIT)
+Copyright (c) 2016 Mark Greenwood, Michelle Sri, Mugsy Carter
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

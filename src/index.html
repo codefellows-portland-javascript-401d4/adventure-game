@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="orcSlayer">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <title>Orc Slayer</title>
+</head>
+<body ng-controller="globalController as globalController">
+  <div class="static" id="header">
+    <h1>Orc Slayer!</h1>
+  </div>
+  <div class="tab-content" id="intro-page" ng-show="activeTab.showIntro">
+    <p></p>
+    <button id="instructions-btn" ng-click="activeTab = { showIntro: false, showInstructions: true, showGame: false };">Instructions</button>
+    <button id="play-btn" ng-click="activeTab = { showIntro: false, showInstructions: false, showGame: true };">Play</button>
+  </div>
+  <div class="tab-content" id="game-page" ng-show="activeTab.showGame" ng-controller="gameController as gc">
+
+    <div id="game-text">{{gc.prefix}}{{gc.roomDescription}}{{gc.monsterText}}{{gc.itemText}} <br> {{gc.talking}}</div>
+    <h3>{{gc.alert}}</h3>
+    <div id="control-panel">
+      <span id="action-btns">
+        <button id="equip-btn" class="game-btn" ng-click="gc.equip();" ng-show="gc.equipButton">Equip</button>
+        <button id="fight-btn" class="game-btn" ng-click="gc.fight();" ng-show="gc.fightButton">Fight</button>
+        <button id="run-btn" class="game-btn" ng-click="gc.run();" ng-show="gc.runButton">Run</button>
+        <button id="talk-btn" class="game-btn" ng-click="gc.talk();" ng-show="gc.talkButton">Talk</button>
+        <button id="give-btn" class="game-btn" ng-click="gc.give();" ng-show="gc.giveButton">Give</button>
+
+      </span>
+      <span id="inventory">
+        <p id="inventory-content">Equipped Item: {{gc.playerItemName}}<br>Item Strength: {{gc.playerItemStrength}}</p>
+         <p id="player-life">Player Life: {{gc.life}}</p>
+      </span>
+      <span id="direction-ctrl" ng-show="gc.moveButtons">
+        <button id="n-btn" class="direction-button" ng-click="gc.move('N')">North</button>
+        <button id="e-btn" class="direction-button" ng-click="gc.move('E')">East</button>
+        <button id="s-btn" class="direction-button" ng-click="gc.move('S')">South</button>
+        <button id="w-btn" class="direction-button" ng-click="gc.move('W')">West</button>
+      </span>
+    </div>
+      <div class="sub-content" id="game-over-page" ng-show="gc.gameOver">
+    <h1>{{gc.ending}}</h1>
+    <h2>You survived {{gc.progress}} rooms of the dungeon.</h2>
+    <button id="play-btn" ng-click="gc.newGame();">Play Again</button>
+  </div>
+  </div>
+  <div class="tab-content" id="instruction-page" ng-show="activeTab.showInstructions">
+    <h1>Instructions</h1>
+    <p>Instructions will go here.</p>
+    <button id="play-btn" ng-click="activeTab = { showIntro: false, showInstructions: false, showGame: true };">Play</button>
+  </div>
+
+
+
+  <div class="static" id="footer">
+    <copy>The Orc Slayers 2016 <br> Mark Greenwood, Michelle Sri, Mugsy Carter</copy>
+  </div>
+
+</body>
+</html>
