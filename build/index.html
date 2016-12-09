@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="datingGame">
+  <head>
+    <meta charset="UTF-8">
+    <title>Millenial Dating Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Ubuntu+Mono" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet"></head>
+  <body ng-controller="game">
+    <div id="container">
+      <h1>find a date</h1>
+      <main>
+        <section id="swipe-view" ng-show="room === 'swipe'">
+          <div class="current-person">
+            <img ng-src="{{ currentProfile.picture }}">
+          </div>
+          <div class="current-profile">
+            <h3>{{ currentProfile.name }}</h3>
+            <h4>{{ currentProfile.bio }}</h4>
+          </div>
+        </section>
+
+        <section id="message-view" ng-show="room === 'message'">
+          <div class="inbox">
+            <h3>It's a match!</h3>
+              <div class="current-person">
+                <img src="{{ currentProfile.picture }}">
+              </div>
+            <h4>Message from: {{ currentProfile.name }}</h4>
+              <p>{{ currentProfile.message }}</p>
+          </div>
+        </section>
+
+        <section id="date-view" ng-show="room === 'date'">
+          <div class="date-info">
+            <h3>You're on a date with {{ currentProfile.name }} at {{ currentDate.location }}</h3>
+              <div class="current-date">
+                {{ currentDate.picture }}
+              </div>
+              <p>{{ currentDate.text }}</p>
+          </div>
+        </section>
+
+        <section id="win-view" ng-show="room === 'win'">
+          <div class="win-text">
+            <p>Date went well! You go on a second date and escape the Millenial dating hellscape.</p>
+          </div>
+        </section>
+
+        <section id="lose-view" ng-show="room === 'lose'">
+          <div class="lose-text">
+            <p>That... did not go so well. You wake up alone and re-open the app.</p>
+          </div>
+        </section>
+
+        <section id="buttons">
+          <button ng-show="room === 'swipe'" ng-click="swipeLeft()">Swipe left</button>
+          <button ng-show="room === 'swipe'" ng-click="room = 'message'">Swipe right</button>
+          <button ng-show="room === 'message'" ng-click="room = 'swipe'">{{currentProfile.noResponse}}</button>
+          <button ng-show="room === 'message'" ng-click="room = 'date'">{{currentProfile.yesResponse}}</button>
+          <button ng-show="room === 'date' && dateStage !== 'end'" ng-click="optionA()">{{dateStage.optionA}}</button>
+          <button ng-show="room === 'date' && dateStage !== 'end'" ng-click="optionB()">{{dateStage.optionB}}</button>
+          <button ng-show="room === 'date' && dateStage === 'end'" ng-click="checkScore()" ng-controller="score">Reflect on the date.</button>
+          <button ng-show="room === 'win'" ng-click="room = 'swipe'">Restart</button>
+          <button ng-show="room === 'lose'" ng-click="room = 'swipe'">Get back out there</button>
+        </section>
+      </main>
+    </div>
+  <script type="text/javascript" src="main.js"></script></body>
+</html>
