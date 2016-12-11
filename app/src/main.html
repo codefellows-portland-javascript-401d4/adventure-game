@@ -22,6 +22,6 @@
     <button class="{{class}}" ng-hide="room === 'secondRoom' || room === 'lastRoom'" ng-click="room = 'lastRoom'">Now travel to the last room!</button>
     <button class="{{class}}" ng-hide="room === 'thirdRoom' || room === 'lastRoom'" ng-click"=room = 'thirdRoom'">Proceed to the third room now!</button>
     <button class="{{class}}" ng-show="coffee && room === 'lastRoom'" ng-click="victory()">Hand Over Coffee</button>
-    <button class="{{class}}" ng-if="!coffee" ng-hide="room !== 'thirdroom'" ng-click="brewCoffee()">Use AeroPress!></button>
+    <button class="{{class}}" ng-if="!coffee" ng-hide="room !== 'thirdroom'" ng-click="brewCoffee()">Use AeroPress!</button>
   </div>
 </div>
