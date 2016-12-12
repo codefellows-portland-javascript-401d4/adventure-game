@@ -33050,12 +33050,12 @@
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	                        value: true
 	});
 	exports.default = firstRoom;
 	function firstRoom($scope) {
-	  $scope.firstRoomDesc = "The first room description will go here";
-	  $scope.location = "You are here in the first room";
+	                        $scope.firstRoomDesc = "You have an amazing new idea for a web app and you can't wait\n                          to sit down, open up your laptop and start coding away.  However,\n                          you're too sluggish even start typing!  Where do you go now?";
+	                        $scope.location = "You are here in the living room!";
 	}
 
 /***/ },
@@ -33069,8 +33069,8 @@
 	});
 	exports.default = secondRoom;
 	function secondRoom($scope) {
-	  $scope.secondRoomDesc = "The second room description will go here";
-	  $scope.location = "You are here in the second room";
+	  $scope.secondRoomDesc = "While in the kitchen, you notice this coffee-making contraption\n                           and somehow remember that YouTube video showing you exactly how to use it!";
+	  $scope.location = "You are here in the kitchen";
 	}
 
 /***/ },
@@ -33084,8 +33084,8 @@
 	});
 	exports.default = lastRoom;
 	function lastRoom($scope) {
-	  $scope.lastRoomDesc = "The last description will go here";
-	  $scope.location = "You finally entered the last room!";
+	  $scope.lastRoomDesc = "The office is nice and quiet. It's the perfect spot\n                         to hammer out that awesome web app and make your millions! $$$";
+	  $scope.location = "You're finally in the office!";
 	}
 
 /***/ },
@@ -33099,7 +33099,7 @@
 	});
 	exports.default = final;
 	function final($scope) {
-	  $scope.finalDesc = "You drink your amazing cup of coffee claim and claim victory!";
+	  $scope.finalDesc = "You drink your amazing cup of coffee claim and claim coding victory!";
 	}
 
 /***/ },
@@ -33149,7 +33149,7 @@
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-controller=\"main\" class=\"container\">\r\n  <div ng-show=\"room === ''\" class=\"choice\">\r\n    <p>{{beginning}}</p>\r\n      <hr>\r\n  </div>\r\n  <div ng-show=\"room === 'firstRoom'\" ng-controller=\"firstRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <hr>\r\n    <p>{{firstRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'secondRoom'\" ng-controller=\"secondRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <hr>\r\n    <p>{{secondRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'lastRoom'\" ng-controller=\"lastRoom\" class=\"choice\">\r\n    <h2>Caution! {{location}}</h2>\r\n    <hr>\r\n    <p>{{lastRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'final'\" ng-controller=\"final\" class=\"choice\">\r\n    <p>{{finalDesc}}</p>\r\n  </div>\r\n  <div class=\"choice\">\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'firstRoom' || room === 'final'\" ng-click=\"room = 'firstRoom'\">Travel to the first room!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'lastRoom' || room === 'final'\" ng-click=\"room = 'lastRoom'\">Now travel to the last room!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'secondRoom' || room === 'final'\" ng-click=\"room = 'secondRoom'\">Proceed to the second room now!</button>\r\n    <button class=\"{{class}}\" ng-show=\"coffee && room === 'lastRoom'\" ng-click=\"victory()\">Hand Over Coffee</button>\r\n    <button class=\"{{class}}\" ng-if=\"!coffee\" ng-hide=\"room !== 'secondRoom'\" ng-click=\"brewCoffee()\">Use AeroPress!</button>\r\n  </div>\r\n</div>\r\n";
+	module.exports = "<div ng-controller=\"main\" class=\"container\">\r\n  <div ng-show=\"room === ''\" class=\"choice\">\r\n    <p>{{beginning}}</p>\r\n      <hr>\r\n  </div>\r\n  <div ng-show=\"room === 'firstRoom'\" ng-controller=\"firstRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <hr>\r\n    <p>{{firstRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'secondRoom'\" ng-controller=\"secondRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <hr>\r\n    <p>{{secondRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'lastRoom'\" ng-controller=\"lastRoom\" class=\"choice\">\r\n    <h2>Whoa! {{location}}</h2>\r\n    <hr>\r\n    <p>{{lastRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'final'\" ng-controller=\"final\" class=\"choice\">\r\n    <p>{{finalDesc}}</p>\r\n  </div>\r\n  <div class=\"choice\">\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'firstRoom' || room === 'final'\" ng-click=\"room = 'firstRoom'\">Wander into the living room!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'lastRoom' || room === 'final'\" ng-click=\"room = 'lastRoom'\">Dance your way to the office!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'secondRoom' || room === 'final'\" ng-click=\"room = 'secondRoom'\">Mosey into the kitchen!</button>\r\n    <button class=\"{{class}}\" ng-show=\"coffee && room === 'lastRoom'\" ng-click=\"victory()\">Drink delicious coffee!</button>\r\n    <button class=\"{{class}}\" ng-if=\"!coffee\" ng-hide=\"room !== 'secondRoom'\" ng-click=\"brewCoffee()\">Use AeroPress!</button>\r\n  </div>\r\n</div>\r\n";
 
 /***/ },
 /* 11 */
