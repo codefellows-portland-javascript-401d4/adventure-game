@@ -54,11 +54,11 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _app3 = __webpack_require__(9);
+	var _app3 = __webpack_require__(10);
 	
 	var _app4 = _interopRequireDefault(_app3);
 	
-	var _main = __webpack_require__(10);
+	var _main = __webpack_require__(11);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -33023,7 +33023,11 @@
 	
 	var _lastRoom2 = _interopRequireDefault(_lastRoom);
 	
-	var _main = __webpack_require__(8);
+	var _final = __webpack_require__(8);
+	
+	var _final2 = _interopRequireDefault(_final);
+	
+	var _main = __webpack_require__(9);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -33034,6 +33038,7 @@
 	_module.controller('firstRoom', _firstRoom2.default);
 	_module.controller('secondRoom', _secondRoom2.default);
 	_module.controller('lastRoom', _lastRoom2.default);
+	_module.controller('final', _final2.default);
 	_module.controller('main', _main2.default);
 	
 	exports.default = _module.name;
@@ -33087,6 +33092,20 @@
 /* 8 */
 /***/ function(module, exports) {
 
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = final;
+	function final($scope) {
+	  $scope.finalDesc = "You drink your amazing cup of coffee claim and claim victory!";
+	}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -33104,7 +33123,7 @@
 	  };
 	
 	  $scope.victory = function () {
-	    $scope.room = 'lastRoom';
+	    $scope.room = 'final';
 	  };
 	
 	  $scope.$watch('[room, coffee]', function () {
@@ -33127,13 +33146,13 @@
 	}
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-controller=\"main\" class=\"container\">\r\n  <div ng-show=\"room === ''\" class=\"row\">\r\n    <p>{{beginning}}\r\n      <hr>\r\n  </div>\r\n  <div ng-show=\"room === 'firstRoom'\" ng-controller=\"firstRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <p>{{firstRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'secondRoom'\" ng-controller=\"secondRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <p>{{secondRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'lastRoom'\" ng-controller=\"lastRoom\" class=\"choice\">\r\n    <h2>Caution! {{location}}</h2>\r\n    <p>{{lastRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'final'\" ng-controller=\"final\" class=\"choice\">\r\n    <p>{{finalDesc}}</p>\r\n  </div>\r\n  <div class=\"choice\">\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'firstRoom' || room === 'final'\" ng-click=\"room = firstRoom\">Travel to the first room!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'lastRoom' || room === 'final'\" ng-click=\"room = 'lastRoom'\">Now travel to the last room!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'secondRoom' || room === 'final'\" ng-click=\"room = 'secondRoom'\">Now travel to the last room!</button>\r\n    <button class=\"{{class}}\" ng-show=\"coffee && room === 'lastRoom'\" ng-click=\"victory()\">Hand Over Coffee</button>\r\n    <button class=\"{{class}}\" ng-if=\"!coffee\" ng-hide=\"room !== 'secondRoom'\" ng-click=\"brewCoffee()\">Use AeroPress!</button>\r\n  </div>\r\n</div>\r\n";
+	module.exports = "<div ng-controller=\"main\" class=\"container\">\r\n  <div ng-show=\"room === ''\" class=\"choice\">\r\n    <p>{{beginning}}</p>\r\n      <hr>\r\n  </div>\r\n  <div ng-show=\"room === 'firstRoom'\" ng-controller=\"firstRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <hr>\r\n    <p>{{firstRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'secondRoom'\" ng-controller=\"secondRoom\" class=\"choice\">\r\n    <h2>Your location: {{location}}</h2>\r\n    <hr>\r\n    <p>{{secondRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'lastRoom'\" ng-controller=\"lastRoom\" class=\"choice\">\r\n    <h2>Caution! {{location}}</h2>\r\n    <hr>\r\n    <p>{{lastRoomDesc}}</p>\r\n  </div>\r\n  <div ng-show=\"room === 'final'\" ng-controller=\"final\" class=\"choice\">\r\n    <p>{{finalDesc}}</p>\r\n  </div>\r\n  <div class=\"choice\">\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'firstRoom' || room === 'final'\" ng-click=\"room = 'firstRoom'\">Travel to the first room!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'lastRoom' || room === 'final'\" ng-click=\"room = 'lastRoom'\">Now travel to the last room!</button>\r\n    <button class=\"{{class}}\" ng-hide=\"room === 'secondRoom' || room === 'final'\" ng-click=\"room = 'secondRoom'\">Proceed to the second room now!</button>\r\n    <button class=\"{{class}}\" ng-show=\"coffee && room === 'lastRoom'\" ng-click=\"victory()\">Hand Over Coffee</button>\r\n    <button class=\"{{class}}\" ng-if=\"!coffee\" ng-hide=\"room !== 'secondRoom'\" ng-click=\"brewCoffee()\">Use AeroPress!</button>\r\n  </div>\r\n</div>\r\n";
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

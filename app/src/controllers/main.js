@@ -5,15 +5,15 @@ export default function main($scope) {
                       you need to brew yourself a cup of coffee to win the day!`;
   $scope.class = `now-winning`;
 
-  $scope.brewCoffee = function () {
+  $scope.brewCoffee = function() {
     $scope.coffee = true;
   };
 
-  $scope.victory = function () {
-    $scope.room = 'lastRoom';
+  $scope.victory = function() {
+    $scope.room = 'final';
   };
 
-  $scope.$watch('[room, coffee]', function () {
+  $scope.$watch('[room, coffee]', function() {
     if ($scope.room === `firstRoom`) {
       $scope.class = `not-winning`;
     } else if ($scope.room === 'secondRoom') {
