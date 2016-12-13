@@ -2,34 +2,41 @@
 
 const { assert } = chai;
 
-describe( 'component', () => {
+describe( 'controller', () => {
 
-    beforeEach(angular.mock.module('components'));
-    
-    const fn = angular.mock.inject(function(_$componentCompiler_) {
-        // $rootScope allows us to create new scopes
-        // $scope = $rootScope.$new();
-        // $controller is the generic controller factory
+    beforeEach(angular.mock.module('controllers'));
+
+    let $controller, $scope;
+
+    beforeEach(angular.mock.inject( function( $rootScope, _$controller_ ) {
+        $scope = $rootScope.$new();
         $controller = _$controller_;
-    });
+    }));
+    
+    // const fn = angular.mock.inject(function(_$componentCompiler_) {
+    //     // $rootScope allows us to create new scopes
+    //     // $scope = $rootScope.$new();
+    //     // $controller is the generic controller factory
+    //     $controller = _$controller_;
+    // });
 
-    beforeEach(fn);
+    // beforeEach(fn);
 
-    it('player does not have coffee in the firstRoom', () => {
-        const location = {};
-        const player = { location };
+    // it('player does not have coffee in the firstRoom', () => {
+    //     const location = {};
+    //     const player = { location };
 
-        const $scope = {};
+    //     const $scope = {};
 
-        $controller('firstRoom', { 
-            $scope,
-            playerService: {
-                getNew() { return player; }
-            }
-        });
+    //     $controller('firstRoom', { 
+    //         $scope,
+    //         playerService: {
+    //             getNew() { return player; }
+    //         }
+    //     });
 
-        assert.equal($scope.player, player);
-        assert.equal($scope.getLocation(), location);
-    });
+    //     assert.equal($scope.player, player);
+    //     assert.equal($scope.getLocation(), location);
+    // });
 
 });
