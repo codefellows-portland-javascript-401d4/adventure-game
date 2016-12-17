@@ -12,6 +12,7 @@ describe( 'controller', () => {
         $scope = $rootScope.$new();
         $controller = _$controller_;
     }));
+
     
     // const fn = angular.mock.inject(function(_$componentCompiler_) {
     //     // $rootScope allows us to create new scopes
@@ -22,7 +23,16 @@ describe( 'controller', () => {
 
     // beforeEach(fn);
 
-    // it('player does not have coffee in the firstRoom', () => {
+    // it('player does not win in the firstRoom', () => {
+    //     $controller('main', {$scope});
+    //     $scope.room === 
+    //     assert.equal(($scope.class), `not-winning`);
+
+    it('player wins in the final room', () => {
+        $controller('main', {$scope});
+        $scope.room = 'final';
+
+        assert.equal($scope.victory($scope.room), 'final');
     //     const location = {};
     //     const player = { location };
 
@@ -38,5 +48,6 @@ describe( 'controller', () => {
     //     assert.equal($scope.player, player);
     //     assert.equal($scope.getLocation(), location);
     // });
+    });
 
 });
