@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --inline",
-    "test": "exit 0"
+    "start": "webpack-dev-server --inline"
   },
   "repository": {
     "type": "git",
