@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --inline"
+    "start": "webpack-dev-server --inline",
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
