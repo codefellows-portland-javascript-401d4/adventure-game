@@ -1,0 +1,179 @@
+p, h1, h2, h3 {
+  color: silver;
+}
+
+table td {
+  /*border: 1px dashed cyan;*/
+  min-width: 100px;
+  height: 100px;
+  max-width: 100px;
+  padding: 0;
+}
+
+button {
+  min-height: 75px;
+  min-width: 75px;
+  background: url(/src/images/door1.png) no-repeat;
+  background-size: 100%;
+  border: none;
+}
+
+html {
+  background: url(/src/images/background.jpg) center no-repeat;
+  background-size: 100%;
+  background-color: #2B303F;
+}
+
+body {
+  width: 85%;
+  margin: 2% auto;
+  background-color: rgba(83, 103, 138, .8);
+}
+
+.room-inv {
+  display: inline-block;
+  max-width: 20%;
+  padding: 1rem;
+  vertical-align: top;
+}
+
+.room-inv h2, h3, h4, p {
+  color: silver;
+  margin: 0;
+}
+
+#doors-and-room {
+  margin: auto;
+  width: 30rem;
+  height: 30rem;
+  text-align: center;
+  background: url(/src/images/room.jpg) no-repeat;
+  background-size: 100%;
+}
+
+table {
+  position: relative;
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  max-height: 300px;
+  right: 0%;
+  top: 50%;
+  display: inline;
+}
+
+button h1 {
+  color: black;
+}
+
+#northButton {
+  position: relative;
+  top: 1%;
+}
+
+#westButton {
+  position: relative;
+  display: inline;
+  right: 0;
+  top: 7rem;
+}
+
+#eastButton {
+  position: relative;
+  display: inline;
+  left: 0;
+  top: 7rem;
+}
+
+#southButton {
+  position: relative;
+  bottom: 0;
+}
+
+.inv {
+  display: inline;
+}
+
+.use-inv {
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  background: url(/src/images/invImage.png) no-repeat;
+  background-size: 100%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.use-inv h3 {
+  position: relative;
+  color: darkblue;
+  text-shadow: black 1px 1px;
+  bottom: -30px;
+}
+
+#monster-id {
+  background: url(/src/images/monsterImage.png) no-repeat;
+  background-size: 100%;
+}
+
+.inv-area {
+  background: url(/src/images/invImage.png) no-repeat;
+  background-size: 100%;
+  min-width: 80px;
+  max-width: 80px;
+  min-height: 80px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.inv-area h3 {
+  position: relative;
+  color: darkblue;
+  text-shadow: black 1px 1px;
+  bottom: -30px;
+}
+
+#room {
+  display: inline-block;
+  max-width: 45%;
+  padding: 1rem;
+}
+
+#monster {
+  display: block;
+  max-width: 80%;
+  padding: 1rem;
+  margin: auto;
+}
+
+.black {
+  color: black;
+}
+
+.red {
+  color: darkred;
+}
+
+.grave-div {
+  display: inline-block;
+  clear: left;
+  vertical-align: bottom;
+
+}
+
+.grave {
+  background: url(/src/images/grave.png) no-repeat;
+  background-size: 100%;
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.grave h3 {
+  color: black;
+  padding-top: 25px;
+  vertical-align: bottom;
+}
