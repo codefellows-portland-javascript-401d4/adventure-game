@@ -4,9 +4,9 @@
   "description": "Choose your own adventure lab assignment",
   "main": "app.js",
   "scripts": {
-    "build": "webpack",
+    "test": "karma start --single-run",    
     "start": "webpack-dev-server --inline",
-    "test": "karma start --single-run"
+    "build": "webpack"    
   },
   "repository": {
     "type": "git",
