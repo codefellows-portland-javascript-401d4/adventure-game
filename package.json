@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Choose your own adventure lab assignment",
   "main": "app.js",
-  "scripts": {        
+  "scripts": {
     "start": "webpack-dev-server --inline",
     "build": "webpack",
-    "test": "karma start --single-run" 
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",

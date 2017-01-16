@@ -33054,7 +33054,7 @@
 	});
 	exports.default = firstRoom;
 	function firstRoom($scope) {
-	                        $scope.firstRoomDesc = "You have an amazing new idea for a web app and you can't wait\n                          to sit down, open up your laptop and start coding away.  However,\n                          you're too sluggish even start typing!  Where do you go now?";
+	                        $scope.firstRoomDesc = "You have an amazing new idea for a web app and you can't wait\n                          to sit down, open up your laptop and start coding away.  However,\n                          you're too sluggish to even start typing!  Where do you go now?";
 	                        $scope.location = "You are here in the living room!";
 	}
 
