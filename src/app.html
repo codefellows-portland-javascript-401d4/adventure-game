@@ -1,0 +1,31 @@
+<div ng-controller="main" class="container">
+  <div ng-show="room === ''" class="choice">
+    <p>{{beginning}}</p>
+      <hr>
+  </div>
+  <div ng-show="room === 'firstRoom'" ng-controller="firstRoom" class="choice">
+    <h2>Your location: {{location}}</h2>
+    <hr>
+    <p>{{firstRoomDesc}}</p>
+  </div>
+  <div ng-show="room === 'secondRoom'" ng-controller="secondRoom" class="choice">
+    <h2>Your location: {{location}}</h2>
+    <hr>
+    <p>{{secondRoomDesc}}</p>
+  </div>
+  <div ng-show="room === 'lastRoom'" ng-controller="lastRoom" class="choice">
+    <h2>Whoa! {{location}}</h2>
+    <hr>
+    <p>{{lastRoomDesc}}</p>
+  </div>
+  <div ng-show="room === 'final'" ng-controller="final" class="choice">
+    <p>{{finalDesc}}</p>
+  </div>
+  <div class="choice">
+    <button class="{{class}}" ng-hide="room === 'firstRoom' || room === 'final'" ng-click="room = 'firstRoom'">Wander into the living room!</button>
+    <button class="{{class}}" ng-hide="room === 'lastRoom' || room === 'final'" ng-click="room = 'lastRoom'">Dance your way to the office!</button>
+    <button class="{{class}}" ng-hide="room === 'secondRoom' || room === 'final'" ng-click="room = 'secondRoom'">Mosey into the kitchen!</button>
+    <button class="{{class}}" ng-show="coffee && room === 'lastRoom'" ng-click="victory()">Drink delicious coffee!</button>
+    <button class="{{class}}" ng-if="!coffee" ng-hide="room !== 'secondRoom'" ng-click="brewCoffee()">Use AeroPress!</button>
+  </div>
+</div>
