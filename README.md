@@ -1,33 +1,74 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Angular Adventure Game
-====
+# MONSTER MANSION
+## a Javascript fueled adventure game - lab for Code Fellows 401.
 
-Create a "text" based adventure game! For this assignment you'll be creating a 
-text based adventure game ala Zork or choose your own adventure.
+### Collaborators
+  - Gloria Anholt
+  - Tim Combs
+  - Steven Jackson
 
-**Work in teams of 2-3 for this project**
 
-* This game should have at least three rooms or scenes that the player can move between. 
+### Project Functionality
+  - This is a Code Fellows Project to create an adventure game that uses Angular.
+  - Players start in the foyer of a magic mansion full of monsters.
+  - Game ends when the character's hit points reach zero.
 
-* Have at least one item that the player can interact and at least one monster or character
-the player defeats or interacts with. 
+### Game Play
+  - A map graphic with 4 doors is the playing field.
+  - Clicking on a door moves character to next room.
+    - If room has not been visited before a random room is instantiated.
+    - New rooms may be populated by a monster and/or items
+    - Going back into a room DOES NOT repopulate the room.
+  - Clicking on the monster causes damage to the character.
+  - Clicking on an item puts it into the character's inventory.
+  - Once item is in inventory, clicking on an it uses the item.
+    - If item is a basic item then character hp either increased or decreased AND item removed from inventory.
+    - If item is a weapon:
+      - a) monster present and weapon matches monster weakness then monster dies AND item removed from inventory.
+      - b) monster present and weapon DOES NOT match monster weakness then character hp decreased.
+      - c) monser not present nothing happens.
 
-* You need to provide ways for user to specify what they want to do (button, input, etc) 
+### Technologies used
+  - For app
+    - Javascript
+    - Angular
 
-* No need to try and persist the data (though you can put on localStorage if you want)
+  - For development
+    - Chai
+    - Mocha
+    - Karma
+    - Webpack
+    - Eslint
 
-* Test your controllers. Remember test the code you wrote, not Angular!
+  - Make sure to run npm install from the directory root to install dependencies
+  - Please refer to the package.json for more info
 
-* For a choose your own adventure style game, you will need to use `ng-if`, `ng-show`, to change scenes, etc.
 
-* A text adventure will likely retain state.
+### Directions to run locally
+  - Download the files
+  - Set up project
+    - Open a terminal window, `npm start`
+    - Then open a browser window and navigate to the address localhost:8080
 
-* The goal is to jump into Angular and try and build something more complex than first assignment.
+  - Please refer to the package.json for info about scripts
 
-* To share state ($scope data) across controllers, you need to introduce the data in a parent that encompases those
-child controllers. (Yes, controllers in angular can be nested. Child $scope prototypically inherits the $scope of the parent)
 
-## Rubric
-* Templating directives, design, features: 10pts 
-* Controllers: 5pts 
-* Project Org: 5pts
-* Testing: 10pts
+### Testing
+  - Set Up
+    - To run the test suite at cli at root of the project directory type:
+      ```
+      $ npm test
+      ```
+    - this will first run eslint - for more info look at .eslintrc
+    - then karma uses mocha to run Angular unit tests
+
+
+### Code Shape
+  - The code has been vetted using eslint & Travis-CI
+
+### Collborations/Questions/issues
+  - Not currently looking for collaborators at this time
+  - Always looking for suggestions
+  - Any questions and concerns can be handled by opening an issue on the codebase
+
+### License
+  - Licensed under the Creative Commons Non Commercial license - see LICENSE.md for more info
