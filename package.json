@@ -4,8 +4,8 @@
   "description": "An interactive dynamically generated map based adventure game.",
   "main": "app.js",
   "scripts": {
-    "pre": "eslint",
-    "test": "karma start",
+    "pre": "eslint src/*/*.js",
+    "test": "karma start --single-run",
     "start": "webpack-dev-server --inline",
     "build": "webpack"
   },
@@ -45,6 +45,9 @@
     "Webpack",
     "Game"
   ],
+  "engines": {
+    "node": "6.9.1"
+  },
   "author": "Gloria Anholt <gloriaanholt@gmail.com>, Steven Jackson <hpats67@gmail.com>, Tim Combs <tim00combs@gmail.com>",
   "license": "CC-BY-NC-4.0",
   "bugs": {

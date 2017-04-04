@@ -1,12 +1,12 @@
+/* globals chai */
+
 import charMethods from '../src/models/characterMethods';
-import character from '../src/models/character';
-import monsters from '../src/models/monsters';
+import character from '../src/data/character';
+import monsters from '../src/data/monsters';
 
-import chai from 'chai';
+const { assert } = chai;
 
-const {assert} = chai;
-
-describe('the pick up item method', () => {
+describe('the pick up and delete item methods', () => {
   
   let irrelevantItem = {
     name: 'irrelevant item',
@@ -20,7 +20,7 @@ describe('the pick up item method', () => {
     monster: {
       type: 'monster',
       name: 'neverwas',
-      description: 'Dangerous because unkown',
+      description: 'Dangerous because unknown',
       weakness: 'nothing',
       attack: 15
     },
@@ -28,20 +28,12 @@ describe('the pick up item method', () => {
   };
 
   it('adds an item to inventory', () => {
+    assert.notInclude(character.inventory, irrelevantItem, 'character should not have an item before picking it up');
+
     charMethods.pickUpItem(irrelevantItem, fakeRoom);
     assert.include(character.inventory, irrelevantItem, 'charMethods.pickUpItem does not add an object to the character array');
     assert.notInclude(fakeRoom.inventory, irrelevantItem, 'charMethods.pickUpItem does not remove an object to the room array');
   });
-
-});
-
-describe('the delete from inventory method', () => {
-
-  let irrelevantItem = {
-    name: 'irrelevant item',
-    description: 'Easily overlooked',
-    value: 0
-  };
 
   it('deletes an item from inventory', () => {
     charMethods.deleteFromInv(irrelevantItem);
@@ -50,7 +42,6 @@ describe('the delete from inventory method', () => {
 
 });
 
-//do i test all the method calls in this method?
 describe('the battle a monster method', () => {
   let fakeRoom = {
     name: 'Fake Room',
@@ -58,7 +49,7 @@ describe('the battle a monster method', () => {
     monster: {
       type: 'monster',
       name: 'neverwas',
-      description: 'Dangerous because unkown',
+      description: 'Dangerous because unknown',
       weakness: 'nothing',
       attack: 15
     },
@@ -77,19 +68,19 @@ describe('the battle a monster method', () => {
     description: 'Something is not always better than nothing.',
   };
 
-  it('reduces character hp if wrong weapon selected', () => {
+  it('reduces character hp if wrong weapon used', () => {
     let initCharHp = character.hp;
-
     charMethods.battleMonster(fakeWrongWeapon, fakeRoom);
+
     assert.isBelow(character.hp, initCharHp, 'charMethods.battleMonster does not reduce the character hp when monster attacks');
   });
 
   it('removes monster from room, puts monster in graveyard and removes object from inventory if correct weapon selected.', () => {
     let initRoomMonster = fakeRoom.monster;
     charMethods.pickUpItem(fakeRightWeapon, fakeRoom);
-
     charMethods.battleMonster(fakeRightWeapon, fakeRoom);
-    assert.deepEqual(fakeRoom.monster, false, 'charMethods.battleMonster did not remove monster from room');
+
+    assert.equal(fakeRoom.monster, false, 'charMethods.battleMonster did not remove monster from room');
     assert.include(monsters.graveyard, initRoomMonster, 'charMethods.battleMonster did not put monster in graveyard');
     assert.notInclude(character.inventory, fakeRightWeapon, 'charMethods.battleMonster did not remove weapon from inventory');
   });

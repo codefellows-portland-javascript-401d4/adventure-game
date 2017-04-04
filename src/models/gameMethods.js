@@ -1,5 +1,5 @@
 import charMethods from './characterMethods';
-import character from './character';
+import character from '../data/character';
 
 const gameMethods = {};
 

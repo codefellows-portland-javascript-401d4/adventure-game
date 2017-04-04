@@ -1,4 +1,4 @@
-import rooms from './rooms';
+import rooms from '../data/rooms';
 import monsterMethods from './monsterMethods';
 import itemMethods from './itemMethods';
 import weaponMethods from './weaponMethods';
@@ -15,12 +15,12 @@ roomMethods.addMonster = function(roomObj) {
 };
 
 roomMethods.addItemWeapons = function(roomObj) {
-// 70% chance of a weapon - if over %75 an item also appears
+// 70% chance of a weapon - if over %40 an item also appears
   var randomCell;
   let itemChance = Math.random();
 
   // if an ok roll, you just get a weapon
-  if (itemChance > .30) {
+  if (itemChance > .30 && itemChance <= .60) {
     randomCell = Math.floor((Math.random() * 8) + 1);
     const weapon = weaponMethods.get(); // returns a weapon
     roomObj.inventory.push(weapon);
@@ -29,7 +29,7 @@ roomMethods.addItemWeapons = function(roomObj) {
   if (itemChance > .60) {  // if a really good roll -- you also get an item
     randomCell = Math.abs(randomCell - 3);
     if (randomCell === 0) {
-      randomCell += 1;
+      randomCell = 1;
     }
     const item = itemMethods.get();  // returns an item
     roomObj.inventory.push(item);

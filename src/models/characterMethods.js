@@ -1,4 +1,4 @@
-import character from './character';
+import character from '../data/character';
 import gameMethods from './gameMethods';
 import monsterMethods from './monsterMethods';
 

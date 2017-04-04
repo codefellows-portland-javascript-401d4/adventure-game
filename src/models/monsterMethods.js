@@ -1,4 +1,4 @@
-import monsters from './monsters';
+import monsters from '../data/monsters';
 
 const monsterMethods = {};
 

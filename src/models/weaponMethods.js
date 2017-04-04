@@ -1,4 +1,4 @@
-import weapons from './weapons';
+import weapons from '../data/weapons';
 
 const weaponMethods = {};
 

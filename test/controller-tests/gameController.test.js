@@ -13,6 +13,7 @@ describe.only('the gameController', () => {
     $controller = _$controller_;
   }));
 
+  
   let Foyer = { name: 'Foyer',
     description: 'You\'re in the entry of a large, old house. More of a mansion, really. ' +
     'It looks like no one has kept up with cleaning or repairs in a long time, dust and ' +
@@ -28,6 +29,7 @@ describe.only('the gameController', () => {
 
     $controller('gameController', { $scope });
     // The game should initialize with the first room as Foyer and full health
+    $scope.graveyard = [];
     assert.equal($scope.characterHealth, 100);
     assert.isAtMost($scope.inventory.length, 2);
     assert.deepEqual($scope.currentRoom, Foyer);
@@ -58,6 +60,7 @@ describe.only('the gameController', () => {
       type: 'weapon', attack: 10 };
 
     $controller('gameController', { $scope });
+    $scope.graveyard = [];
     assert.equal($scope.characterHealth, 100);
     assert.equal($scope.charDead, false);
     assert.deepEqual($scope.graveyard, []);

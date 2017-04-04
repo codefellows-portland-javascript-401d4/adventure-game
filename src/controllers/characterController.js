@@ -1,17 +1,16 @@
 import charChange from '../models/gameMethods';
-import character from '../models/character';
-import monster from '../models/monsters';
+import character from '../data/character';
+import monster from '../data/monsters';
 
 
 characterController.$inject = ['$scope'];
 
 export default function characterController($scope) {
-  $scope.$parent.characterName = character.name;
-  $scope.$parent.graveyard = monster.graveyard;
+  $scope.characterName = character.name;
 
   $scope.changeName = function() {
     if($scope.text) {
-      $scope.$parent.characterName = $scope.text;
+      $scope.characterName = $scope.text;
       $scope.$parent.submitted = false;
     }
   };

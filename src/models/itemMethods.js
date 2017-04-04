@@ -1,4 +1,4 @@
-import items from './items';
+import items from '../data/items';
 
 const itemMethods = {};
 

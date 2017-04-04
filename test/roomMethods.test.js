@@ -1,4 +1,6 @@
-const assert = require('chai').assert;
+/* globals chai */
+
+const { assert } = chai;
 
 import roomMethods from '../src/models/roomMethods';
 
@@ -59,7 +61,7 @@ describe('Room methods', () => {
       northDoor: '', southDoor: '', eastDoor: '', westDoor: ''};
 
     const testRoom = roomMethods.getRoom(Foyer, 'northDoor');
-    assert.equal(Foyer.northDoor, testRoom.name);
+    assert.equal(Foyer.northDoor, testRoom.name.replace(' ', ''));
     assert.equal(Foyer.name, testRoom.southDoor);
 
   });
@@ -72,9 +74,9 @@ describe('Room methods', () => {
       northDoor: '', southDoor: '', eastDoor: '', westDoor: ''};
     const monsterChance = roomMethods.addMonster(Foyer);
     if (monsterChance < .60) {
-      assert.isOk(Foyer.monster, 'chance was below 40%, so monster');
+      assert.isOk(Foyer.monster, 'Chance was below 60%, should have a monster');
     } else {
-      assert.isFalse(Foyer.monster, 'chance was above 40%, so no monster');
+      assert.isFalse(Foyer.monster, 'Chance was above 60%, should not have a monster');
     }
   });
 
@@ -85,7 +87,13 @@ describe('Room methods', () => {
       roomArea5: {}, roomArea6: {}, roomArea7: {}, roomArea8: {},
       northDoor: '', southDoor: '', eastDoor: '', westDoor: '' };
     const itemChance = roomMethods.addItemWeapons(Foyer);
-    if (itemChance > .30) {
+    if (itemChance <= .30) {
+      for (let i = 1; i < 9; i++) {
+        // Nothing added, assert that all roomAreas still empty
+        assert.deepEqual(Foyer['roomArea' + i], {}, 'chance is below 30%, should have no weapons or items');
+      }
+      assert.equal(Foyer.inventory.length, 0, 'no weapons in the inventory array');
+    } else if (itemChance > .30 && itemChance <= .60) {
       let used;
       for (let i = 1; i < 9; i++) {
         if (Foyer['roomArea' + i].type !== undefined) {
@@ -93,16 +101,12 @@ describe('Room methods', () => {
           break;
         }
       }
+      let weapon = Foyer['roomArea'+used];
       // If something was added, assert that it's an object with a weapon property
-      assert.equal(Foyer['roomArea' + used].type, 'weapon', 'chance is above 30%, so weapon');
+      assert.equal(weapon.type, 'weapon', 'chance is above 30%, so weapon');
       assert.equal(Foyer.inventory[0].type, 'weapon', 'adds a weapon to the inventory array');
-    } else {
-      for (let i = 1; i < 9; i++) {
-        // If nothing was added, assert that all type properties are still undefined
-        assert.equal(Foyer['roomArea' + i].type, undefined, 'chance is below 30%, so no weapon');
-      }
-      assert.equal(Foyer.inventory.length, 0, 'no weapons in the inventory array');
     }
+
   });
 
 
@@ -113,22 +117,23 @@ describe('Room methods', () => {
       roomArea5: {}, roomArea6: {}, roomArea7: {}, roomArea8: {},
       northDoor: '', southDoor: '', eastDoor: '', westDoor: '' };
     const itemChance = roomMethods.addItemWeapons(Foyer);
-    if (itemChance > .75) {
+    if (itemChance > .60) {
       let used;
       for (let i = 1; i < 9; i++) {
-        if (Foyer['roomArea' + i].type !== undefined ||
+        if (Foyer['roomArea' + i].type !== undefined &&
           Foyer['roomArea' + i].type !== 'weapon') {
           used = i;
           break;
         }
       }
       // If something was added, assert that it's an object with an item property
-      assert.equal(Foyer['roomArea' + used].type, 'item', 'chance is above 75%, so item');
+      assert.equal(Foyer['roomArea' + used].type, 'item', 'chance is above 70%, so item');
       assert.equal(Foyer.inventory[1].type, 'item', 'adds an item to the inventory array');
     } else {
       for (let i = 1; i < 9; i++) {
         // If nothing was added, assert that no type properties are set to item
-        assert.notEqual(Foyer['roomArea' + i].type, 'item', 'chance is below 75%, so no item');
+        if (Foyer['roomArea' + i].type === undefined) break;
+        assert.notEqual(Foyer['roomArea' + i].type, 'item', 'chance is below 70%, so no item');
       }
       assert.isAtMost(Foyer.inventory.length, 1, 'chance is below 75%, so no item');
     }
