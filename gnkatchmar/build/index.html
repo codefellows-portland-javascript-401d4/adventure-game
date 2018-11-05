@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="game">
+<head>
+    <meta charset="UTF-8">
+    <title>Hell's Kitchen Mini Challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Almendra" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/main.css">
+<link href="main.css" rel="stylesheet"></head>
+<body>
+	<div ng-show="room == 'dining'">
+		<h1>The Hell's Kitchen Dining Room</h1>
+		<p>You have just stepped in to the most opulent and decadent dining room in Los Angeles (at least according to the show's narrator). This is a prime destination for B-list celebrities and online contest winners that are here to see and to be seen; each hoping to be annointed with a personal table-side visit from Chef Gordon Ramsay.</p>
+		<p>What are you going to do?</p>
+			<input class="button" type="button" value="Go to Chef Ramsay's Office" ng-click="office()">
+			<input class="button" type="button" value="Go to the Hell's Kitchen" ng-click="kitchen()">
+	</div>
+	
+	<div ng-show="room == 'kitchen'">
+		<h1>Hell's Kitchen</h1>
+		<p>Chef Ramsey's kitchen is the apex of culinary excellence and orderly chaos. The kitchen is a buzzing bee hive of activity as Chef Ramsey's kitchen staff diligently prepare for this evening's dinner service. There is a relentless driving rhythm to the pace of their work. The kitchen is hot as Hell as each member of the staff toils amongst the leaping flames.</p>
+		<p>What are you going to do?</p>
+			<input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
+			<span ng-show="risottoAssigned && !risottoMade">
+        <input class="button" type="button" value="Make F***ing Risotto" ng-click="makeRisotto()">
+      </span>
+	</div>
+
+	 <div ng-show="room == 'office'">
+		<h1>Chef Ramsay's Office</h1>
+		<p>Chef Ramsey's office is spartan and sparkling clean. Hanging from the wall behind Chef Ramsey is a well-worn cricket bat that has been wielded upon many an unfortunate sous chef. Will you be next? Beads of sweat drip from your brow as Chef Ramsay glares up at you from his desk and yells:</p>
+		<div ng-show="!risottoAssigned">
+			<p>"Hey, donkey! Go make me some f***ing risotto to prove you are worthy of staying in this reality competition!"</p>
+		</div>
+		<div ng-show="risottoAssigned && !risottoMade">
+			<p>"Well, don't just stand around waiting for validation. Get to it, you dumb s***!"</p>
+		</div>
+		<div ng-show="risottoMade">
+			<p>"Is that your f***ing risotto? Bring it here, donkey!"</p>
+		</div>
+      <input class="button" type="button" value="Go to the Dining Room" ng-click="dining()">
+			<input class="button" type="button" value="Ask Chef to Stop Cursing" ng-click="lose()">
+			<span ng-show="!risottoAssigned">
+				<input class="button" type="button" value="Accept Chef's Risotto Challenge" ng-click="assignRisotto()">
+			</span>
+			<span ng-show="risottoMade">
+				<input class="button" type="button" value="Present Risotto" ng-click="win()">
+			</span>
+	</div>
+
+	<div ng-show="room == 'victory'">
+		<h1>Victory!</h1>
+		<p>Chef Ramsey finds your risotto acceptable and you are safe from elimination in tonight's challenge.</p>
+		<input class="button" type="button" value="Play Again?" ng-click="reset()">
+	</div>
+
+	<div ng-show="room == 'defeat'">
+		<h1>Defeat!</h1>
+		<p>Chef Ramsey has no need for someone of your delicate sensibilities. You are eliminated from competition. Remove your chef's coat and leave the premises.
+		</p>
+		<input class="button" type="button" value="Try Again?" ng-click="reset()">
+	</div>
+
+<script type="text/javascript" src="main.js"></script></body>
+</html>

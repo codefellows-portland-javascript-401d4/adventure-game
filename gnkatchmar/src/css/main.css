@@ -1,0 +1,32 @@
+h1 {
+  font-family: 'Almendra', serif;
+  font-style: italic;
+  font-size: 175%;
+  font-weight: bolder;
+  color: black;
+}
+
+p {
+  font-family: 'Almendra', serif;
+  font-style: italic;
+  font-size: 125%;
+  font-weight: bold;
+  color: black;
+}
+
+body {
+  background: radial-gradient(#ffff00, #ff0000);
+}
+
+.button {
+  display: inline-block;
+  width: 250px;
+  height: 40px;
+  margin-right: 10px;
+  border: 5px solid blue;
+  border-radius: 5px;
+  border-color: blue;
+  background-color: yellow;
+  font-size: 14px;
+  font-weight: bold;
+}
