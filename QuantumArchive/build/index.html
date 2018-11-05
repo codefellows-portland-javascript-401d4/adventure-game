@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link href="styles.css" rel="stylesheet"></head>
+<body>
+    <section ng-controller="myGame">
+        <header class="sticky-header">Godzilla Dungeon!</header>
+        <div id="textarea">
+            <p ng-model="playerHistory" ng-repeat="history in playerHistory track by $index">{{history}}</p>
+            <div id="bottom-container">
+                <a id="bottom"></a>
+            </div>
+        </div>
+        <hr>
+        <div class="sticky-footer">
+            <div ng-controller="movementController">
+                <button type="button" id="{{action.title}}" ng-click="buttonClicked(action.command)"
+                ng-model="userMovement" ng-hide="action.type === 'item'" ng-if="player.status === 'alive'" ng-repeat="action in choices">{{action.name}}</button>
+            </div>
+            <div ng-controller="itemController">
+                <button type="button" id="{{action.title}}" ng-click="buttonClicked(action.command)"
+                ng-model="userItem" ng-hide="action.type === 'movement'" ng-if="player.status === 'alive'" ng-repeat="action in choices">{{action.name}}</button>
+            </div>
+            <div ng-controller="reloadController">
+                <button type="button" id="reload-button" ng-model="playerStatus" ng-if="player.status === 'dead'" ng-click="reload()">Start Over</button>
+            </div>
+        </div>
+    </section>
+<script type="text/javascript" src="main.js"></script></body>
+</html>

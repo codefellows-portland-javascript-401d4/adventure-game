@@ -1,0 +1,62 @@
+html, body, section {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0px 8px;
+}
+
+html {
+    background-color: lightslategray;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    height: 0px;
+    width: 100%;
+}
+
+.sticky-header, .sticky-footer {
+    flex: 0 0 auto;
+    background-color: steelblue;
+    text-align: center;
+    padding: 5px;
+    border: 1px white solid;
+}
+
+.sticky-header {
+    margin: 15px 0px;
+    color: white;
+}
+
+#textarea {
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    background-color: white;
+    padding: 5px;
+}
+
+#bottom-container {
+    height: 1px;
+    padding-top: 40px;
+}
+
+p {
+    margin: 1em;
+    font-family: sans-serif;
+}
+
+.alive {
+    visibility: visible;
+}
+
+.dead {
+    visibility: hidden;
+}
+/*# sourceMappingURL=styles.css.map*/
